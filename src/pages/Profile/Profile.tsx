@@ -19,7 +19,8 @@ export default function Profile() {
       </div>
       
 
-<TableComponent title={""} data={[]} />
+
+<TableComponent title={""} data={[]} headers={[]} changePage={() => {} } deleteItem={undefined} currentPage={0} totalPages={0} />
 
 
 

@@ -8,10 +8,10 @@ import { limitText } from "../../utility/limitText";
 import { categoryGetAll } from "../../service/category";
 import { Icategory } from "../../interface/Icategory";
 
-export default function Posts({pageSize}:{pageSize:number}) {
+export default function Posts() {
 
     const { data: categories } = useQuery({queryKey: ['category'], queryFn: () => categoryGetAll()})
-    const [params, setParams] = useState({ page: 1, pageSize: pageSize ? pageSize : 4 , categoryId : categories?.data[0].id})
+    const [params, setParams] = useState({ page: 1, pageSize:  4 , categoryId : categories?.data[0]?.id})
     const { data, isLoading } = useQuery({
         queryKey: ['posts', params],
         queryFn: () => getPost(params)
@@ -31,7 +31,7 @@ export default function Posts({pageSize}:{pageSize:number}) {
 
             <div className="flex lg:px-20">
                 {categories?.data.map((category: Icategory) =>
-                     <button onClick={() => setParams({ page: 1, pageSize: pageSize ? pageSize : 4 , categoryId : category.id})} className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-800 text-gray-800 hover:border-gray-500 hover:text-gray-500 focus:outline-none focus:border-gray-500 focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-white dark:text-white dark:hover:text-neutral-300 dark:hover:border-neutral-300">{category.category} </button>)}
+                     <button onClick={() => setParams({ page: 1, pageSize:  4 , categoryId : category.id})} className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-800 text-gray-800 hover:border-gray-500 hover:text-gray-500 focus:outline-none focus:border-gray-500 focus:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:border-white dark:text-white dark:hover:text-neutral-300 dark:hover:border-neutral-300">{category.category} </button>)}
             </div>
 
             <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">

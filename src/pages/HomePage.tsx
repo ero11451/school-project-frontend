@@ -1,4 +1,4 @@
-import { Header,  Plane } from "../component";
+import { Header } from "../component";
 import PostsList from "../component/PostList";
 
 
