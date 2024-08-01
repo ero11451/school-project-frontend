@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import sidebarInterface from '../utility/interface/SideBarNav'
+import sidebarInterface from '../interface/SideBarNav'
 
 export default function NavItem({
     path,

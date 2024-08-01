@@ -5,6 +5,6 @@ export function categoryCreate(data:Icategory){
     return api.post('category', data);
  }
 
- export function categoryGetAll():Promise<{data:Icategory[]}>{
+ export function categoryGetAll(){
     return api.get('category');
  }

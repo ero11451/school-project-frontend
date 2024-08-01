@@ -1,4 +1,8 @@
+import { useDispatch } from "react-redux"
+import { showNotification } from "../redux-store/slice/authSlice"
+
 export default function Contacts() {
+  const dispatch = useDispatch()
   return (
     <div>
        <div className="bg-neutral-900">
@@ -108,13 +112,13 @@ export default function Contacts() {
                 </p>
 
                 <p className="mt-5">
-                  <a className="group inline-flex items-center gap-x-2 py-2 px-3 bg-[#ff0] font-medium text-sm text-neutral-800 rounded-full focus:outline-none" href="#">
+                  <button className="group inline-flex items-center gap-x-2 py-2 px-3 bg-lime-400 font-medium text-sm text-neutral-800 rounded-full focus:outline-none" >
                     Submit
                     <svg className="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"></path>
                       <path d="m12 5 7 7-7 7"></path>
                     </svg>
-                  </a>
+                  </button>
                 </p>
               </div>
             </form>
@@ -132,8 +136,8 @@ export default function Contacts() {
                 <h4 className="text-white font-semibold">Our address:</h4>
 
                 <address className="mt-1 text-neutral-400 text-sm not-italic">
-                  300 Bath Street, Tay House<br></br>
-                  Glasgow G2 4JR, United Kingdom
+                 Glasgow <br></br>
+                  United Kingdom
                 </address>
               </div>
             </div>
@@ -161,13 +165,13 @@ export default function Contacts() {
                 <h4 className="text-white font-semibold">We're hiring</h4>
                 <p className="mt-1 text-neutral-400">We're thrilled to announce that we're expanding our team and looking for talented individuals like you to join us.</p>
                 <p className="mt-2">
-                  <a className="group inline-flex items-center gap-x-2 font-medium text-sm text-[#ff0] decoration-2 hover:underline focus:outline-none focus:underline" href="#">
+                  <button onClick={() =>   dispatch(showNotification({show:true, message:"login successful", type:'successful'}))} className="group inline-flex items-center gap-x-2 font-medium text-sm text-lime-400 decoration-2 hover:underline focus:outline-none focus:underline">
                     Job openings
                     <svg className="flex-shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"></path>
                       <path d="m12 5 7 7-7 7"></path>
                     </svg>
-                  </a>
+                  </button>
                 </p>
               </div>
             </div>

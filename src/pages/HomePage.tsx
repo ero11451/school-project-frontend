@@ -1,8 +1,11 @@
 import { Header,  Plane } from "../component";
-import PostsList from "./ClassRoom/LessonsList";
+import PostsList from "../component/PostList";
+
 
 
 function HomePage() {
+  
+    
     return (
         <div>
 
@@ -12,7 +15,7 @@ function HomePage() {
                     Latest work
                 </h1>
             </div>
-            <PostsList />
+            <PostsList grid={2} />
 
 
             <main>
@@ -44,7 +47,7 @@ function HomePage() {
                     </div>
                 </div>
             </main>
-            <Plane />
+            {/* <Plane /> */}
 
 
         </div>

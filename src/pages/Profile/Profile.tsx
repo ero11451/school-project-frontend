@@ -1,3 +1,4 @@
+import TableComponent from "../../component/TableComponent";
 
 
 export default function Profile() {
@@ -18,7 +19,17 @@ export default function Profile() {
       </div>
       
 
+<TableComponent title={""} data={[]} />
+
+
+
+
 
     </div>
   )
 }
+
+
+
+
+

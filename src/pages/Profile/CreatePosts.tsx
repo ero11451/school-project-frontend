@@ -1,45 +1,56 @@
-import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Ipost } from '../../interface/Ipost';
-import { fileService } from '../../service/fileService';
 import { createPost } from '../../service/posts';
+import { showNotification } from '../../redux-store/slice/authSlice';
+import { useMutation } from '@tanstack/react-query';
+import { useDispatch } from 'react-redux';
 
-const FormComponent: React.FC = () => {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<Ipost>();
-  const [uploading, setUploading] = useState(false);
+export default function FormComponent() {
+  const { register, handleSubmit, formState: { errors } } = useForm<Ipost>();
+  // const [uploading, setUploading] = useState(false);
   // const store = useSelector((storeData:{}) => )
 //   const [imagePreview, setImagePreview] = useState('')
+const dispatch = useDispatch();
+
+const mutation = useMutation({
+  mutationFn: (user:Ipost) =>  createPost(user) ,
+  onSuccess: (res:{data:{token:string, user:Ipost}}) => {
+    console.log(res);
+   dispatch(showNotification({show:true, message:"content created successful", type:'successful'}))
+   return []
+  }
+});
 
 
   const onSubmit = (data: Ipost) => {
-    createPost(data);
+   mutation.mutate(data)
   };
 
-  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
+  // const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = event.target.files?.[0];
+  //   if (!file) return;
 
-    setUploading(true);
-    const formData = new FormData();
-    formData.append('file', file);
+  //   setUploading(true);
+  //   const formData = new FormData();
+  //   formData.append('file', file);
 
-    try {
-      const response = await fileService(formData)
-      const imageUrl = response.data.filePath;
-      console.log(imageUrl, response)
-    //   setImagePreview(imageUrl)
-      setValue('imgUrl', imageUrl);
-      setUploading(false);
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      setUploading(false);
-    }
-  };
+  //   try {
+  //     const response = await fileService(formData)
+  //     const imageUrl = response.data.filePath;
+  //     console.log(imageUrl, response)
+  //   //   setImagePreview(imageUrl)
+  //     setValue('imgUrl', imageUrl);
+  //     setUploading(false);
+  //   } catch (error) {
+  //     console.error('Error uploading image:', error);
+  //     setUploading(false);
+  //   }
+  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="bg-white rounded-xl shadow dark:bg-neutral-900">
-        <div className={`relative h-40 rounded-t-xl bg-[url('/Users/user/Desktop/school-project/backend-app/uploads/american-express.png')] bg-no-repeat bg-cover bg-center`}></div>
+        {/* <div className={`relative h-40 rounded-t-xl bg-[url('/Users/user/Desktop/school-project/backend-app/uploads/american-express.png')] bg-no-repeat bg-cover bg-center`}></div> */}
         <div className="pt-0 p-4 sm:pt-0 sm:p-7">
           <div className="space-y-4 sm:space-y-6">
              <div className="space-y-2">
@@ -69,17 +80,18 @@ const FormComponent: React.FC = () => {
               {errors.content && <span className="text-red-500 text-sm">This field is required</span>}
             </div>
 
-            {/* <div className="space-y-2">
-              <label htmlFor="paid" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
-                Paid
+            <div className="space-y-2">
+              <label htmlFor="content" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
+                Code
               </label>
-              <input
-                id="paid"
-                type="checkbox"
-                {...register('paid')}
-                className='input'
-              />
-            </div> */}
+              <textarea
+                id="code"
+                {...register('code', { required: true })}
+                className="input"
+                placeholder="Enter code"
+              ></textarea>
+              {errors.content && <span className="text-red-500 text-sm">This field is required</span>}
+            </div>
 
             <div className="space-y-2">
               <label htmlFor="imgUrl" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
@@ -93,7 +105,7 @@ const FormComponent: React.FC = () => {
                 placeholder="Enter image URL"
                 readOnly
               />
-              <label
+              {/* <label
                 htmlFor="uploadImage"
                 className="group p-4 sm:p-7 block cursor-pointer text-center border-2 border-dashed border-gray-200 rounded-lg focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 dark:border-neutral-700"
               >
@@ -129,7 +141,7 @@ const FormComponent: React.FC = () => {
                     </span>
                   </>
                 )}
-              </label>
+              </label> */}
             </div>
 
             <div className="space-y-2">
@@ -145,6 +157,7 @@ const FormComponent: React.FC = () => {
               />
             </div>
 
+       {/*
             <div className="space-y-2">
               <label htmlFor="status" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
                 Status
@@ -157,8 +170,18 @@ const FormComponent: React.FC = () => {
                 placeholder="Enter status"
               />
             </div>
-
-            <div className="space-y-2">
+ <div className="space-y-2">
+              <label htmlFor="paid" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
+                Paid
+              </label>
+              <input
+                id="paid"
+                type="checkbox"
+                {...register('paid')}
+                className='input'
+              />
+            </div>
+               <div className="space-y-2">
               <label htmlFor="categoryId" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
                 Category ID
               </label>
@@ -184,7 +207,7 @@ const FormComponent: React.FC = () => {
               />
             </div>
 
-            <div className="space-y-2">
+          <div className="space-y-2">
               <label htmlFor="teacherId" className="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-neutral-200">
                 Teacher ID
               </label>
@@ -195,7 +218,7 @@ const FormComponent: React.FC = () => {
                 className="py-2 px-3 pe-11 block w-full border-gray-200 shadow-sm text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                 placeholder="Enter teacher ID"
               />
-            </div>
+            </div> */}
 
           </div>
 
@@ -203,7 +226,6 @@ const FormComponent: React.FC = () => {
             <button
               type="submit"
               className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-              disabled={uploading}
             >
               Submit your project
             </button>
@@ -212,6 +234,6 @@ const FormComponent: React.FC = () => {
       </div>
     </form>
   );
-};
+}
 
-export default FormComponent;
+

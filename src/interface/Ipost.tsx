@@ -7,14 +7,16 @@ export interface Ipost {
     content: string;
     imgUrl: string;
     videoUrl: string;
+    example?: string;
+    code?: string;
     status: string;
     test?: TestModel;
     categoryId?: number;
     category?: Icategory;
     locationId?: number;
     location?: LocationModel;
-    teacherId?: number;
-    teacher?: UserModel;
+    // teacherId?: number;
+    // teacher?: UserModel;
 
 }
 

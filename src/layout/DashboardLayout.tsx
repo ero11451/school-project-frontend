@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import ThemeToggle from "../component/ThemeToggle";
-import sidebarInterface from "../utility/interface/SideBarNav";
+import sidebarInterface from "../interface/SideBarNav";
 import Logo from "../component/Logo";
 
 

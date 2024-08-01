@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { RoutePath } from './routerPath';
-import { AuthState, showNotification } from '../redux-store/slice/authSlice';
+import {  showNotification } from '../redux-store/slice/authSlice';
 
 const ProtectedRoute: React.FC = () => {
   const navigate = useNavigate();
-  const isAuthenticated = useSelector((state: { auth: AuthState}) => state.auth.token);
+  const isAuthenticated = localStorage.getItem('token');
   const dispatch = useDispatch();
 
   useEffect(() => {

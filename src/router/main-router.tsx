@@ -25,10 +25,10 @@ function ErrorBoundary() {
   return <>There was a error with this page</>;
 }
 
-function MainLayout() {  
-    
+function MainLayout() {
+
   return (
-    <>   
+    <>
       <CustomNotification />
       <Navbar />
       <Outlet />
@@ -37,14 +37,15 @@ function MainLayout() {
 }
 
 export default function MainRouter() {
-
+  // localStorage.clear();
   return (
     <BrowserRouter>
       <LoadingIndicator />
+      <CustomNotification />
       <ErrorMessage />
-   
+
       <Routes>
-        
+
         <Route
           path={RoutePath.initialPage}
           element={<MainLayout />}
@@ -52,17 +53,20 @@ export default function MainRouter() {
         >
           <Route path={RoutePath.contact} element={<Contacts />} />
           <Route path={RoutePath.home} element={<HomePage />} />
-          <Route element = {<ProtectedRoute  />}>
-               <Route path={RoutePath.PostsList} element={<Posts />} />  
-               <Route path={`${RoutePath.postDetails}/:postId`} element={<PostDetails />} />
-          </Route>
+          <Route path={RoutePath.initialPage} element={<HomePage />} />
+          <Route path={RoutePath.PostsList} element={<Posts />} />
+          <Route path={`${RoutePath.postDetails}/:postId`} element={<PostDetails />} />
+          <Route path={RoutePath.about} element={<About />} />
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />
-          <Route path={RoutePath.about} element={<About />} />
         </Route>
+        <Route path={RoutePath.register} element={<Register />} />
+        <Route path={RoutePath.login} element={<Login />} />
 
- 
-        
+
+
+        <Route element={<ProtectedRoute />}>
+        </Route>
         <Route
           path={RoutePath.profile}
           element={<DashboardLayout sideNavList={ProfileNavList} />}
