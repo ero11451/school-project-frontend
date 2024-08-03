@@ -72,9 +72,9 @@ export default function Navbar() {
                     className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6">
                     <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
                         <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
-                        <NavItem path={RoutePath.contact} label="Contact" key={1} isActive={false} />
-                        <NavItem path={RoutePath.PostsList} label="Post" key={1} isActive={false} />
-                        <NavItem path={RoutePath.about} label="About" key={1} isActive={false} />
+                        <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
+                        <NavItem path={RoutePath.PostsList} label="Post" key={3} isActive={false} />
+                        <NavItem path={RoutePath.about} label="About" key={4} isActive={false} />
                     </div>
                 </div>
 

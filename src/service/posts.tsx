@@ -1,6 +1,6 @@
 import api from "./interseptor";
 
-export  function getPost(query:{page:number, pageSize:number})
+export  function getPost(query:{page:number, pageSize:number, categoryId ?:number | null})
     { return api.get(`posts`, { params: query  } );}
 
 export const getPostById = function (id:number){

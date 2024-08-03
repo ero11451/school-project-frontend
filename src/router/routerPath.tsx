@@ -6,6 +6,7 @@ export  const RoutePath = {
     PostsList:'Posts',
     postDetails:'postdetails',
     about:'about',
+    task:'test',
     profile:'profile',
     editProfile:'edit-profile',
     profilePosts:'my-Posts',

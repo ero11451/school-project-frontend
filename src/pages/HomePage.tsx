@@ -1,10 +1,25 @@
+import { useQuery } from "@tanstack/react-query";
 import { Header } from "../component";
 import PostsList from "../component/PostList";
+import { useState } from "react";
+import { getPost } from "../service/posts";
 
 
 
 function HomePage() {
   
+    const [params, setParams] = useState({ page: 1, pageSize:  4, categoryId : null  })
+    const { data, isLoading } = useQuery({
+        queryKey: ['posts', params], queryFn: () => getPost(params)
+    })
+    const posts = data?.data?.data;
+
+    if (isLoading) {
+        return <p className='text-center'>Loading...</p>
+    }
+    if (!data?.data?.data) {
+        return <p className="text-center">No data</p>
+    }
     
     return (
         <div>
@@ -15,8 +30,28 @@ function HomePage() {
                     Latest work
                 </h1>
             </div>
-            <PostsList grid={2} />
+            <PostsList posts={posts} />
+            <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
 
+<div className="mt-10 lg:mt-20  text-center">
+    <div className="flex  align-center  justify-center gap-2">
+        <button onClick={() => setParams({ page: params.page == 1 ? 1 : params.page - 1, pageSize: 4 , categoryId: params.categoryId ? params.categoryId : null })} className="
+        relative inline-block font-medium md:text-lg text-black 
+        before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
+        before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
+        dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
+            Previous content
+        </button>
+        <button onClick={() => setParams({ page: params.page + 1, pageSize: 4, categoryId: params.categoryId ? params.categoryId : null  })} className="
+     relative inline-block font-medium md:text-lg text-black 
+     before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
+     before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
+     dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
+            Next content
+        </button>
+    </div>
+</div>
+</div>
 
             <main>
 

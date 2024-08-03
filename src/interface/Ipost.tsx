@@ -10,10 +10,11 @@ export interface Ipost {
     example?: string;
     code?: string;
     status: string;
-    test?: TestModel;
+    options?: Array <Itest>;
     categoryId?: number;
     category?: Icategory;
     locationId?: number;
+    question?:string;
     location?: LocationModel;
     // teacherId?: number;
     // teacher?: UserModel;
@@ -21,10 +22,12 @@ export interface Ipost {
 }
 
 // interfaces.ts
-export interface TestModel {
-    // Define the properties of TestModel here
-  }
-  
+export interface Itest {
+    id:number
+    option ?:string
+    isCorrect ?:boolean ,
+    selected? :boolean
+}
 
   
   export interface LocationModel {

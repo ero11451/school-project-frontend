@@ -17,7 +17,7 @@ import ClassRoom from "../pages/ClassRoom";
 import LoadingIndicator from "../component/LoadingIndicator";
 import ErrorMessage from "../component/Error";
 import Register from "../pages/Auth/Register";
-import ProtectedRoute from "./ProtectedRoute";
+// import ProtectedRoute from "./ProtectedRoute";
 import CustomNotification from "../component/CustomNotification";
 import CreatePosts from "../pages/Profile/CreatePosts";
 
@@ -59,14 +59,15 @@ export default function MainRouter() {
           <Route path={RoutePath.about} element={<About />} />
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />
+
         </Route>
         <Route path={RoutePath.register} element={<Register />} />
         <Route path={RoutePath.login} element={<Login />} />
 
 
 
-        <Route element={<ProtectedRoute />}>
-        </Route>
+        {/* <Route element={<ProtectedRoute />}>
+        </Route> */}
         <Route
           path={RoutePath.profile}
           element={<DashboardLayout sideNavList={ProfileNavList} />}

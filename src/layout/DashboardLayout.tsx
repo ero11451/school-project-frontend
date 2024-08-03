@@ -107,7 +107,7 @@ export default function DashboardLayout({ sideNavList }: { sideNavList: sidebarI
               <NavLink
                 to={nav.path}
                 className={({ isActive }) => isActive ?
-                  "transition ease-linear transition-all border-lime-400 bg-lime-100 border-l-4 p-2  text-lime-900 dark:bg-lime-900 dark:text-white dark:border-lime-200"
+                  "transition ease-linear transition-all rounded-r-[22px] border-lime-400 bg-lime-100 border-l-4 p-2  text-lime-900 dark:bg-lime-900 dark:text-white dark:border-lime-200"
                   :
                   "transition ease-linear transition-all my-2 text-gray-800 dark:text-white dark:bg-neutral-800 dark:border-neutral-700"}
               >
@@ -119,7 +119,7 @@ export default function DashboardLayout({ sideNavList }: { sideNavList: sidebarI
               <NavLink
                 to={'/home'}
                 className={({ isActive }) => isActive ?
-                  "transition ease-linear transition-all border-lime-400 bg-lime-100 border-l-4 p-2  text-lime-900 dark:bg-lime-900 dark:text-white dark:border-lime-200"
+                  "transition ease-linear transition-all rounded-r-lg border-lime-400 bg-lime-100 border-l-4 p-2  text-lime-900 dark:bg-lime-900 dark:text-white dark:border-lime-200"
                   :
                   "transition ease-linear transition-all my-2 text-gray-800 dark:text-white dark:bg-neutral-800 dark:border-neutral-700"}
               >

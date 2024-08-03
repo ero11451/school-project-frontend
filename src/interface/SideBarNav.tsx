@@ -1,5 +1,5 @@
 export default interface sidebarInterface {
-    key?:number;
+    key?:number | string | null;
     path:string;
     label:string;
     icon?:unknown;

@@ -1,32 +1,38 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme } from '../redux-store/slice/themeSlice';
 
-
-
 const ThemeToggle = () => {
-    const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value)
+    const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
     const dispatch = useDispatch();
+
+    const toggleTheme = () => {
+        dispatch(setTheme(theme === "dark" ? 'light' : 'dark'));
+    };
+
     return (
         <div>
-            <button type="button" 
-             onClick={() =>  theme == "dark" ?  dispatch(setTheme('light')) :  dispatch(setTheme('dark'))}
-             className=" text-sm" >
-            
-                <svg  className={`flex-shrink-0 ${theme == "dark" ? 'hidden transition delay-150 transition-all duration-500 ease-linear' : ''} size-7`} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <path d="M12 2v2"></path>
-                    <path d="M12 20v2"></path>
-                    <path d="m4.93 4.93 1.41 1.41"></path>
-                    <path d="m17.66 17.66 1.41 1.41"></path>
-                    <path d="M2 12h2"></path>
-                    <path d="M20 12h2"></path>
-                    <path d="m6.34 17.66-1.41 1.41"></path>
-                    <path d="m19.07 4.93-1.41 1.41"></path>
-                </svg>
-            
-                <svg className={`flex-shrink-0 ${theme == "light" ? 'hidden transition delay-150 transition-all duration-500 ease-linear' : ''} size-7`} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                </svg>
+            <button 
+                type="button"
+                onClick={toggleTheme}
+                className="text-sm"
+            >
+                {theme === "dark" ? (
+                    <svg className="flex-shrink-0 size-7 transition-all duration-500 ease-linear" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                ) : (
+                    <svg className="flex-shrink-0 size-7 transition-all duration-500 ease-linear" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                )}
             </button>
         </div>
     );
