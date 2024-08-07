@@ -1,4 +1,4 @@
-import { BrowserRouter, Outlet, Route, Routes, } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes, useLocation, } from "react-router-dom";
 import { ProfileNavList, RoutePath } from "./routerPath";
 import {
   About,
@@ -20,12 +20,25 @@ import Register from "../pages/Auth/Register";
 // import ProtectedRoute from "./ProtectedRoute";
 import CustomNotification from "../component/CustomNotification";
 import CreatePosts from "../pages/Profile/CreatePosts";
+import "preline/preline";
+import { IStaticMethods } from "preline/preline";
+import { useEffect } from "react";
+declare global {
+  interface Window {
+    HSStaticMethods: IStaticMethods;
+  }
+}
 
 function ErrorBoundary() {
   return <>There was a error with this page</>;
 }
 
 function MainLayout() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, [location.pathname]);
 
   return (
     <>
@@ -38,6 +51,7 @@ function MainLayout() {
 
 export default function MainRouter() {
   // localStorage.clear();
+
   return (
     <BrowserRouter>
       <LoadingIndicator />
