@@ -3,7 +3,7 @@ import store from '../redux-store/store';
 import { setLoading, setError, clearToken } from '../redux-store/slice/authSlice';
 
 const api = axios.create({
-    baseURL: "http://localhost:5160/api/",
+    baseURL: "https://neeboh.azurewebsites.net/api/",
 });
 
 api.interceptors.request.use(
