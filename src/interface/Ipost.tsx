@@ -2,7 +2,8 @@ import { Icategory } from "./Icategory";
 
 
 export interface Ipost {
-    id?: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    id?: any;
     title?: string;
     content?: string;
     imgUrl?: string;
