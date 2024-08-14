@@ -12,16 +12,16 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit,  formState: { errors, isValid , isLoading }, } = useForm<Iuser>();
+  const { register, handleSubmit,  formState: { errors, isValid , isLoading } } = useForm<Iuser>();
   const dispatch = useDispatch();
 
   const mutation = useMutation({
     mutationFn: (user:Iuser) =>  LoginService(user) ,
-    onSuccess: (res:{data:{token:string, user:Iuser}}) => {
+    onSuccess: (res:{data:{accessToken:string, user:Iuser}}) => {
      dispatch(showNotification({show:true, message:"login successful", type:'successful'}))
      dispatch(setUserData(res.data.user))
-     dispatch(setToken(res.data.token))
-     return navigate(`/${RoutePath.home}`)
+     dispatch(setToken(res.data.accessToken));
+     return navigate(`/${RoutePath.home}`);
     }
 });
 
@@ -35,7 +35,7 @@ export default function Login() {
 
 
 
-      <div className=" lg:w-2/5 bg-white border border-gray-200 backdrop-blur-lg  rounded-xl h-fit shadow-sm dark:bg-neutral-900 backdrop-blur-lg dark:border-neutral-700">
+      <div className=" lg:w-2/5 w-full bg-white border border-gray-200 backdrop-blur-lg  rounded-xl h-fit shadow-sm dark:bg-neutral-900 backdrop-blur-lg dark:border-neutral-700">
         <div className="p-4 sm:p-7">
           <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>

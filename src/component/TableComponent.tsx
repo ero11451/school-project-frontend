@@ -35,7 +35,7 @@ const TableComponent: FC<TableComponentProps> = ({
     });
 
     return (
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-[85rem]  sm:px-6 lg:p-8  mx-auto">
             <div className="flex flex-col">
                 <div className="-m-1.5 overflow-x-auto">
                     <div className="p-1.5 min-w-full inline-block align-middle">
@@ -111,14 +111,14 @@ const TableComponent: FC<TableComponentProps> = ({
                                     <button
                                         onClick={() => currentPage > 1 && changePage(currentPage - 1)}
                                         disabled={currentPage <= 1}
-                                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:bg-gray-300 dark:bg-blue-700 dark:hover:bg-blue-800"
+                                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:bg-gray-300 bg-blue-700 dark:hover:bg-blue-800"
                                     >
                                         Previous
                                     </button>
                                     <button
                                         onClick={() => currentPage < totalPages && changePage(currentPage + 1)}
                                         disabled={currentPage >= totalPages}
-                                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:bg-gray-300 dark:bg-blue-700 dark:hover:bg-blue-800"
+                                        className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:bg-gray-300 bg-blue-700 dark:hover:bg-blue-800"
                                     >
                                         Next
                                     </button>

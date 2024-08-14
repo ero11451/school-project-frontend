@@ -39,3 +39,9 @@
 
 
 /* Add more theme-specific styling as needed */
+
+.color-primary{
+  background: -webkit-linear-gradient(green, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

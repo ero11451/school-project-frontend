@@ -5,6 +5,7 @@ export  const RoutePath = {
     register:'register',
     PostsList:'Posts',
     postDetails:'postdetails',
+    servicePage:'service',
     about:'about',
     task:'test',
     profile:'profile',
@@ -22,12 +23,13 @@ export const ProfileNavList = [{
     path: RoutePath.profileDashboard,
     isActive: false,
     key: 0
-}, {
-    label: 'My learing',
-    path: RoutePath.profilePosts,
-    isActive: false,
-    key: 1
-},
+}, 
+// {
+//     label: 'My learing',
+//     path: RoutePath.profilePosts,
+//     isActive: false,
+//     key: 1
+// },
 {
     label: 'Create Video',
     path: RoutePath.profileCreatePosts,

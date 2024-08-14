@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../router/routerPath";
+import Glowing from "./headerBG/Glowing";
 
 
 export default function Header() {
@@ -7,14 +8,15 @@ export default function Header() {
     const navigate = useNavigate();
 
     return (
-        <div className="bg-neutral-900 dark:bg-black">
-            <div className="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24">
+        <div className=" dark:bg-black bg-black ">
+            <Glowing />
+            <div className="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24 absolute top-20 left-0 right-0 w-screen">
                 <h1 className="font-semibold text-white text-5xl md:text-6xl">
                     <span className="text-lime-400">Neeboh:</span> Transforming ideas into reality
                 </h1>
                 <div className="max-w-4xl">
                     <p className="mt-5 text-neutral-400 text-lg">
-                        It is a creative hub where imagination meets craftsmanship to transform ideas into tangible realities. At Preline Agency, we specialize in turning conceptual visions into concrete forms, whether it be through design, artistry, or technological innovation.
+                    Unlock your potential with our comprehensive learning portal and expert digital product development services. Dive into a world of knowledge, master new skills, and grow your expertise. Whether you're a beginner or a pro, our resources are designed to help you succeed. Start your journey today and transform your future with endless learning opportunities, and let us bring your digital products to life."  
                     </p>
                 </div>
                 <div>

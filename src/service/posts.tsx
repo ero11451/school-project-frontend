@@ -1,20 +1,22 @@
+import { Ipost } from "../interface/Ipost";
 import api from "./interseptor";
 
 export  function getPost(query:{page:number, pageSize:number, categoryId ?:number | null})
-    { return api.get(`posts`, { params: query  } );}
+    { return api.get('api/posts', { params: query  } );}
 
 export const getPostById = function (id:number){
     console.log(id);
-    return api.get('posts/' + id);
+    return api.get('api/posts/' + id);
 }
 
 
-export function createPost(data:unknown){
-    return api.post('posts', data);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function createPost(data:Ipost): Promise<any>{
+     return api.post('api/posts', data);
 }
 
 
 
 export function deletePost(id:number){
-    return api.delete('posts/' + id);
+    return api.delete('api/posts/' + id);
 }

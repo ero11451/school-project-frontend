@@ -3,12 +3,15 @@ import { Header } from "../component";
 import PostsList from "../component/PostList";
 import { useState } from "react";
 import { getPost } from "../service/posts";
+import ServicePage from "./ServicePage";
+import TutorsSection from "../component/TutorsSection";
+
 
 
 
 function HomePage() {
-  
-    const [params, setParams] = useState({ page: 1, pageSize:  4, categoryId : null  })
+
+    const [params, setParams] = useState({ page: 1, pageSize: 4, categoryId: null })
     const { data, isLoading } = useQuery({
         queryKey: ['posts', params], queryFn: () => getPost(params)
     })
@@ -20,42 +23,23 @@ function HomePage() {
     if (!data?.data?.data) {
         return <p className="text-center">No data</p>
     }
-    
+
     return (
         <div>
 
-            <Header />     
+            <Header />
             <div className="mb-6 mt-5 sm:mb-10 max-w-2xl text-center mx-auto">
                 <h1 className="font-medium text-black text-2xl sm:text-4xl dark:text-white">
                     Latest work
                 </h1>
             </div>
-            <PostsList posts={posts} />
-            <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
+            {/* <p className="color-primary">this is a function for the right </p> */}
+            <PostsList posts={posts} params={params} setParams={() => setParams} />
 
-<div className="mt-10 lg:mt-20  text-center">
-    <div className="flex  align-center  justify-center gap-2">
-        <button onClick={() => setParams({ page: params.page == 1 ? 1 : params.page - 1, pageSize: 4 , categoryId: params.categoryId ? params.categoryId : null })} className="
-        relative inline-block font-medium md:text-lg text-black 
-        before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
-        before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
-        dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
-            Previous content
-        </button>
-        <button onClick={() => setParams({ page: params.page + 1, pageSize: 4, categoryId: params.categoryId ? params.categoryId : null  })} className="
-     relative inline-block font-medium md:text-lg text-black 
-     before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
-     before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
-     dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
-            Next content
-        </button>
-    </div>
-</div>
-</div>
+            <main className="flex align-center justify-center bg-gradient-to-r mt-10 from-lime-100 via-lime-500 to-lime-200">
+                <TutorsSection />
 
-            <main>
-
-                <div className="bg-black">
+                {/* <div className="bg-black">
                     <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
                         <blockquote className="max-w-4xl mx-auto">
                             <p className="mb-6 md:text-lg">
@@ -80,9 +64,9 @@ function HomePage() {
                             </footer>
                         </blockquote>
                     </div>
-                </div>
+                </div> */}
             </main>
-            {/* <Plane /> */}
+            <ServicePage />
 
 
         </div>

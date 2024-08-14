@@ -20,7 +20,7 @@ export default function Detail({ posts }: { posts: Ipost }) {
                     <iframe
                         width={width < 300 ? 300 : 850}
                         height={width < 300 ? 300 : 450}
-                        src={`https://www.youtube.com/embed/${postDetile?.videoUrl}`}
+                        src={`https://www.youtube.com/embed/${postDetile.videoUrl}`}
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

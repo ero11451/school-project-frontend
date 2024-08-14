@@ -2,8 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../router/routerPath";
 import { Ipost } from "../interface/Ipost";
 import { limitText } from "../utility/limitText";
+import { Params } from "../interface/PostComponent";
+import NotFound from "./NotFound";
 
-export default function PostsList({posts}:{posts:Array<Ipost>}) {
+export default function PostsList({posts,setParams}:{
+    posts:Array<Ipost>;
+    params: Params;
+    setParams:unknown
+}) {
     
 
     const navigate = useNavigate();
@@ -47,7 +53,7 @@ export default function PostsList({posts}:{posts:Array<Ipost>}) {
                                         {post?.title}
                                     </h3>
                                     <p className="mt-2 text-left text-white/80">
-                                        {limitText(post?.content, 40)}
+                                        {limitText(post.content || '', 40)}
                                     </p>
                                 </div>
                             </div>
@@ -58,8 +64,32 @@ export default function PostsList({posts}:{posts:Array<Ipost>}) {
                     </div>
            
 
-             
-            </div>
+             {posts.length >= 1 &&       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
+
+                    <div className="mt-10 lg:mt-20  text-center">
+                        <div className="flex  align-center  justify-center gap-2">
+                            <button onClick={() => setParams} className="
+            relative inline-block font-medium md:text-lg text-black 
+            before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
+            before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
+            dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
+                                Previous content
+                            </button>
+                            <button onClick={() => setParams} className="
+         relative inline-block font-medium md:text-lg text-black 
+         before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full 
+         before:h-1 before:bg-lime-400 hover:before:bg-black focus:outline-none focus:before:bg-black 
+         dark:text-white dark:hover:before:bg-white dark:focus:before:bg-white" >
+                                Next content
+                            </button>
+                        </div>
+                    </div>
+                </div>}
+       
+       
+       {posts.length == 0 &&     <NotFound />}
+       
+       </div>
 
         </div>
     </div>

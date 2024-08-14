@@ -3,8 +3,8 @@ import { RoutePath } from '../router/routerPath';
 import ThemeToggle from './ThemeToggle';
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthState, clearToken } from '../redux-store/slice/authSlice';
-import NavItem from './NavItem';
 import Logo from './Logo';
+import  {NavItem}  from '.';
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -43,11 +43,11 @@ export default function Navbar() {
                         Hire us
                     </button> */}
 
-                    <button type="button" 
+                    {/* <button type="button" 
                              onClick={() => navigate(RoutePath.profile)}
                     className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-lime-500">
                        My profile
-                    </button>
+                    </button> */}
 
                     <ThemeToggle />
 
@@ -74,7 +74,9 @@ export default function Navbar() {
                         <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
                         <NavItem path={RoutePath.PostsList} label="Post" key={3} isActive={false} />
-                        <NavItem path={RoutePath.about} label="About" key={4} isActive={false} />
+                        {/* <NavItem path={RoutePath.about} label="About" key={4} isActive={false} /> */}
+                        <NavItem path={RoutePath.servicePage} label="Service" key={5} isActive={false} />
+                     
                     </div>
                 </div>
 

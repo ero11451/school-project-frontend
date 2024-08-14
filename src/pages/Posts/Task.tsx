@@ -20,7 +20,7 @@ export default function Task({ posts }: TaskProps) {
             <button
               key={option.id}
               onClick={() => setSelectedAnswer({...option, ...{selected:true}})}
-              className={`w-full text-left p-2 border rounded bg-gray-100 border-gray-300`}
+              className={`w-full text-left p-2 border rounded dark:text-black bg-gray-100 border-gray-300`}
             >
               {/* {option.isCorrect ? 'false' : 'true'} */}
               {option.option}

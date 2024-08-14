@@ -2,11 +2,11 @@ import { Icategory } from "./Icategory";
 
 
 export interface Ipost {
-    id: number;
-    title: string;
-    content: string;
-    imgUrl: string;
-    videoUrl: string;
+    id?: number;
+    title?: string;
+    content?: string;
+    imgUrl?: string;
+    videoUrl?: string;
     example?: string;
     code?: string;
     status: string;

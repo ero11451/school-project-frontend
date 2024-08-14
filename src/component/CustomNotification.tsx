@@ -22,7 +22,7 @@ const CustomNotification = React.memo(() => {
   if (!notification.show) return null;
 
   return (
-    <div className="absolute top-0 end-0">
+    <div className="fix transition-all transition duration-700 buttom-0 end-0">
       <div
         className={`w-screen 
           ${notification.type === 'info' && 'bg-blue-800'}

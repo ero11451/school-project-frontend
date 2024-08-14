@@ -151,7 +151,7 @@ export default function Contacts() {
                 <h4 className="text-white font-semibold">Email us:</h4>
 
                 <a className="mt-1 text-neutral-400 text-sm" href="#mailto:example@site.co" target="_blank">
-                  hello@example.so
+                  neeboh.io@gmail.com
                 </a>
               </div>
             </div>

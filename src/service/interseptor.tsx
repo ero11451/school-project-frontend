@@ -2,8 +2,10 @@ import axios from 'axios';
 import store from '../redux-store/store';
 import { setLoading, setError, clearToken } from '../redux-store/slice/authSlice';
 
+const envType:boolean = import.meta.env.MODE === 'production';
+
 const api = axios.create({
-    baseURL: "https://neeboh.azurewebsites.net/api/",
+    baseURL: envType ? "https://neeboh.azurewebsites.net/" :  "http://localhost:5160/",
 });
 
 api.interceptors.request.use(
@@ -31,7 +33,7 @@ api.interceptors.response.use(
         if (error.response?.status === 401) {
             store.dispatch(clearToken());
         }
-        store.dispatch(setError(error.message));
+        store.dispatch(setError(error.response.data.title || error.message));
         return Promise.reject(error);
     }
 );

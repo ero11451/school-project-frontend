@@ -1,13 +1,27 @@
-export interface Iuser {
-    email: string;
-    password: string;
-    username?:string
-    bio?: string,
-    userImgUrl?:string,
-    gender?: number,
-    userType?:number,
-    status?:number
-  }
+export interface Iuser  {
+  id: string,
+  userName: string,
+  email: string,
+  phoneNumber: string,
+  user_name: string,
+  password: string,
+  bio: string,
+  userImgUrl: string,
+  gender: number,
+  userType: number,
+  status: number
+  // phoneNumberConfirmed: true,
+  // twoFactorEnabled: true,
+  // emailConfirmed: true,
+  // normalizedUserName: string,
+  // normalizedEmail: string,
+  // passwordHash: string,
+  // securityStamp: string,
+  // concurrencyStamp: string,
+  // lockoutEnd: "2024-08-11T16:05:58.987Z",
+  // lockoutEnabled: true,
+  // accessFailedCount: 0,
+}
   
 
   // "user": {
