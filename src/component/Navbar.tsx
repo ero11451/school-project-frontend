@@ -12,7 +12,7 @@ export default function Navbar() {
     const dispatch = useDispatch();
 
     return (
-        <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7  dark:bg-neutral-900 dark:text-white">
+        <header className="flex flex-wrap md:justify-start  md:flex-nowrap z-50 w-full py-7  dark:bg-neutral-900 dark:text-white">
             <nav className="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto" aria-label="Global">
                 <div className="md:col-span-3">
 
@@ -43,11 +43,11 @@ export default function Navbar() {
                         Hire us
                     </button> */}
 
-                    {/* <button type="button" 
+                    <button type="button" 
                              onClick={() => navigate(RoutePath.profile)}
                     className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-lime-500">
                        My profile
-                    </button> */}
+                    </button>
 
                     <ThemeToggle />
 

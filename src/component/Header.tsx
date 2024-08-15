@@ -10,14 +10,14 @@ export default function Header() {
     return (
         <div className=" dark:bg-black bg-black ">
             <Glowing />
-            <div className="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24 absolute top-20 left-0 right-0 w-screen">
-                <h1 className="font-semibold text-white text-5xl md:text-6xl">
-                    <span className="text-lime-400">Neeboh:</span> Transforming ideas into reality
+            <div className="max-w-5xl mx-auto px-4 xl:px-0 pt-24 lg:pt-32 pb-24 absolute lg:top-20 top-40 left-0 right-0 w-screen ">
+                <h1 className="font-semibold text-white text-5xl md:text-6xl text-lg">
+                    <span className="text-lime-400 ">Neeboh:</span> Transforming ideas into reality
                 </h1>
-                <div className="max-w-4xl">
-                    <p className="mt-5 text-neutral-400 text-lg">
-                    Unlock your potential with our comprehensive learning portal and expert digital product development services. Dive into a world of knowledge, master new skills, and grow your expertise. Whether you're a beginner or a pro, our resources are designed to help you succeed. Start your journey today and transform your future with endless learning opportunities, and let us bring your digital products to life."  
-                    </p>
+                <div className="lg:max-w-4xl">
+                    <p className="mt-5 text-neutral-400 lg:text-lg text-xs">
+                    Unlock your potential with our learning portal and expert digital development services. Master new skills, grow your expertise, and succeed at any level. Start your journey today and transform your future.
+                        </p>
                 </div>
                 <div>
                     <div className='flex gap-3 mt-3'>

@@ -2,7 +2,7 @@
 
 const TutorsSection = () => {
     return (
-        <div className="relative bg-wite rounded-xl  dark:bg-neutral-800 dark:border-neutral-700  m-16 w-1/2 bg-gray-100">
+        <div className="relative bg-wite rounded-xl  dark:bg-neutral-800 dark:border-neutral-700  lg:m-16 lg:w-1/2 bg-gray-100">
             <div className="flex items-center justify-center h-fit dark:bg-neutral-800 m-10">
                 <div className="p-6 bg-whie w-fit m-auto rounded-lg dark:bg-neutral-800">
                     <h3 className="text-lg font-medium text-gray-900 dark:text-neutral-200 text-center">
