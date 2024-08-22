@@ -22,7 +22,12 @@ export default function Login() {
      dispatch(setUserData(res.data.user))
      dispatch(setToken(res.data.accessToken));
      return navigate(`/${RoutePath.home}`);
-    }
+    },
+    onError(error, variables, context) {
+      console.log(variables, context);
+      dispatch(showNotification({show:true, message:error.message, type:'error'}))
+        
+    },
 });
 
   const onSubmit: SubmitHandler<Iuser> = (data) => {

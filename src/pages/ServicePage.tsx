@@ -1,10 +1,10 @@
 export default function ServicePage() {
   return (
-    <div className='dark:bg-black bg-black-200'>
+    <div className='dark:bg-black bg-lime-900'>
       <div className="max-w-5xl px-4 xl:px-0 py-10 lg:pt-5  mx-auto">
      
         <div className="max-w-3xl mb-10 lg:mb-14">
-          <h2 className="dark:text-white font-semibold text-2xl md:text-4xl md:leading-tight">Our approach</h2>
+          <h2 className="dark:text-white font-semibold text-2xl md:text-4xl md:leading-tight text-lime-400 ">Our approach</h2>
           <p className="mt-1 text-neutral-400">This profound insight guides our comprehensive strategy — from meticulous research and strategic planning to the seamless execution of brand development and website or product deployment.</p>
         </div>
       

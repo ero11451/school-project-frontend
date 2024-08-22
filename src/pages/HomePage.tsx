@@ -6,9 +6,6 @@ import { getPost } from "../service/posts";
 import ServicePage from "./ServicePage";
 import TutorsSection from "../component/TutorsSection";
 
-
-
-
 function HomePage() {
 
     const [params, setParams] = useState({ page: 1, pageSize: 4, categoryId: null })
@@ -16,14 +13,12 @@ function HomePage() {
         queryKey: ['posts', params], queryFn: () => getPost(params)
     })
     const posts = data?.data?.data;
-
     if (isLoading) {
         return <p className='text-center'>Loading...</p>
     }
-    if (!data?.data?.data) {
-        return <p className="text-center">No data</p>
-    }
-
+    // if (!data?.data?.data) {
+    //     return <p className="text-center">No data</p>
+    // }
     return (
         <div>
 
@@ -33,8 +28,7 @@ function HomePage() {
                     Latest work
                 </h1>
             </div>
-            {/* <p className="color-primary">this is a function for the right </p> */}
-            <PostsList posts={posts} params={params} setParams={() => setParams} />
+            <PostsList posts={posts || []} params={params || {}} setParams={() => setParams} />
 
             <main className="flex align-center justify-center bg-gradient-to-r mt-10 from-lime-100 via-lime-500 to-lime-200">
                 <TutorsSection />

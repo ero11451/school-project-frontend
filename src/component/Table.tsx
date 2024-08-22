@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import { faSort } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import LoadingIndicator from './LoadingIndicator'
 
@@ -47,12 +45,7 @@ const Table = ({
 												className='px-6 py-3 text-start text-xs font-medium text-white capitalize'
 											>
 												<div className='flex'>
-													{!showHeaderIcon && !column.excludeSort && (''
-														// <FontAwesomeIcon
-														// 	className='sm:mr-1 hidden sm:block pt-0.5 text-gray-500'
-														// 	icon={faSort}
-														// />
-													)}
+													{!showHeaderIcon && !column.excludeSort && ('')}
 													<span> {column.title} </span>
 												</div>
 											</th>

@@ -4,7 +4,7 @@ export  const RoutePath = {
     login:'login',
     register:'register',
     PostsList:'Posts',
-    postDetails:'postdetails',
+    postDetails:'Posts',
     servicePage:'service',
     about:'about',
     task:'test',
