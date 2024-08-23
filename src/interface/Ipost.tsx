@@ -17,6 +17,7 @@ export interface Ipost {
     locationId?: number;
     question?:string;
     location?: LocationModel;
+    summary?:string
     // teacherId?: number;
     // teacher?: UserModel;
 
@@ -27,6 +28,7 @@ export interface Itest {
     id:number
     option ?:string
     isCorrect ?:boolean ,
+    summary?:string,
     selected? :boolean
 }
 

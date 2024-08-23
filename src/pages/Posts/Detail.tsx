@@ -51,7 +51,7 @@ export default function Detail({ posts }: { posts: Ipost }) {
                 <section id="summary" className="mb-8">
                     <h2 className="text-2xl font-semibold mb-4">Summary</h2>
                     <p className="text-gray-700 mb-4 dark:text-white">
-                        This is the summary of the lesson. Recap the key points covered and provide any final thoughts.
+                    {postDetile?.summary}
                     </p>
                 </section>
             </div>

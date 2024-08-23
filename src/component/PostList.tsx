@@ -53,7 +53,7 @@ export default function PostsList({posts,setParams}:{
                                         {post?.title}
                                     </h3>
                                     <p className="mt-2 text-left text-white/80">
-                                        {limitText(post.content || '', 40)}
+                                        {limitText(post.content || '', 60)}
                                     </p>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ export default function PostsList({posts,setParams}:{
                     </div>
            
 
-             {posts.length >= 1 &&       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
+             {posts?.length  >= 1 &&       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
 
                     <div className="mt-10 lg:mt-20  text-center">
                         <div className="flex  align-center  justify-center gap-2">
@@ -87,7 +87,7 @@ export default function PostsList({posts,setParams}:{
                 </div>}
        
        
-       {posts.length == 0 &&     <NotFound />}
+       {posts?.length  == 0 &&     <NotFound />}
        
        </div>
 

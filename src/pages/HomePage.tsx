@@ -1,24 +1,23 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { Header } from "../component";
 import PostsList from "../component/PostList";
 import { useState } from "react";
-import { getPost } from "../service/posts";
+// import { getPost } from "../service/posts";
 import ServicePage from "./ServicePage";
 import TutorsSection from "../component/TutorsSection";
+import { postData } from "../service/postDB";
 
 function HomePage() {
 
     const [params, setParams] = useState({ page: 1, pageSize: 4, categoryId: null })
-    const { data, isLoading } = useQuery({
-        queryKey: ['posts', params], queryFn: () => getPost(params)
-    })
-    const posts = data?.data?.data;
-    if (isLoading) {
-        return <p className='text-center'>Loading...</p>
-    }
-    // if (!data?.data?.data) {
-    //     return <p className="text-center">No data</p>
+    // const { data, isLoading } = useQuery({
+    //     queryKey: ['posts', params], queryFn: () => getPost(params)
+    // })
+    // const posts = data?.data?.data;
+    // if (isLoading) {
+    //     return <p className='text-center'>Loading...</p>
     // }
+ 
     return (
         <div>
 
@@ -28,7 +27,7 @@ function HomePage() {
                     Latest work
                 </h1>
             </div>
-            <PostsList posts={posts || []} params={params || {}} setParams={() => setParams} />
+            <PostsList posts={postData || []} params={params || {}} setParams={() => setParams} />
 
             <main className="flex align-center justify-center bg-gradient-to-r mt-10 from-lime-100 via-lime-500 to-lime-200">
                 <TutorsSection />

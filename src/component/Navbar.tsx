@@ -43,11 +43,11 @@ export default function Navbar() {
                         Hire us
                     </button> */}
 
-                 <button type="button" 
+                 {/* <button type="button" 
                              onClick={() => navigate(RoutePath.profile)}
                     className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-lime-500">
                        My profile
-                    </button> 
+                    </button>  */}
 
                     <ThemeToggle />
 

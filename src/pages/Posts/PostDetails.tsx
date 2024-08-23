@@ -1,31 +1,32 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPostById } from "../../service/posts";
+// import { useQuery } from "@tanstack/react-query";
+// import { getPostById } from "../../service/posts";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Detail from "./Detail";
 import { Ipost } from "../../interface/Ipost";
 import Task, { TaskProps } from "./Task";
+import { postData } from "../../service/postDB";
 
 export default function PostDetails() {
     const { postId } = useParams<{ postId: string }>();
     const id = Number(postId);
     const [showTest, setShowTest] = useState(true);
 
-    const { data, error, isLoading } = useQuery({
-        queryKey: ['posts_details', id],
-        queryFn: () => getPostById(id),
-        enabled: !!id // Ensures the query runs only if id is valid
-    });
+    // const { data, error, isLoading } = useQuery({
+    //     queryKey: ['posts_details', id],
+    //     queryFn: () => getPostById(id),
+    //     enabled: !!id // Ensures the query runs only if id is valid
+    // });
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error loading post details</div>;
+    // if (isLoading) return <div>Loading...</div>;
+    // if (error) return <div>Error loading post details</div>;
 
-    const postDetail = data?.data as Ipost;
+    const postDetail = postData.find((post: Ipost) => post.id === id) || postData[0];
 
     const postTest: TaskProps = {
         posts: {
-            question: postDetail.question || '',
-            options: postDetail.options || []
+            question: postDetail?.question || '',
+            options: postDetail?.options || []
         }
     };
 
