@@ -9,6 +9,7 @@ export const postData: Array<Ipost> = [
       "videoUrl": "o5_u_1N_Ziw&t=13s",
       "code": "```javascript\n// Global Scope\nlet globalVariable = 'I am global';\n\nfunction exampleFunction() {\n    // Local Scope\n    let localVariable = 'I am local';\n    console.log(globalVariable); // Accessible\n    console.log(localVariable); // Accessible\n}\n\nconsole.log(globalVariable); // Accessible\nconsole.log(localVariable); // Uncaught ReferenceError: localVariable is not defined\n```",
       "status": "published",
+      "summary":"",
       "categoryId": 1,
       "question": "Which of the following statements about JavaScript scope is correct?",
       options: [
@@ -32,6 +33,8 @@ export const postData: Array<Ipost> = [
     {
       id: 2,
       "title": "Understanding Variables in JavaScript",
+      "summary": "This article explains the different types of variables in JavaScript, including `var`, `let`, and `const`. It covers their scope, behavior, and best practices for using them effectively in your code.",
+  
       "content": "Variables in JavaScript are fundamental building blocks used to store and manipulate data. A variable is essentially a container that holds a value, which can be of different types such as numbers, strings, or objects. In JavaScript, variables can be declared using `var`, `let`, or `const`, each with different scopes and use cases.\n\n- `var` is function-scoped and allows redeclaration, which can sometimes lead to unexpected behavior. It is hoisted to the top of its scope.\n- `let` is block-scoped and does not allow redeclaration, making it safer for use within loops and conditionals.\n- `const` is also block-scoped but is used for variables whose values should not change after they are assigned.\n\nIt's important to choose the correct type of variable declaration to ensure your code behaves as expected and to avoid common pitfalls like hoisting issues or unintended redeclarations.",
       "imgUrl": "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80",
       "videoUrl": "aROOcPx54Do",
@@ -57,7 +60,6 @@ export const postData: Array<Ipost> = [
         }
       ]
     }
-  
   
   ]
   

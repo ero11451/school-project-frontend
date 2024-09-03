@@ -74,7 +74,7 @@ export default function Navbar() {
                         <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
                         <NavItem path={RoutePath.PostsList} label="Post" key={3} isActive={false} />
-                        {/* <NavItem path={RoutePath.about} label="About" key={4} isActive={false} /> */}
+                        <NavItem path={RoutePath.devTools} label="Dev tools" key={4} isActive={false} />
                         <NavItem path={RoutePath.servicePage} label="Service" key={5} isActive={false} />
                      
                     </div>

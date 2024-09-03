@@ -25,6 +25,7 @@ import { ErrorBoundary } from "../component/ErrorBoundary";
 import ServicePage from "../pages/ServicePage";
 import NotFound from "../component/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
+import DevToolsPage from "../pages/DevToolsPage";
 
 declare global {
   interface Window {
@@ -59,6 +60,7 @@ export default function MainRouter() {
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />
           <Route path={RoutePath.servicePage} element={<ServicePage />} />
+          <Route path={RoutePath.devTools} element ={<DevToolsPage />} />
         </Route>
         <Route path={RoutePath.register} element={<Register />} />
         <Route path={RoutePath.login} element={<Login />} />

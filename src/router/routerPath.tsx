@@ -14,6 +14,7 @@ export  const RoutePath = {
     videoDisplay:'video',
     profileCreatePosts:'create-Posts',
     profileDashboard:'dashboard',
+    devTools:"dev-tools",
     initialPage:'/'
 } as const
 

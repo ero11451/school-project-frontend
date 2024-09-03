@@ -5,17 +5,35 @@ import { RoutePath } from "../../router/routerPath";
 import { RegisterService } from "../../service/auth/login.service";
 import { Iuser } from "../../interface/Iuser";
 import { useEffect, useState } from "react";
+import { showNotification, setUserData, setToken } from "../../redux-store/slice/authSlice";
+import { useDispatch } from "react-redux";
 
 export default function Register() {
   const navigate = useNavigate();
   const [showPAssword, setShowPAssword] = useState(false);
+  const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors, isValid } } = useForm<Iuser>({
     mode: "onChange", // Enables real-time form validation
   });
   
+  // const mutation = useMutation({
+  //   mutationFn: (data: Iuser) => RegisterService(data),
+  // });
+
   const mutation = useMutation({
-    mutationFn: (data: Iuser) => RegisterService(data),
-  });
+    mutationFn: (user:Iuser) =>  RegisterService(user) ,
+    onSuccess: (res:{data:{accessToken:string, user:Iuser}}) => {
+     dispatch(showNotification({show:true, message:"Registration successful", type:'successful'}))
+     dispatch(setUserData(res.data.user))
+     dispatch(setToken(res.data.accessToken));
+     return navigate(`/${RoutePath.home}`);
+    },
+    onError(error, variables, context) {
+      console.log(variables, context);
+      dispatch(showNotification({show:true, message:error.message, type:'error'}))
+        
+    },
+});
 
   const onSubmit: SubmitHandler<Iuser> = (data) => {
     mutation.mutate(data);
