@@ -23,9 +23,9 @@ import { IStaticMethods } from "preline/preline";
 import { MainLayout } from "../layout/MainLayout";
 import { ErrorBoundary } from "../component/ErrorBoundary";
 import ServicePage from "../pages/ServicePage";
-import NotFound from "../component/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
 import DevToolsPage from "../pages/DevToolsPage";
+import PageNotFound from "../component/PageNotFound";
 
 declare global {
   interface Window {
@@ -85,8 +85,10 @@ export default function MainRouter() {
         </Route>
 
 
-        <Route path={'**'} element={<NotFound />} />
+        <Route path={'*'} element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+

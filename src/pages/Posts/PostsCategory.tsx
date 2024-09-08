@@ -1,8 +1,6 @@
 
 import { Props } from "../../interface/PostComponent";
 
-
-
 export default function PostsCategory({ categories, setParams, params }: Props) {
   return (
     <div>

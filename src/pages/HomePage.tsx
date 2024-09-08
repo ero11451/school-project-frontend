@@ -17,7 +17,7 @@ function HomePage() {
     // if (isLoading) {
     //     return <p className='text-center'>Loading...</p>
     // }
- 
+
     return (
         <div>
 
@@ -60,7 +60,46 @@ function HomePage() {
                 </div> */}
             </main>
             <ServicePage />
-
+            <section className="pt-6 lg:pt-[40px] md:pb-[80px] pb-[30px]">
+                <div className="mx-auto 2xl:px-0 max-w-[1200px] lg:px-[72px]">
+                    <div className="bg-green-200 rounded-[24px]">
+                        <div className="flex flex-wrap items-center">
+                            <div className="md:order-1 order-2 md:mb-0 mb-10 md:w-2/5 w-5/6">
+                                <img alt="" src="image/handVector.svg" />
+                            </div>
+                            <div className="w-full md:order-2 order-1 md:w-3/5">
+                                <div className="lg:px-12 px-7 ml-auto xl:px-[72px] py-[60px] max-w-[680px]">
+                                    <h3 className="font-bold 2xl:text-4xxl xl:text-4xl lg:lg:text-3xl text-2xl md:text-[28px] text-2xlmd:text-[26px] mb-[10px]">
+                                        Rent out your place and find your next tenant - for FREE
+                                    </h3>
+                                    <p className="xl:text-lg text-base pt-2 mb-4 font-medium">Tired of paying money to rent out your apartment or house? Use Rentumo and find your next tenant for free</p>
+                                    <ul className="mb-[10px]">
+                                        <li className="md:text-lg text-base font-semibold flex">
+                                            <img alt="" className="mr-[8px]" src="/image/icon_tick.svg " />
+                                                <span className="flex-1">Use our modern messaging system</span>
+                                        </li>
+                                        <li className="md:text-lg text-base font-semibold flex my-2">
+                                            <img alt="" className="mr-[8px]" src="/image/icon_tick.svg" />
+                                                <span className="flex-1">
+                                                    Only get contacted by serious tenants
+                                                </span>
+                                        </li>
+                                        <li className="md:text-lg text-base font-semibold flex">
+                                            <img alt="" className="mr-[8px]" src="/image/icon_tick.svg" />
+                                                <span className="flex-1">
+                                                    Choose new tenants by with confidence
+                                                </span>
+                                        </li>
+                                    </ul>
+                                    <a className="h-11 mt-8 flex items-center justify-center bg-blue_reg rounded-xl text-white text-lg font-Albert font-bold border border-blue_reg border-solid max-w-[100%] tracking-[-0.01em]" href="/advertise-your-property">
+                                        Rent out your property
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </div>
 
