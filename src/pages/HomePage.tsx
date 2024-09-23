@@ -60,7 +60,7 @@ function HomePage() {
                 </div> */}
             </main>
             <ServicePage />
-            <section className="pt-6 lg:pt-[40px] md:pb-[80px] pb-[30px]">
+            {/* <section className="pt-6 lg:pt-[40px] md:pb-[80px] pb-[30px]">
                 <div className="mx-auto 2xl:px-0 max-w-[1200px] lg:px-[72px]">
                     <div className="bg-green-200 rounded-[24px]">
                         <div className="flex flex-wrap items-center">
@@ -99,7 +99,7 @@ function HomePage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
         </div>
 
