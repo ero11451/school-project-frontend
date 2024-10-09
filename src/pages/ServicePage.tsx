@@ -1,7 +1,7 @@
 export default function ServicePage() {
   return (
     <div className='dark:bg-black bg-lime-900'>
-      <div className="max-w-5xl px-4 xl:px-0 py-10 lg:pt-5  mx-auto">
+      <div className="max-w-5xl px-4 xl:px-0 lg:py-10 lg:pt-5  mx-auto">
      
         <div className="max-w-3xl mb-10 lg:mb-14">
           <h2 className="dark:text-white font-semibold text-2xl md:text-4xl md:leading-tight text-lime-400 ">Our approach</h2>

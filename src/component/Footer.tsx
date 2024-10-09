@@ -3,37 +3,31 @@
 export default function Footer() {
     return (
         <div>
-            <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+            <footer >
+                <div className="">
 
-                <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+
+                <div className="lg:flex  justify-between bg-[#E8EBEA] justify-self-center   p-10 rounded-lg border-4 border-white mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
                     <div>
-                        <a className="flex-none text-xl font-semibold text-black focus:outline-none dark:text-white" >
-                            neeboh
-                        </a>
+                        <p className="font-[600] text-[34px]">Expert Help and Skill Development</p>
+                        <p className="lg:pr-100">Lorem ipsum dolor sit amet consectetur. Sed adipiscing odio viverra posuere fermentum elit sed blandit ipsum.</p>
                     </div>
+                    <button className="btn-primary-rounded">
+                        <img src="icon/calendar.svg" alt="" />
+                        Schedule a consultation
+                    </button>
+                </div>
+                </div>
 
+                <div className=" p-32 bg-black relative z-10 ">
+                    
+                <div className="text-center">
+                    <a className="flex-none text-xl font-semibold text-black focus:outline-none dark:text-white text-[#FFD77D]" >
+                        neeboh
+                    </a>
+                </div>
 
-                    <ul className="text-center">
-                        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-                            <a className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
-                                About
-                            </a>
-                        </li>
-                        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-                            <a className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
-                                Services
-                            </a>
-                        </li>
-                        <li className="inline-block relative pe-8 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-neutral-600">
-                            <a className="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-
-
-
-                    <div className="md:text-end space-x-2">
+                    <div className="md:text-center space-x-2">
                         <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
                             <svg className="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
@@ -55,8 +49,7 @@ export default function Footer() {
                             </svg>
                         </a>
                     </div>
-
-                </div>
+</div>
 
             </footer>
         </div>

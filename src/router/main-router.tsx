@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import { ProfileNavList, RoutePath } from "./routerPath";
 import {
   About,
-  Contacts,
   DashboardLayout,
   HomePage,
   Posts,
@@ -17,7 +16,7 @@ import LoadingIndicator from "../component/LoadingIndicator";
 import ErrorMessage from "../component/Error";
 import Register from "../pages/Auth/Register";
 import CustomNotification from "../component/CustomNotification";
-import CreatePosts from "../pages/Profile/CreatePosts";
+import CreatePosts from "../pages/Admin/CreatePosts";
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
 import { MainLayout } from "../layout/MainLayout";
@@ -26,6 +25,8 @@ import ServicePage from "../pages/ServicePage";
 import ProtectedRoute from "./ProtectedRoute";
 import DevToolsPage from "../pages/DevToolsPage";
 import PageNotFound from "../component/PageNotFound";
+import ContactUs from "../pages/ContactUs";
+import ProfilePage from "../pages/ProfilePage";
 
 declare global {
   interface Window {
@@ -49,7 +50,7 @@ export default function MainRouter() {
           element={<MainLayout />}
           errorElement={<ErrorBoundary />}
         >
-          <Route path={RoutePath.contact} element={<Contacts />} />
+          <Route path={RoutePath.contact} element={<ContactUs />} />
           <Route path={RoutePath.home} element={<HomePage />} />
           <Route path={RoutePath.initialPage} element={<HomePage />} />
           <Route path={RoutePath.PostsList} element={<Posts />} />
@@ -61,6 +62,8 @@ export default function MainRouter() {
           <Route path={RoutePath.login} element={<Login />} />
           <Route path={RoutePath.servicePage} element={<ServicePage />} />
           <Route path={RoutePath.devTools} element ={<DevToolsPage />} />
+
+          <Route path={RoutePath.profile} element={<ProfilePage />} />
         </Route>
         <Route path={RoutePath.register} element={<Register />} />
         <Route path={RoutePath.login} element={<Login />} />
@@ -70,10 +73,9 @@ export default function MainRouter() {
         </Route> */}
         <Route element={<ProtectedRoute />} >
           <Route
-            path={RoutePath.profile}
+            path={RoutePath.admin}
             element={<DashboardLayout sideNavList={ProfileNavList} />}
           >
-            <Route path={''} element={<Profile />} />
             <Route path={RoutePath.profileDashboard} element={<Profile />} />
             <Route path={RoutePath.profilePosts} element={<ProfilePosts />} />
             <Route

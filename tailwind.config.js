@@ -8,6 +8,16 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
     'node_modules/preline/dist/*.js',
   ],
+  keyframes: {
+    gradient: {
+      '0%, 100%': { backgroundPosition: '0% 50%' },
+      '50%': { backgroundPosition: '100% 50%' },
+    },
+  },
+  // Custom animation using the keyframes
+  animation: {
+    gradient: 'gradient 3s ease infinite',
+  },
   theme: {
     extend: {
       backgroundImage: {
@@ -15,7 +25,8 @@ module.exports = {
       },
       background: {
         'primary' : '-red-400'
-      }
+      },
+      
     },
   },
   plugins: [

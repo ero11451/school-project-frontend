@@ -1,5 +1,5 @@
 
-export {default as Header } from '../component/Header';
+// export {default as Header } from '../component/Header';
 export {default as Plane  } from '../component/Plane';
 export {default as Input  } from '../component/Input';
 // export {default as PostsList } from '../component/PostsList';
