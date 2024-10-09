@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 export default function HeardBg({title, description , label, labelIcon}: {title: string, description: string, label: string, labelIcon: string}) {
   return (
