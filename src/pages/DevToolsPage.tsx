@@ -1,13 +1,13 @@
 const DevToolsPage = () => {
   return <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900 flex">
-    <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 dark:text-white ">
+    <div className="grid grid-cols-1 gap-12 lg:grid-cols-9 dark:text-white ">
 
-      <div>
-        <p>Documents</p>
+      <div className="  lg:col-span-2   ">
+        <p className="lg:text-[20px]">Documents</p>
         <button className="p-4 border text-start border-2 border-gray-200 text-[#101828] dark:text-white text-sm rounded">Understanding JavaScript Scope</button>
       </div>
 
-      <div className="  col-span-3   ">
+      <div className="  lg:col-span-7   ">
 
         <header className=" ">
           <h1 className="lg:text-4xl font-bold">jero Documentation</h1>
@@ -112,12 +112,12 @@ const DevToolsPage = () => {
       </div>
 
 
-      <div>
+      {/* <div>
         <p>On this page</p>
         <button className="p-4 border border-2 border-gray-200 text-[#101828] text-sm rounded dark:text-white">
         Introduction
         </button>
-      </div>
+      </div> */}
     </div>
   </div>
   };

@@ -2,7 +2,7 @@ import HeardBg from "../component/HeardBg";
 
 export default function About() {
     return (
-        <div>
+        <div className="dark:bg-neutral-900 dark:text-white">
 
             {/* category-2.svg */}
             <HeardBg title={"Empowering Growth Through Learning and Innovation"}
@@ -11,20 +11,24 @@ export default function About() {
 
                 <div className="lg:grid lg:grid-cols-2  gap-4">
                     <p className=" font-[600] lg:text-[36px]">
-                        We are dynamic platform that bridges the gap between <span className="text-[#10182873]">learning and professional services </span>
+                        We are dynamic platform that bridges the gap between <span className="text-[#10182873] dark:text-white">learning and professional services </span>
                     </p>
-                    <p className="text-[#333333] font-[300] lg:text-[18px]">
+                    <p className="text-[#333333] font-[300] lg:text-[18px] dark:text-white">
                         Our mission is to empower individuals and businesses by providing access to expert talent, practical learning resources, and seamless development tools, enabling everyone to achieve their full potential
                     </p>
                 </div>
-                <div className="grid grid-cols-4  grid-rows-4 gap-4 my-10 ">
+                <div className="grid grid-cols-4  grid-rows-4 gap-4 my-10 h-fit">
                     <div className="bg-gray-300 col-span-2 row-span-4 rounded-lg">
                         <img src="image/Frame1618870078.svg" alt="" className="w-full h-full object-cover rounded-lg" />
                     </div>
-                    <div className="bg-gray-300 col-span-2 row-span-2 rounded-lg"
-                        style={{ backgroundImage: "url('image/Frame1618870078.svg')" }}></div>
-                    <div className=" bg-gray-300 col-span-2 row-span-2 rounded-lg"
-                        style={{ backgroundImage: "url('image/Frame1618870078.svg')" }}> </div>
+                    <div className="bg-gray-300 col-span-2 row-span-2 rounded-lg">
+
+                        <img src="image/Frame1618870079.svg" alt="" className="w-full h-full object-cover rounded-lg" />
+                    </div>
+                    <div className=" bg-gray-300 col-span-2 row-span-2 rounded-lg">
+
+                        <img src="image/Frame1618870080.svg" alt="" className="w-full h-full object-cover rounded-lg" />
+                    </div>
                 </div>
 
 
@@ -53,7 +57,7 @@ export default function About() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-2 items-center gap-6 md:gap-10">
 
                         {[1, 1].map(() =>
-                            <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg p-10 dark:bg-neutral-900">
+                            <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg p-10 ">
                                 <div className="flex items-center gap-x-4 mb-3">
                                     <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white dark:border-blue-900 bg-none">
                                         <img src="image/home_service_icon.svg" alt="" />
@@ -104,12 +108,12 @@ export default function About() {
                         </div>
 
 
-                        <div className="hidden absolute top-1/2 start-0 transform -translate-y-1/4 -translate-x-40 md:block lg:-translate-x-80" aria-hidden="true">
+                        <div className=" absolute top-1/2 start-0 transform -translate-y-1/4 -translate-x-40 md:block lg:-translate-x-80" aria-hidden="true">
                             <img src="image/gradiant-ball.svg" alt="" />
                         </div>
 
 
-                        <div className="hidden absolute top-1/5 end-0 transform -translate-y-2/4 translate-x-40 md:block lg:translate-x-80 " aria-hidden="true">
+                        <div className=" absolute top-1/5 end-0 transform -translate-y-2/4 translate-x-40 md:block lg:translate-x-80 " aria-hidden="true">
                             <img src="image/cove_green.svg" alt="" />
                         </div>
                     </div>
@@ -150,7 +154,7 @@ export default function About() {
 
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10 lg:m-12">
 
-                                <div className="size-full   p-5 dark:bg-neutral-900">
+                                <div className="size-full   p-5 ">
 
                                     <div className="shrink-0">
                                         <h3 className="block text-[22px] font-[600] 0 dark:text-white ">Our Service</h3>
@@ -161,14 +165,14 @@ export default function About() {
                                 </div>
 
                                 {[1, 1, 1, 1, 1].map(() =>
-                                    <div className="size-full bg-white/30 backdrop-blur-lg   rounded-lg p-5 dark:bg-neutral-900">
+                                    <div className="size-full bg-white/30 backdrop-blur-lg   rounded-lg p-5 text-black">
                                         <div className="flex items-center gap-x-4 mb-3">
-                                            <div className="inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white dark:border-blue-900 bg-none">
+                                            <div className="inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white  bg-none">
                                                 <img src="icon/code_icon.svg" alt="" />
                                             </div>
                                         </div>
                                         <div className="shrink-0">
-                                            <h3 className="block text-[22px] font-[600] 0 dark:text-white ">Product Development </h3>
+                                            <h3 className="block text-[22px] font-[600] ">Product Development </h3>
                                         </div>
                                         <br />
                                         <p className="font-[100] text-[18px]">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>

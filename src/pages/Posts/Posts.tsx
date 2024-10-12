@@ -2,7 +2,7 @@
 // import { useQuery } from '@tanstack/react-query'
 import { useState, } from 'react'
 // import { categoryGetAll } from '../../service/category'
-import PostsList from '../../component/PostList'
+import PostsList from './PostList'
 // import PostsCategory from './PostsCategory'
 // import { Ipost } from '../../interface/Ipost'
 import { postData } from '../../service/postDB'

@@ -3,12 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Step 1: Define the font using @font-face */
+@font-face {
+  font-family: 'primary-font';
+  src: url('font/Poppins-Medium.ttf') format('ttf'),
+       url('font/Poppins-Bold.woff') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Step 2: Use the font in your CSS */
+body {
+  font-family: 'primary-font', sans-serif;
+}
+
 /* @import "preline"; */
 
 .dark-theme {
   --bg-primary: #1a202c;
   --text-primary: #ffffff;
-  --bg-secondary: orange;
+  --bg-secondary: #163930;
   --text-secondary: #cbd5e0;
 }
 
@@ -30,7 +45,7 @@
 }
 
 .input {
-  @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400;
+  @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:backdrop-blur-lg dark:bg-white/30  dark:border-neutral-700 dark:text-neutral-400;
 }
 
 .btn-primary {

@@ -12,7 +12,7 @@ export default function Header() {
     <><div>
 
 
-      <div className="overflow-hidden bg-[#FEFAF1]" style={{backgroundImage:"url('image/yelloBG.svg')"}}>
+      <div className="overflow-hidden bg-[#FEFAF1]" style={{ backgroundImage: "url('image/yelloBG.svg')" }}>
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
           <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
@@ -48,21 +48,18 @@ export default function Header() {
           </div>
         </div>
 
-        <div className=" w-full h-fit">
-          <div className="flex space-x-0 overflow-x-scroll scrollbar-hide">
 
-            <div className="min-w-[100px] min-h-[350px] bg-none rounded-lg flex-shrink-0 h-64 flex items-center justify-center">
-            </div>
 
-            {[1, 1, 1, 1].map(() =>
-             <div className="min-w-[340px] min-h-[360px]  rounded-lg flex-shrink-0 h-64 flex items-center justify-center">
-              <img src="image/home_page_bander_1.svg" alt="" className=" w-full h-full" />
-            </div>
-            )}
-
-          </div>
+        <div className="w-full h-100 overflow-x-scroll flex -space-x-4  scrollbar-hide">
+        <div className="h-full w-100"  ></div>
+          <img src="image/home_page_bander_1.svg" className="h-full w-full" alt="Image 1" />
+          <img src="image/home_page_bander_1.svg" className="h-full w-full" alt="Image 2" />
+          <img src="image/home_page_bander_1.svg" className="h-full w-full" alt="Image 3" />
+          <img src="image/home_page_bander_1.svg" className="h-full w-full" alt="Image 4" />
         </div>
-      <br />
+
+
+        <br />
       </div>
     </div>
       {/* <SideShow /> */}

@@ -8,7 +8,7 @@ export default function HeardBg({title, description , label, labelIcon}: {title:
                     <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
                         <div className="text-center">
-                            <button className='py-1 px-2 inline-flex items-center gap-x-1 text-xs font-medium text-[#E5951A] rounded-full bg-white/30 backdrop-blur-lg  dark:text-teal-500'>
+                            <button className='py-1 px-2 inline-flex items-center gap-x-1 text-xs font-medium text-[#E5951A] rounded-full bg-white/30 backdrop-blur-lg '>
                                <img src={labelIcon} alt=""  />
                                 {label}
                             </button>

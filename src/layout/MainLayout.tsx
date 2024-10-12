@@ -14,6 +14,10 @@ export function MainLayout() {
       <>
         {/* <CustomNotification /> */}
         <Navbar />
+        <br />
+        <br />
+        <br />
+        <br />
         <Outlet />
         <Footer />
       </>

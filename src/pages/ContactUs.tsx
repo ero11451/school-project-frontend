@@ -2,8 +2,8 @@
 
 export default function ContactUs() {
     return (
-        <div className='bg-[#F8F8F8]' >
-            <div className="overflow-hidden bg-[#FEFAF1]"  style={{backgroundImage:"url('image/yelloBG.svg')"}}>
+        <div className='bg-[#F8F8F8] dark:bg-neutral-900' >
+            <div className="overflow-hidden bg-[#FEFAF1]" style={{ backgroundImage: "url('image/yelloBG.svg')" }}>
                 <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
                     <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
@@ -29,10 +29,10 @@ export default function ContactUs() {
                 </div>
             </div>
 
-            <div className="container mx-auto flex justify-center">
-                <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit'>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10">
-                        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <div className="container mx-auto flex justify-center ">
+                <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/30 dark:backdrop-blur-lg '>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark: ">
+                        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
                             <div className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between ">
                                 <div>
                                     <h2 className="text-2xl font-[500] text-[#101828] dark:text-neutral-200">
@@ -94,21 +94,25 @@ export default function ContactUs() {
                                     </div>
 
                                 </div>
-
                             </div>
-                            <div className="space-y-4 flex flex-col gap-1">
+                            <div className="space-y-4 flex flex-col gap-1 ">
+                                <div>
+                                    <label htmlFor="">Full name</label>
+                                    <input type="text" className='input' />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Email</label>
+                                    <input type="text" className='input' />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Subject</label>
+                                    <input type="text" className='input' />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Message</label>
+                                    <textarea className='input' ></textarea>
+                                </div>
 
-                                <label htmlFor="">Full name</label>
-                                <input type="text" className='input' />
-
-                                <label htmlFor="">Email</label>
-                                <input type="text" className='input' />
-
-                                <label htmlFor="">Subject</label>
-                                <input type="text" className='input' />
-
-                                <label htmlFor="">Message</label>
-                                <textarea className='input' ></textarea>
                                 <button className=' btn-primary-rounded flex justify-center'>
                                     Shoot us a mail
                                 </button>

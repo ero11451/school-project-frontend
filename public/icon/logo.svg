@@ -2,7 +2,8 @@
     <!ENTITY display "entity-value">
 ]>
 <svg
-    class="flex items-end "
+   
+    class="flex items-start bg-red-100"
     width="520"
     height="100"
     viewBox="0 0 30 30"

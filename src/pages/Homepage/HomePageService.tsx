@@ -13,9 +13,9 @@ export default function HomePageService() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
 
                  {[1,1,1,1,1,1].map(() => 
-                     <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg p-10 dark:bg-neutral-900">
+                     <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg p-10 ">
                      <div className="flex items-center gap-x-4 mb-3">
-                         <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white dark:border-blue-900 bg-none">
+                         <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white  bg-none">
                              <img src="image/home_service_icon.svg" alt="" />
                          </div>
                      </div>
