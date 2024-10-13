@@ -4,7 +4,7 @@ export default function HeardBg({title, description , label, labelIcon}: {title:
   return (
     <div>
          <div className="overflow-hidden bg-[#FEFAF1]"  style={{backgroundImage:"url('image/yelloBG.svg')"}}>
-                <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 lg:py-20 p-5">
                     <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
                         <div className="text-center">
@@ -12,10 +12,10 @@ export default function HeardBg({title, description , label, labelIcon}: {title:
                                <img src={labelIcon} alt=""  />
                                 {label}
                             </button>
-                            <h1 className="text-3xl text-[#101828] font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200">
+                            <p className="text-lg text-[#101828]  p-3 lg:p-1 font-bold  lg:text-6xl lg:leading-tight dark:text-neutral-200">
                                {title}
-                            </h1>
-                           {description && <p className="mt-4 text-lg lg:mt-6">
+                            </p>
+                           {description && <p className="lg:mt-4  lg:text-lg lg:mt-6 text-sm text-gray-800">
                                {description}
                             </p>}
                         </div>

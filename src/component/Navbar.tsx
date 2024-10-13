@@ -12,7 +12,7 @@ export default function Navbar() {
 
     return (
         <header className="flex flex-wrap md:justify-start fixed bg-white  md:flex-nowrap z-50 w-full py-2  dark:bg-neutral-900 dark:text-white">
-            <nav className="relative max-w-7xl w-full flex flex-wrap md:grid  md:grid-cols-12 flex  basis-full items-center lg:px-2 md:px-6 md:px-2 mx-auto" >
+            <nav className="relative max-w-7xl w-full flex flex-wrap md:grid  md:grid-cols-12  gap-3  basis-full items-center lg:px-2 md:px-6 md:px-2 mx-auto" >
                 <div className="lg:col-span-2 ">
                     <button onClick={() => navigate(RoutePath.home)} className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
                         <Logo />
@@ -20,7 +20,7 @@ export default function Navbar() {
                 </div>
 
 
-                <div className="flex items-center gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3 ">
+                <div className="flex items-center gap-x-2 lg:ms-auto py-1 md:ps-6 md:order-3 md:col-span-3 ">
                     <ThemeToggle />
                     {user == null ? <button type="button"
                         onClick={() => navigate(RoutePath.login)}

@@ -44,8 +44,8 @@ export default function About() {
                 className=' bg-gradient-to-r from-[#14342C] via-[#0D7D61] to-[#14342C] text-white'>
 
                 <div className='text-center lg:pt-10 pt-5 '>
-                    <p className='lg:font-[600] lg:text-[32px]'>Guided by Our Mission, Driven by Our Values</p>
-                    <p className='lg:font-[100] lg:text-[18px] p-4'>
+                    <p className='lg:font-[600] font-bold lg:text-[32px]'>Guided by Our Mission, Driven by Our Values</p>
+                    <p className='lg:font-[100] lg:text-[18px] lg:p-4 text-sm'>
                         Empowering Growth and Success Through Integrity, Innovation, and Collaboration, to Create Meaningful Impact
                     </p>
                 </div>
@@ -57,17 +57,16 @@ export default function About() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-2 items-center gap-6 md:gap-10">
 
                         {[1, 1].map(() =>
-                            <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg p-10 ">
+                            <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg lg:p-10 p-5 ">
                                 <div className="flex items-center gap-x-4 mb-3">
                                     <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white dark:border-blue-900 bg-none">
                                         <img src="image/home_service_icon.svg" alt="" />
                                     </div>
                                 </div>
-                                <div className="shrink-0">
-                                    <h3 className="block text-[32px] font-[600] 0 dark:text-white ">Tailored Solutions for You</h3>
+                                <div className="shrink-0 lg:my-10 my-3">
+                                    <h3 className="block lg:text-[32px] font-[600] 0 dark:text-white ">Tailored Solutions for You</h3>
                                 </div>
-                                <br />
-                                <p className="font-[100]">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>
+                                <p className="font-[100] text-sm ">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>
                             </div>
                         )
                         }
@@ -84,10 +83,10 @@ export default function About() {
                         <div className="">
                             <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                                 <div>
-                                    <h1 className="block text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
+                                    <h1 className="block text-lg lg:my-5 my-5 lg:text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
                                         Unlock Your Project’s Potential with Expert Talent
                                     </h1>
-                                    <p className="mt-3 font-[400]">
+                                    <p className="text-sm font-[400]">
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
                                     <div className="mt-7 grid gap-3 w-full sm:inline-flex">
@@ -133,12 +132,17 @@ export default function About() {
                                     <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
                                 </div>
                                 <div>
-                                    <h1 className="block text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
+                                    <h1 className="block text-lg lg:my-5 my-5 lg:text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
                                         Unlock Your Project’s Potential with Expert Talent
                                     </h1>
-                                    <p className="mt-3 font-[400]">
+                                    <p className="text-sm font-[400]">
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
+                                    <div className="mt-7 grid gap-3 w-full sm:inline-flex">
+                                        <a className="btn-primary-rounded flex justify-center" href="#">
+                                            Book a demo in 1 minutes
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

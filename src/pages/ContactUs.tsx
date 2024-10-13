@@ -1,33 +1,17 @@
 // import React from 'react'
 
+import HeardBg from "../component/HeardBg";
+
 export default function ContactUs() {
     return (
         <div className='bg-[#F8F8F8] dark:bg-neutral-900' >
-            <div className="overflow-hidden bg-[#FEFAF1]" style={{ backgroundImage: "url('image/yelloBG.svg')" }}>
-                <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
-
-                        <div className="text-center">
-                            <h1 className="text-3xl text-[#101828] font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200">
-                                Get in Touch and Start Your Journey with Us Today
-                            </h1>
-                            <p className="mt-4 text-lg lg:mt-6">
-                                We’re Here to Help – Reach Out for Questions, Support, or Collaboration Opportunities
-                            </p>
-                        </div>
-
-                        {/* Background vector image - left side */}
-                        <div className="hidden md:block absolute top-2/4 left-0 transform -translate-y-2/4 -translate-x-16 lg:-translate-x-40 xl:-translate-x-80" aria-hidden="true">
-                            <img src="image/Vector1376.svg" alt="" className="w-32 lg:w-48" />
-                        </div>
-
-                        {/* Background vector image - right side */}
-                        <div className="hidden md:block absolute top-1/4 right-0 transform -translate-y-1/4 translate-x-16 lg:translate-x-40 xl:translate-x-80" aria-hidden="true">
-                            <img src="image/image365.svg" alt="" className="w-32 lg:w-48" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            <HeardBg 
+                title={" Get in Touch and Start Your Journey with Us Today"}
+                description={"We’re Here to Help – Reach Out for Questions, Support, or Collaboration Opportunities"} 
+                label={"Contact us"} 
+                labelIcon={"icon/category-2.svg"} />
+      
 
             <div className="container mx-auto flex justify-center ">
                 <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/30 dark:backdrop-blur-lg '>
@@ -35,7 +19,7 @@ export default function ContactUs() {
                         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
                             <div className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between ">
                                 <div>
-                                    <h2 className="text-2xl font-[500] text-[#101828] dark:text-neutral-200">
+                                    <h2 className="lg:text-2xl text-lg font-[500] text-[#101828] dark:text-neutral-200">
                                         Your Questions Matter – <span className='text-[#FEBE3F]'>  We’re Here to Assist You!</span>
                                     </h2>
                                     <div className="my-4">
