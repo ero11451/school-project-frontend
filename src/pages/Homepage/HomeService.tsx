@@ -7,7 +7,7 @@ export default function HomeService() {
 
     return (
         <div>
-            <div className="overflow-hidden bg-[#FEFAF1]"  style={{backgroundImage:headerBG }}>
+            <div className="overflow-hidden bg-[#FEFAF1] dark:text-white"  style={{backgroundImage:headerBG }}>
                 <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-1 ">
                     <div className="relative mx-auto max-w-5xl grid space-y-5 sm:space-y-10">
 
