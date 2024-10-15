@@ -1,9 +1,13 @@
 // import React from 'react'
+import { useSelector } from "react-redux";
 
 export default function HomeService() {
+    const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
+    const headerBG :string = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')"
+
     return (
         <div>
-            <div className="overflow-hidden bg-[#FEFAF1]"  style={{backgroundImage:"url('image/yelloBG.svg')"}}>
+            <div className="overflow-hidden bg-[#FEFAF1]"  style={{backgroundImage:headerBG }}>
                 <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-1 ">
                     <div className="relative mx-auto max-w-5xl grid space-y-5 sm:space-y-10">
 

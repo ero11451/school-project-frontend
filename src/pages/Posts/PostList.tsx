@@ -4,6 +4,7 @@ import { Ipost } from "../../interface/Ipost";
 // import { limitText } from "../utility/limitText";
 import { Params } from "../../interface/PostComponent";
 import NotFound from "../../component/NotFound";
+import HeardBg from "../../component/HeardBg";
 
 export default function PostsList({posts,setParams}:{
     posts:Array<Ipost>;
@@ -16,6 +17,7 @@ export default function PostsList({posts,setParams}:{
     
   return (
     <div >
+        <HeardBg title={"Explore classes from Neeboh"} description={"Lorem ipsum dolor sit amet consectetur. Mauris id viverra adipiscing odio leo integer. "} label={"Courses"} labelIcon={"category-1.svg"} />
         <div className=" dark:bg-neutral-900">
             <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
 
@@ -32,7 +34,7 @@ export default function PostsList({posts,setParams}:{
                             <h3 className="text-xl font-semibold text-start text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
                                 Announcing a free plan for small teams
                             </h3>
-                            <p className="mt-5 text-gray-600 dark:text-neutral-400 text-left">
+                            <p className="mt-5 text-gray-600 dark:text-neutral-200 text-left ">
                                 At Wake, our mission has always been focused on bringing openness.
                             </p>
                         </div>

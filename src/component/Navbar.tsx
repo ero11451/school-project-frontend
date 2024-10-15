@@ -12,7 +12,7 @@ export default function Navbar() {
 
     return (
         <header className="flex flex-wrap md:justify-start fixed bg-white  md:flex-nowrap z-50 w-full py-2  dark:bg-neutral-900 dark:text-white">
-            <nav className="relative max-w-7xl w-full flex flex-wrap md:grid  md:grid-cols-12  gap-3  basis-full items-center lg:px-2 md:px-6 md:px-2 mx-auto" >
+            <nav className="relative lg:max-w-7xl w-full flex flex-wrap md:grid  md:grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6 md:px-2 lg:mx-auto" >
                 <div className="lg:col-span-2 ">
                     <button onClick={() => navigate(RoutePath.home)} className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
                         <Logo />
@@ -53,7 +53,7 @@ export default function Navbar() {
                         {/* <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} /> */}
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
-                        <NavItem path={RoutePath.PostsList} label="Post" key={3} isActive={false} />
+                        <NavItem path={RoutePath.PostsList} label="Courses" key={3} isActive={false} />
                         <NavItem path={RoutePath.devTools} label="Dev tools" key={4} isActive={false} />
                         {/* <NavItem path={RoutePath.servicePage} label="Service" key={5} isActive={false} /> */}
 

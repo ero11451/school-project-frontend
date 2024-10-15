@@ -1,8 +1,12 @@
 // import React from 'react'
 
+import { useSelector } from "react-redux";
 import HeardBg from "../component/HeardBg";
 
 export default function ContactUs() {
+    const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
+     
+   const bgImageURl = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')" 
     return (
         <div className='bg-[#F8F8F8] dark:bg-neutral-900' >
             
@@ -17,7 +21,7 @@ export default function ContactUs() {
                 <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/30 dark:backdrop-blur-lg '>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark: ">
                         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
-                            <div className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between ">
+                            <div style={{background: bgImageURl}} className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between rounded-lg">
                                 <div>
                                     <h2 className="lg:text-2xl text-lg font-[500] text-[#101828] dark:text-neutral-200">
                                         Your Questions Matter – <span className='text-[#FEBE3F]'>  We’re Here to Assist You!</span>
@@ -58,7 +62,7 @@ export default function ContactUs() {
 
                                 </div>
                                 <div>
-                                    <p>
+                                    <p className="dark:text-white">
                                         You can also reach out to us on our social media
                                     </p>
                                     <div className="flex gap-3 mt-4 text-[#E5951A]">

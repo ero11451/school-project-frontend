@@ -12,12 +12,16 @@ export default function BookInSection() {
 
                         <div className="">
 
-                            <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+                            <div className="grid md:grid-cols-2 flex-col-reverse flex  gap-4 md:gap-8 xl:gap-20 md:items-center">
                                 <div>
-                                    <h1 className="block text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
-                                        Unlock Your Project’s Potential with Expert Talent
+                                    <button className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white">
+                                        <img src="icon/category-dark.svg" alt=""  />
+                                        <p>Hire us</p>
+                                    </button>
+                                    <h1 className="block text-[32px] font-bold dark:text-white">
+                                        Unlock Your Project’s Potential with <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#163930] dark:from-white via-green-900 to-[#3D9F86] dark:to-green-200 animate-gradien'>  Expert Talent</span>
                                     </h1>
-                                    <p className="mt-3 font-[400]">
+                                    <p className="mt-3 lg:font-[400] font-[200] dark:text-white">
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
 

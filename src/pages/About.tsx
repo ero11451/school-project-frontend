@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import HeardBg from "../component/HeardBg";
 
 export default function About() {
+    const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
     return (
         <div className="dark:bg-neutral-900 dark:text-white">
 
@@ -83,10 +85,10 @@ export default function About() {
                         <div className="">
                             <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                                 <div>
-                                    <h1 className="block text-lg lg:my-5 my-5 lg:text-[32px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradien">
-                                        Unlock Your Project’s Potential with Expert Talent
+                                <h1 className="block text-[32px] font-bold dark:text-white">
+                                        Unlock Your Project’s Potential with <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#163930] dark:from-white via-green-900 to-[#3D9F86] dark:to-green-200 animate-gradien'>  Expert Talent</span>
                                     </h1>
-                                    <p className="text-sm font-[400]">
+                                    <p className="mt-3 lg:font-[400] font-[200] dark:text-white">
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
                                     <div className="mt-7 grid gap-3 w-full sm:inline-flex">
@@ -151,8 +153,8 @@ export default function About() {
             </div>
 
             <div>
-                <div className="overflow-hidden bg-[#FEFAF1]"
-                    style={{ backgroundImage: "url('image/yelloBG.svg')" }}>
+                <div className="overflow-hidden bg-[#FEFAF1] dark:text-white"
+                    style={{ backgroundImage: theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')" }}>
                     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-1 ">
                         <div className="relative mx-auto max-w-5xl grid space-y-5 sm:space-y-10">
 
@@ -169,17 +171,17 @@ export default function About() {
                                 </div>
 
                                 {[1, 1, 1, 1, 1].map(() =>
-                                    <div className="size-full bg-white/30 backdrop-blur-lg   rounded-lg p-5 text-black">
+                                    <div className="size-full bg-white/30 backdrop-blur-lg   rounded-lg p-5 text-black dark:text-white">
                                         <div className="flex items-center gap-x-4 mb-3">
                                             <div className="inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white  bg-none">
                                                 <img src="icon/code_icon.svg" alt="" />
                                             </div>
                                         </div>
                                         <div className="shrink-0">
-                                            <h3 className="block text-[22px] font-[600] ">Product Development </h3>
+                                            <h3 className="block text-lg lg:text-[22px] font-[600] ">Product Development </h3>
                                         </div>
                                         <br />
-                                        <p className="font-[100] text-[18px]">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>
+                                        <p className="font-[100]  text-sm lg:text-[18px]">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>
                                     </div>
                                 )
                                 }
