@@ -27,6 +27,7 @@ import DevToolsPage from "../pages/DevToolsPage";
 import PageNotFound from "../component/PageNotFound";
 import ContactUs from "../pages/ContactUs";
 import ProfilePage from "../pages/ProfilePage";
+import CourseList from "../pages/Posts/CourseList";
 
 declare global {
   interface Window {
@@ -57,6 +58,7 @@ export default function MainRouter() {
           <Route element={<ProtectedRoute />} >
             <Route path={`${RoutePath.postDetails}/:postId`} element={<PostDetails />} />
           </Route>
+          <Route element ={RoutePath.courseList} element = {<CourseList />} />
           <Route path={RoutePath.about} element={<About />} />
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />

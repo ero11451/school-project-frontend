@@ -20,9 +20,9 @@ export default function Header() {
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
           <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
-            <div className=" text-left lg:text-center">
+            <div className=" text-left lg:text-center ">
 
-              <h1 className="text-3xl text-[#101828] font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200">
+              <h1 className="text-3xl text-[#101828] font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200 lg:pt-20">
                 Transform Your Vision <br /> into
                 <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradient dark:text-white">
                   Reality</span>

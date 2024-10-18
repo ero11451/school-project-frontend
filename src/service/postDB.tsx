@@ -11,6 +11,7 @@ export const postData: Array<Ipost> = [
       "status": "published",
       "summary":"",
       "categoryId": 1,
+      "createdBy": "osamuyi ero",
       "question": "Which of the following statements about JavaScript scope is correct?",
       options: [
         {
@@ -41,6 +42,7 @@ export const postData: Array<Ipost> = [
       "code": "```javascript\n// Variable declarations\nvar x = 5;\nlet y = 'Hello';\nconst z = true;\n\n// Block scope example\nif (true) {\n  let y = 'Hi';\n  console.log(y); // Output: 'Hi'\n}\n\nconsole.log(y); // Output: 'Hello'\n```",
       "status": "published",
       "categoryId": 1,
+      "createdBy": "osamuyi ero",
       "question": "Which of the following statements is true about `const` in JavaScript?",
       "options": [
         {

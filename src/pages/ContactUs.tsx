@@ -18,7 +18,7 @@ export default function ContactUs() {
       
 
             <div className="container mx-auto flex justify-center ">
-                <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/30 dark:backdrop-blur-lg '>
+                <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/10 dark:backdrop-blur-lg '>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark: ">
                         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
                             <div style={{background: bgImageURl}} className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between rounded-lg">
@@ -33,7 +33,7 @@ export default function ContactUs() {
                                             </div>
 
                                             <div className="grow">
-                                                <p className="text-sm text-gray-500 dark:text-neutral-500">
+                                                <p className="text-sm text-gray-500 dark:text-neutral-300">
                                                     Our Email
                                                 </p>
                                                 <h3 className="group-hover:text-blue-600 font-[500] text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
@@ -50,7 +50,7 @@ export default function ContactUs() {
                                             </div>
 
                                             <div className="grow">
-                                                <p className="text-sm text-gray-500 dark:text-neutral-500">
+                                                <p className="text-sm text-gray-500 dark:text-neutral-300">
                                                     Our Telephone
                                                 </p>
                                                 <h3 className="group-hover:text-blue-600 font-[500] text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
@@ -83,7 +83,7 @@ export default function ContactUs() {
 
                                 </div>
                             </div>
-                            <div className="space-y-4 flex flex-col gap-1 ">
+                            <div className="space-y-4 flex flex-col gap-1 dark:text-white font-[100]">
                                 <div>
                                     <label htmlFor="">Full name</label>
                                     <input type="text" className='input' />

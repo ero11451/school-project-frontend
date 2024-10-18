@@ -8,13 +8,15 @@ export default function HomeDevTool() {
             <div className="max-w-[75rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="text-center lg:p-10">
                     <button type="button" className="btn w-fit "></button>
-                        <p className='font-[600]  lg:text-[32px] text-transparent bg-clip-text bg-gradient-to-r dark:from-white lg:from-[#163930] via-green-900 to-[#3D9F86] animate-gradient'>Powerful Dev Tools to Bring Your Ideas to Life</p>
-                    <p className='lg:px-60 text-sm text-gray-200' >Access cutting-edge development tools and resources to streamline your workflow and  build exceptional digital products</p>
+                        <p className='font-[600]  lg:text-[32px] text-transparent 
+                        bg-clip-text bg-gradient-to-r dark:from-white lg:from-[#163930] 
+                        via-green-900 to-[#3D9F86] dark:text-white animate-gradient'>Powerful Dev Tools to Bring Your Ideas to Life</p>
+                    <p className='lg:px-60 text-sm dark:text-gray-200 text-black' >Access cutting-edge development tools and resources to streamline your workflow and  build exceptional digital products</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12">
                     <div className="lg:w-full">
-                       <img src="image/Frame1000001885@2x.svg" alt="" className=' bg-[#E8EBEA] border-8 border-[#E8EBEA] rounded-xl' />
+                       <img src="image/Frame1000001885@2x.svg" alt="" className='bg-[#E8EBEA]  dark:bg-[#E8EBEA] dark:border-gray-800 border-8 border-[#E8EBEA] rounded-xl' />
                     </div>
 
 

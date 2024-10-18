@@ -1,9 +1,9 @@
 // import React from 'react'
 
-// interface dataInter {
-//     title: string,
-//     description: string
-// }
+interface Iitem {
+    title: string,
+    description: string
+}
 
 const data  = [{
     title: 'Tailored Solutions for You',
@@ -18,38 +18,40 @@ const data  = [{
     description: 'Access a rich library of learning resources and interactive quizzes to boost your skills at your own pace.'
 },
 {
-    title: 'Comprehensive Platform', description: ''
+    title: 'Comprehensive Platform', description: 'We offer a one-stop solution for hiring professionals and accessing top-quality learning content, making your growth journey seamless.'
 },
 {
-    title: 'Comprehensive Learning Resources', description: ''
+    title: 'Comprehensive Learning Resources', description: 'access a wide range of industry-focused materials to enhance your skills effectively and at your own pace'
 },
 {
-    title: 'Secure and Reliable products', description: ''
+    title: 'Secure and Reliable products', description: 'Trustworthy services with a focus on your security and satisfaction every step of the way.'
 }]
 
 export default function HomePageService() {
+
+
     return (
         <div className=' bg-gradient-to-r from-[#14342C] via-[#0D7D61] to-[#14342C] text-white' style={{ backgroundImage: "url('image/green_bg.svg')" }}>
 
-            <div className='text-center lg:pt-10 pt-5 '>
-                <p className='lg:font-[600] lg:text-[32px] font-bold text-lg lg:text-center text-left px-5'>Your Top Choice for Expert Services and Learning</p>
-                <p className='lg:font-[100] lg:text-[15px] lg:px-[400px] lg:text-center text-left text-sm font-[100] p-4'>chieve Your Goals with Expert Support and Comprehensive Learning Resources for Personal and Professional Growth</p>
+            <div className='text-center lg:pt-24 pt-10 '>
+                <p className='lg:font-[600] lg:text-[32px] font-semibold text-lg lg:text-center text-left px-5'>Your Top Choice for Expert Services and Learning</p>
+                <p className='lg:font-[100] lg:text-[16px] lg:p-5 lg:px-[400px] leading-relaxed lg:text-center text-left text-sm font-[100] p-4'>chieve Your Goals with Expert Support and Comprehensive Learning Resources for Personal and Professional Growth</p>
             </div>
 
-            <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
+            <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:p-14 lg:px-20 mx-auto ">
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
 
-                    {data.map(() =>
-                        <div className="size-full bg-white/30 backdrop-blur-lg  shadow-lg rounded-lg lg:p-10 p-5 ">
+                    {data.map((item:Iitem) =>
+                        <div className="size-full bg-white/5 backdrop-blur-lg  shadow-lg rounded-[30px] lg:p-8 p-5 border-[1px] border-gray-200 ">
                             <div className="flex items-center gap-x-4 mb-3">
-                                <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white dark:border-blue-900 bg-none">
+                                <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white  bg-none">
                                     <img src="image/home_service_icon.svg" alt="" />
                                 </div>
                             </div>
-                            <div className="shrink-0 lg:my-10 my-3">
-                                <h3 className="block lg:text-[32px] font-[600] 0 dark:text-white ">Trusted and skilled Professionals</h3>
+                            <div className="shrink-0 lg:my-7 my-3">
+                                <h3 className="block lg:text-[32px] font-semibold  dark:text-white ">{item.title}</h3>
                             </div>
-                            <p className="font-[100] text-sm ">Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you..</p>
+                            <p className="font-[100] lg:text-[18px] text-sm leading-relaxed">{item.description}</p>
                         </div>
                     )
                     }

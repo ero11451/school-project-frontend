@@ -5,6 +5,7 @@ export  const RoutePath = {
     register:'register',
     PostsList:'posts',
     postDetails:'Posts',
+    courseList:'courses',
     servicePage:'service',
     admin:'admin',
     about:'about',

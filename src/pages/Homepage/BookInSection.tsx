@@ -21,7 +21,7 @@ export default function BookInSection() {
                                     <h1 className="block text-[32px] font-bold dark:text-white">
                                         Unlock Your Project’s Potential with <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#163930] dark:from-white via-green-900 to-[#3D9F86] dark:to-green-200 animate-gradien'>  Expert Talent</span>
                                     </h1>
-                                    <p className="mt-3 lg:font-[400] font-[200] dark:text-white">
+                                    <p className="mt-3 lg:font-[200] font-[200] dark:text-white">
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
 

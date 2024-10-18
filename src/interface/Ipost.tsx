@@ -17,7 +17,8 @@ export interface Ipost {
     locationId?: number;
     question?:string;
     location?: LocationModel;
-    summary?:string
+    summary?:string;
+    createdBy:string
     // teacherId?: number;
     // teacher?: UserModel;
 
