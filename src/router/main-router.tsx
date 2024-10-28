@@ -58,7 +58,7 @@ export default function MainRouter() {
           <Route element={<ProtectedRoute />} >
             <Route path={`${RoutePath.postDetails}/:postId`} element={<PostDetails />} />
           </Route>
-          <Route element ={RoutePath.courseList} element = {<CourseList />} />
+          <Route path ={RoutePath.courseList} element = {<CourseList />} />
           <Route path={RoutePath.about} element={<About />} />
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />
