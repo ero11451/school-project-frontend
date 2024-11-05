@@ -2,16 +2,17 @@
 
 import { useSelector } from "react-redux";
 
-export default function Logo() {
+export default function Logo({ imageStyle }: { imageStyle?: string }) {
   // const width =  useWindowWidth();
   const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
-   
+
   return (
     <div>
 
       <div className="flex items-start " >
-        {theme !== "light"?  <img src="icon/logo_white.svg" className=" w-full lg:h-10 h-5 object-contain " alt="" /> :
-         <img src="icon/logo.svg" className=" w-full lg:h-10 h-5 object-contain " alt="" />}
+        {theme !== "light" ?
+          <img src="icon/logo_white.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="" /> :
+          <img src="icon/logo.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="" />}
       </div>
     </div>
   )

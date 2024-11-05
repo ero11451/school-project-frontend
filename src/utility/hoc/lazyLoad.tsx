@@ -17,7 +17,6 @@ function Loading() {
 
 export default function LazyLoad({ path = '' }: { path: string }) {
         const Element = React.lazy(() => import(path));
-        
         return (
             <React.Suspense fallback={<Loading />}>
                 <Element />
