@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 
 interface Iitem {
+    id: number,
     title: string,
     description: string,
     iconurl:string,
@@ -9,29 +10,34 @@ interface Iitem {
 }
 
 const data : Iitem[] = [{
+    id: 1,
     title: 'Tailored Solutions for You',
     description: 'Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you.',
     iconurl: "",
     activte: true
 },
 {
+    id: 2,
     title: 'Trusted and skilled Professionals',
     description: 'Our experts are thoroughly vetted to ensure you receive top-quality services every time',
     iconurl: "",
     activte: false
 },
 {
+    id: 3,
     title: 'Learn at your own pace',
     description: 'Access a rich library of learning resources and interactive quizzes to boost your skills at your own pace.',
     iconurl: "",
     activte: false
 },
 {
+    id: 4,
     title: 'Comprehensive Platform', description: 'We offer a one-stop solution for hiring professionals and accessing top-quality learning content, making your growth journey seamless.',
     iconurl: "",
     activte: false
 },
 {
+    id: 5,
     title: 'Secure and Reliable products', description: 'Trustworthy services with a focus on your security and satisfaction every step of the way.',
     iconurl: "",
     activte: false
@@ -60,7 +66,7 @@ export default function HomeService() {
                             </div>
 
                             {data.map((item) =>
-                                <div className={`size-full  ${!item.activte ? 'bg-white/40 dark:bg-white/10 ': 'bg-[#163930] text-white'} backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
+                                <div key={item.id} className={`size-full  ${!item.activte ? 'bg-white/40 dark:bg-white/10 ': 'bg-[#163930] text-white'} backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
                                     <div className="flex items-center gap-x-4 mb-3">
                                         <div className={`inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white  bg-none`}>
                                             <img src="icon/code_icon.svg" alt="" />

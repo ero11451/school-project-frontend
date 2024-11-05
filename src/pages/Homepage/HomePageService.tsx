@@ -1,29 +1,32 @@
 // import React from 'react'
 
 interface Iitem {
+    id:number,
     title: string,
     description: string
 }
 
 const data  = [{
+    id:1,
     title: 'Tailored Solutions for You',
     description: 'Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you.'
 },
 {
+    id:2,
     title: 'Trusted and skilled Professionals',
     description: 'Our experts are thoroughly vetted to ensure you receive top-quality services every time'
 },
-{
+{    id:3,
     title: 'Learn at your own pace',
     description: 'Access a rich library of learning resources and interactive quizzes to boost your skills at your own pace.'
 },
-{
+{    id:4,
     title: 'Comprehensive Platform', description: 'We offer a one-stop solution for hiring professionals and accessing top-quality learning content, making your growth journey seamless.'
 },
-{
+{    id:5,
     title: 'Comprehensive Learning Resources', description: 'access a wide range of industry-focused materials to enhance your skills effectively and at your own pace'
 },
-{
+{    id:6,
     title: 'Secure and Reliable products', description: 'Trustworthy services with a focus on your security and satisfaction every step of the way.'
 }]
 
@@ -42,7 +45,7 @@ export default function HomePageService() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
 
                     {data.map((item:Iitem) =>
-                        <div className="size-full bg-white/5 backdrop-blur-lg  shadow-lg rounded-[30px] lg:p-8 p-5 border-[1px] border-gray-200 ">
+                        <div key={item.id} className="size-full bg-white/5 backdrop-blur-lg  shadow-lg rounded-[30px] lg:p-8 p-5 border-[1px] border-gray-200 ">
                             <div className="flex items-center gap-x-4 mb-3">
                                 <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white  bg-none">
                                     <img src="image/home_service_icon.svg" alt="" />

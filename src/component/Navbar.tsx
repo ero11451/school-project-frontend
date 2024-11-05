@@ -12,8 +12,8 @@ export default function Navbar() {
 
     return (
         <header className="flex flex-wrap md:justify-start fixed bg-white  md:flex-nowrap z-50 w-full py-2  dark:bg-neutral-900 dark:text-white">
-            <nav className="relative lg:max-w-7xl w-full flex  grid  grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6 md:px-2 lg:mx-auto" >
-                <div className="col-span-3 ">
+            <nav className="relative lg:max-w-7xl w-full  grid grid-cols-3  lg:grid  lg:grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6 md:px-2 lg:mx-auto" >
+                <div className="lg:col-span-3 ">
                     <button onClick={() => navigate(RoutePath.home)} className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
                         <Logo />
                     </button>
@@ -24,7 +24,7 @@ export default function Navbar() {
                     <ThemeToggle />
                     {user == null ? <button type="button"
                         onClick={() => navigate(RoutePath.login)}
-                        className="btn-primary-rounded">
+                        className="btn-primary-rounded text-sm">
                         Get started
                     </button> :
                     <ProfileDropDown />
@@ -48,7 +48,7 @@ export default function Navbar() {
 
                 <div
                     id="navbar-collapse-with-animation"
-                    className="hs-collapse  hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6">
+                    className="hs-collapse  hidden overflow-hidden transition-all duration-300 basis-full w-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6 col-span-3 ">
                     <div className="flex flex-col lg:px-2 px-5 gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
                         {/* <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} /> */}
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />

@@ -33,7 +33,7 @@ export default function ExploreClasses() {
                                 <div className="flex space-x-4 overflow-x-scroll scrollbar-hide">
 
                                     {postData.map((item) =>
-                                         <a className="group  bg-white/50 dark:bg-white/10 backdrop-blur-lg  flex flex-col w-[400px] min-h-[350px] 
+                                         <a key={item.id} className="group  bg-white/50 dark:bg-white/10 backdrop-blur-lg  flex flex-col w-[400px] min-h-[350px] 
                                          border border-gray-200 dark:border-gray-800  hover:border-transparent hover:shadow-lg 
                                          focus:outline-none focus:border-transparent focus:shadow-lg transition
                                           duration-300 rounded-xl p-5 " >
