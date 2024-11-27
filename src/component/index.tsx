@@ -2,7 +2,7 @@
 // export {default as Header } from '../component/Header';
 export {default as Plane  } from '../component/Plane';
 export {default as Input  } from '../component/Input';
-// export {default as PostsList } from '../component/PostsList';
+export {default as HeardBg } from '../component/HeardBg';
 export {default as ThemeToggle } from '../component/ThemeToggle';
 export {default as Dashboard } from '../layout/DashboardLayout';
 export {default as FileInput } from '../component/FileInput';

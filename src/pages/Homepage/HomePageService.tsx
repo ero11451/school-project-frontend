@@ -48,7 +48,7 @@ export default function HomePageService() {
                         <div key={item.id} className="size-full bg-white/5 backdrop-blur-lg  shadow-lg rounded-[30px] lg:p-8 p-5 border-[1px] border-gray-200 ">
                             <div className="flex items-center gap-x-4 mb-3">
                                 <div className="inline-flex justify-center items-center size-[62px] rounded-full border-2 border-white  bg-none">
-                                    <img src="image/home_service_icon.svg" alt="" />
+                                    <img loading="lazy"  src="image/home_service_icon.svg" alt="" />
                                 </div>
                             </div>
                             <div className="shrink-0 lg:my-7 my-3">

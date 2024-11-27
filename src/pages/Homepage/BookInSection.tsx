@@ -15,7 +15,7 @@ export default function BookInSection() {
                             <div className="grid md:grid-cols-2 flex-col-reverse flex  gap-4 md:gap-8 xl:gap-20 md:items-center">
                                 <div>
                                     <button className="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white">
-                                        <img src="icon/category-dark.svg" alt=""  />
+                                        <img loading="lazy"  src="icon/category-dark.svg" alt=""  />
                                         <p>Hire us</p>
                                     </button>
                                     <h1 className="block text-[32px] font-bold dark:text-white">
@@ -38,7 +38,7 @@ export default function BookInSection() {
 
 
                                 <div className="relative ms-4">
-                                    <img className="w-full rounded-md" src="image/home_unlock_user_image.svg" alt="Hero Image" />
+                                    <img loading="lazy"  className="w-full rounded-md" src="image/home_unlock_user_image.svg" alt="Hero Image" />
                                     <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
 
 
@@ -50,12 +50,12 @@ export default function BookInSection() {
 
 
                         <div className="hidden absolute top-1/2 start-0 transform -translate-y-1/4 -translate-x-40 md:block lg:-translate-x-80" aria-hidden="true">
-                            <img src="image/gradiant-ball.svg" alt="" />
+                            <img loading="lazy"  src="image/gradiant-ball.svg" alt="" />
                         </div>
 
 
                         <div className="hidden absolute top-1/5 end-0 transform -translate-y-2/4 translate-x-40 md:block lg:translate-x-80 " aria-hidden="true">
-                            <img src="image/cove_green.svg" alt="" />
+                            <img loading="lazy"  src="image/cove_green.svg" alt="" />
                         </div>
                     </div>
                 </div>

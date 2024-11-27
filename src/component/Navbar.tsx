@@ -12,7 +12,7 @@ export default function Navbar() {
 
     return (
         <header className="flex flex-wrap md:justify-start fixed bg-white  md:flex-nowrap z-50 w-full py-2  dark:bg-neutral-900 dark:text-white">
-            <nav className="relative lg:max-w-7xl w-full  grid grid-cols-3  lg:grid  lg:grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6 md:px-2 lg:mx-auto" >
+            <nav className="relative lg:max-w-7xl w-full  grid grid-cols-3  lg:grid  lg:grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6  lg:mx-auto" >
                 <div className="lg:col-span-3 ">
                     <button onClick={() => navigate(RoutePath.home)} className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
                         <Logo />
@@ -20,13 +20,15 @@ export default function Navbar() {
                 </div>
 
 
-                <div className="flex items-center gap-x-2 lg:ms-auto lg:py-1 lg:ps-6 md:order-3 lg:col-span-3 ">
+                <div className="flex items-center  w-[200px]  gap-x-2 lg:ms-auto lg:py-1 lg:ps-6 md:order-3 lg:col-span-3 ">
                     <ThemeToggle />
-                    {user == null ? <button type="button"
+                    {user == null ? <div className=''>
+                        <button type="button"
                         onClick={() => navigate(RoutePath.login)}
-                        className="btn-primary-rounded text-sm">
+                        className="lg:btn-primary-rounded  text-[10px] bg-[#163930] p-2 lg:px-3 text-white rounded-full">
                         Get started
-                    </button> :
+                    </button> 
+                    </div>:
                     <ProfileDropDown />
                     }
 
@@ -53,7 +55,7 @@ export default function Navbar() {
                         {/* <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} /> */}
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
-                        <NavItem path={RoutePath.PostsList} label="Courses" key={3} isActive={false} />
+                        <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
                         <NavItem path={RoutePath.devTools} label="Dev tools" key={4} isActive={false} />
                         {/* <NavItem path={RoutePath.servicePage} label="Service" key={5} isActive={false} /> */}
 
@@ -73,7 +75,7 @@ function ProfileDropDown(){
     return   <>
     <div className="hs-dropdown relative inline-flex">
         <button id="hs-dropdown-custom-icon-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-            <img className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
+            <img loading="lazy"  className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
         </button>
 
         <div className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-custom-icon-trigger">
@@ -81,19 +83,19 @@ function ProfileDropDown(){
 
 
                 <div className='text-center  justify-center items-center p-2 flex-col flex gap-2'>
-                    <img className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
+                    <img loading="lazy"  className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
                     <p>osamuyi ero</p>
                 </div>
                 <button type="button" 
                     onClick={() => navigate(RoutePath.profile)}
                 className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" >
-                    <img src="icon/profile_gray.svg" alt="" />  View profile
+                    <img loading="lazy"  src="icon/profile_gray.svg" alt="" />  View profile
                 </button>
                 <button type="button"
                     onClick={() => dispatch(clearToken())}
                     className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-[#EB5757] hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700" >
 
-                    <img src="icon/logout.svg" alt="" />
+                    <img loading="lazy"  src="icon/logout.svg" alt="" />
                     Log out
                 </button>
             </div>

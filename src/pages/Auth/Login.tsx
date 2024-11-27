@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { LoginService } from '../../service/auth/login.service';
+import { loginGetUserData } from '../../service/auth/login.service';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from '../../router/routerPath';
 import { Iuser } from '../../interface/Iuser';
@@ -12,17 +12,20 @@ import HeardBg from '../../component/HeardBg';
 export default function Login() {
 
   const navigate = useNavigate();
+  
 
   const { register, handleSubmit, formState: { errors, isValid, isLoading } } = useForm<Iuser>();
   const dispatch = useDispatch();
 
   const mutation = useMutation({
-    mutationFn: (user: Iuser) => LoginService(user),
-    onSuccess: (res: { data: { accessToken: string, user: Iuser } }) => {
+    mutationFn: (user: Iuser) => loginGetUserData(user),
+    onSuccess: (res:  { data:{ accessToken: string, user: Iuser} }) => {
       dispatch(showNotification({ show: true, message: "login successful", type: 'successful' }))
       dispatch(setUserData(res.data.user))
       dispatch(setToken(res.data.accessToken));
-      return navigate(`/${RoutePath.home}`);
+
+      console.log(res)
+      // return navigate(`/${RoutePath.home}`);
     },
     onError(error, variables, context) {
       console.log(variables, context);

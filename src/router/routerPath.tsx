@@ -3,8 +3,8 @@ export  const RoutePath = {
     contact:'contact',
     login:'login',
     register:'register',
-    PostsList:'posts',
-    postDetails:'Posts',
+    // courseList:'course-list',
+    postDetails:'course-details',
     courseList:'courses',
     servicePage:'service',
     admin:'admin',
@@ -17,6 +17,7 @@ export  const RoutePath = {
     profileCreatePosts:'create-Posts',
     profileDashboard:'dashboard',
     devTools:"dev-tools",
+    cousersClassList:"/course-list-class",
     initialPage:'/'
 } as const
 

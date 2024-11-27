@@ -10,9 +10,12 @@ export default function NavItem({
         <div>
             <NavLink
                 to={path}
-                className={({ isActive }) => isActive ?
-                    "transition ease-linear transition-all relative inline-block text-black before:absolute before:bottom-0.6 before:start-0 before:-z-[1] before:w-10 font-bold before:h-1 before:bg-[#163930] dark:text-lime-400 dark:text-green-300"
-                    : "transition ease-linear transition-all inline-block text-black hover:text-gray-600 dark:text-white dark:hover:text-[#163930] "}
+                className={({ isActive }) => `transition ease-linear transition-all  duration-400 
+                 {${isActive ? 
+                    "text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradient  font-extrabold "  
+                    :
+                    "inline-block text-black hover:text-gray-600 dark:text-white dark:hover:text-[#163930] "}}
+                    `}
                 aria-current="page">
                 {label}
             </NavLink>

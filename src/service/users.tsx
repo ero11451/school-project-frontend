@@ -8,6 +8,12 @@ export const getUserById = function (id:number){
     return api.get('api/user/' + id);
 }
 
+export const getUserProfileByEmail = function (email:string){
+    return api.get('api/user/email/'+ email );
+}
+
+
+
 export const getUserProfile = function (){
     return api.get('api/user/profile' );
 }

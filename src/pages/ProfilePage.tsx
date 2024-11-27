@@ -12,7 +12,7 @@ export default function ProfilePage() {
             <div data-hs-file-upload='{"url": "/upload",  "acceptedFiles": "image/*",  "maxFiles": 1,  "singleton": true}'>
               <template data-hs-file-upload-preview="">
                 <div className="size-20">
-                  <img className="w-full object-contain rounded-full" data-dz-thumbnail="" />
+                  <img loading="lazy"  className="w-full object-contain rounded-full" data-dz-thumbnail="" />
                 </div>
               </template>
 

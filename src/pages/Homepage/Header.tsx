@@ -39,14 +39,14 @@ export default function Header() {
             </div>
 
             <div className="hidden absolute top-2/4 start-0 transform -translate-y-2/4 -translate-x-40 md:block lg:-translate-x-80" aria-hidden="true">
-              <img src="image/yello_shape.svg" alt="" />
+              <img loading="lazy"  src="image/yello_shape.svg" alt="" />
             </div>
             <div className="hidden absolute top-2/4 start-0 transform -translate-y-2/4 -translate-x-40 md:block lg:-translate-x-10" aria-hidden="true">
-              <img src="image/circle-home.svg" alt="" />
+              <img loading="lazy"  src="image/circle-home.svg" alt="" />
             </div>
 
             <div className="hidden absolute top-2/4 end-0 transform -translate-y-2/4 translate-x-40 md:block lg:translate-x-80 " aria-hidden="true">
-              <img className="rounded-full animate-roll" src="image/greenball.svg" alt="" />
+              <img loading="lazy"  className="rounded-full animate-roll" src="image/greenball.svg" alt="" />
             </div>
           </div>
         </div>
@@ -56,9 +56,9 @@ export default function Header() {
         <div className="w-full h-100 overflow-x-scroll flex -space-x-4  scrollbar-hide">
         <div className="h-full w-100"  ></div>
           <div  className="h-full w-100" ></div>
-          <img src="image/home_page_bander_1.svg" className="h-full w-full cover-full" alt="Image 1" />
-          <img src="image/home_page_bander_2.svg" className="h-full w-full" alt="Image 2" />
-          <img src="image/home_page_bander_3.svg" className="h-full w-full" alt="Image 3" />
+          <img loading="lazy"  src="image/home_page_bander_1.svg" className="h-full w-full cover-full" alt="Image 1" />
+          <img loading="lazy"  src="image/home_page_bander_2.svg" className="h-full w-full" alt="Image 2" />
+          <img loading="lazy"  src="image/home_page_bander_3.svg" className="h-full w-full" alt="Image 3" />
         </div>
 
 

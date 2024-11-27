@@ -4,18 +4,16 @@ export default function Footer() {
         <div>
             <footer  className="relative lg:pt-20 lg:flex lg:flex-col items-center">
                 <div className=" z-10 lg:absolute lg:mb-10">
-                    <div className="bg-[#E8EBEA]  rounded-lg border-8 
-                 
-                     border-white w-full max-w-[65rem]  mx-auto ">
+                    <div className="bg-[#E8EBEA]  rounded-lg border-8   border-white w-full max-w-[65rem]  mx-auto ">
                         <div className="lg:grid grid-cols-6 gap-6">
-                            <div className="col-span-4 lg:p-10">
-                                <p className="font-[600] text-[24px]">Expert Help and Skill Development</p>
-                                <p className="lg:pr-100 text-sm ">Lorem ipsum dolor sit amet consectetur. Sed adipiscing odio viverra posuere fermentum elit sed blandit ipsum.</p>
+                            <div className="col-span-4 lg:p-10 p-5">
+                                <p className="font-[600] lg:text-[24px]">Expert Help and Skill Development</p>
+                                <p className="lg:pr-100 lg:text-sm text-[10px] font-thin">Lorem ipsum dolor sit amet consectetur. Sed adipiscing odio viverra posuere fermentum elit sed blandit ipsum.</p>
                             </div>
-                            <div className="col-span-2 flex justify-center items-center">
+                            <div className="col-span-2 flex lg:justify-center lg:p-1 px-4 pb-3 items-center">
 
                                 <button className="btn-primary-rounded ">
-                                    <img src="icon/calendar.svg" alt="" />
+                                    <img loading="lazy"  src="icon/calendar.svg" alt="" />
                                     Schedule a consultation
                                 </button>
 
@@ -24,16 +22,16 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className=" lg:pt-32 lg:pb-10 bg-[#163930] relative lg:mt-24 w-full">
+                <div className=" lg:pt-32 lg:pb-10 bg-[#163930] p-2 relative lg:mt-24 w-full">
 
-                    <div className="">
-                        <div>
+                    <div className=" p-3">
+                     
 
-                        <img src="icon/logo_white.svg" className={` w-full lg:h-12 h-5 object-contain `} alt="" />
-                        </div>
+                        <img loading="lazy"  src="icon/logo_white.svg" className={` w-full lg:h-12 h-5 object-contain mb-3`} alt="" />
+                  
                
 
-                    <div className="md:text-center space-x-2 lg:pl-20 lg:pt-5">
+                    <div className="text-center space-x-2 lg:pl-20 lg:pt-5">
                         <a className="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
                             <svg className="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />

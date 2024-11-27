@@ -7,6 +7,7 @@ import { Iuser } from "../../interface/Iuser";
 import { useEffect, useState } from "react";
 import { showNotification, setUserData, setToken } from "../../redux-store/slice/authSlice";
 import { useDispatch } from "react-redux";
+import HeardBg from "../../component/HeardBg";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -44,10 +45,12 @@ export default function Register() {
   }, [errors]);
 
   return (
+    <div>
+      <HeardBg title={'Get started on Neeboh'} description={''} label={'Sign up'} labelIcon={'icon/profile.svg'} />
     <div className='flex justify-center flex-1 dark:bg-neutral-900 h-screen'>
       <div className="lg:w-2/5 w-full bg-white border border-gray-200 backdrop-blur-lg rounded-xl h-fit shadow-sm dark:bg-neutral-900 backdrop-blur-lg dark:border-neutral-700">
         <div className="p-4 sm:p-7">
-          <div className="text-center">
+          {/* <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign up</h1>
             <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
               Don't have an account yet?
@@ -56,10 +59,10 @@ export default function Register() {
                 Sign in here
               </a>
             </p>
-          </div>
+          </div> */}
 
           <div className="mt-5">
-            <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">Or</div>
+            {/* <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">Or</div> */}
 
          
 
@@ -97,12 +100,13 @@ export default function Register() {
                  </div>
                 {errors.password && <span className='text-sm text-red-600'>{errors.password.message}</span>}
 
-                <input disabled={!isValid} className="btn-primary mt-3" type="submit" />
+                <input disabled={!isValid} className="btn-primary-rounded mt-3 flex justify-center w-full" type="submit" />
               </form>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -6,17 +6,17 @@ export default function HomeDevTool() {
             <div className="max-w-[75rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="text-center lg:p-10">
                     <button type="button" className="btn w-fit "></button>
-                        <p className='font-[600]  lg:text-[32px] dark:text-white text-[#163930] '>Powerful Dev Tools to Bring Your 
+                        <p className='font-[600]  lg:text-[32px] dark:text-white text-[#163930] '>Powerful Dev Tools to Bring Your Ideas to 
                             <span className="text-transparent 
-                        bg-clip-text bg-gradient-to-r dark:from-white text-[#163930] lg:from-[#163930] 
-                        via-green-900 to-[#3D9F86] dark:text-white animate-gradient"> Ideas to Life</span>
+                        bg-clip-text bg-gradient-to-r dark:from-white text-green-900 lg:from-[#163930] 
+                        via-[#3D9F86]  to-green-800 dark:text-white animate-gradient"> Life</span>
                         </p>
                     <p className='lg:px-60 text-sm dark:text-gray-200 text-black' >Access cutting-edge development tools and resources to streamline your workflow and  build exceptional digital products</p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12">
                     <div className="lg:w-full">
-                       <img src="image/Frame1000001885@2x.svg" alt="" className='bg-[#E8EBEA]  dark:bg-[#E8EBEA] dark:border-gray-800 border-8 border-[#E8EBEA] rounded-xl' />
+                       <img loading="lazy"  src="image/Frame1000001885@2x.svg" alt="" className='bg-[#E8EBEA]  dark:bg-[#E8EBEA] dark:border-gray-800 border-8 border-[#E8EBEA] rounded-xl' />
                     </div>
 
 
@@ -29,11 +29,10 @@ export default function HomeDevTool() {
                             </span>
                             <div className="grow">
                                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                                    Industry-leading documentation
+                                All-in-One Platform
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                                    Our documentation and extensive Client libraries contain everything a business needs to build a custom integration in a fraction of the time.
-                                </p>
+                                Access tools for design, development, testing, and collaboration in one place.                                </p>
                             </div>
                         </div>
 
@@ -44,11 +43,10 @@ export default function HomeDevTool() {
                             </span>
                             <div className="grow">
                                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                                    Developer community support
+                                Enhanced Productivity
                                 </h3>
                                 <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                                    We actively contribute to open-source projects—giving back to the community through development, patches, and sponsorships.
-                                </p>
+                                Boost efficiency with tools that speed up development and reduce repetitive tasks.                                </p>
                             </div>
                         </div>
 
@@ -59,10 +57,10 @@ export default function HomeDevTool() {
                             </span>
                             <div className="grow">
                                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                                    Simple and affordable
-                                </h3>
+                                Collaborative Features
+                                                                </h3>
                                 <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                                    From boarding passes to movie tickets, there's pretty much nothing you can't store with Preline.
+                                Enable real-time collaboration for seamless teamwork across your projects.
                                 </p>
                             </div>
                         </div>

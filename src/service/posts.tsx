@@ -5,7 +5,6 @@ export  function getPost(query:{page:number, pageSize:number, categoryId ?:numbe
     { return api.get('api/posts', { params: query  } );}
 
 export const getPostById = function (id:number){
-    console.log(id);
     return api.get('api/posts/' + id);
 }
 

@@ -17,7 +17,7 @@ export default function ContactUs() {
                 labelIcon={"icon/category-2.svg"} />
       
 
-            <div className="container mx-auto flex justify-center ">
+            <div className="container mx-auto flex justify-center lg:-mt-12">
                 <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/10 dark:backdrop-blur-lg '>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark: ">
                         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
@@ -29,7 +29,7 @@ export default function ContactUs() {
                                     <div className="my-4">
                                         <div className="flex gap-x-5">
                                             <div className="inline-flex justify-center items-center size-[42px] rounded-full bg-[#E5951A1F] ">
-                                                <img src="icon/sms.svg" alt="" />
+                                                <img loading="lazy"  src="icon/sms.svg" alt="" />
                                             </div>
 
                                             <div className="grow">
@@ -46,7 +46,7 @@ export default function ContactUs() {
                                         <div className="flex gap-x-5">
                                             <div className="inline-flex justify-center items-center size-[42px] rounded-full bg-[#E5951A1F] ">
 
-                                                <img src="icon/call-calling.svg" alt="" />
+                                                <img loading="lazy"  src="icon/call-calling.svg" alt="" />
                                             </div>
 
                                             <div className="grow">
@@ -83,9 +83,9 @@ export default function ContactUs() {
 
                                 </div>
                             </div>
-                            <div className="space-y-4 flex flex-col gap-1 dark:text-white font-[100]">
+                            <div className="space-y-4 flex text-[12px] flex-col gap-1 dark:text-white font-[100]">
                                 <div>
-                                    <label htmlFor="">Full name</label>
+                                    <label htmlFor="text-sm" >Full name</label>
                                     <input type="text" className='input' />
                                 </div>
                                 <div>

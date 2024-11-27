@@ -11,7 +11,7 @@
 //         >
 //             {imgUrl && (
 //                 <div className="aspect-w-16 aspect-h-11">
-//                     <img
+//                     <img loading="lazy" 
 //                         className="w-full object-cover rounded-xl"
 //                         src={imgUrl}
 //                         alt="Post Image"
@@ -27,7 +27,7 @@
 //                 </p>
 //             </div>
 //             <div className="mt-auto flex items-center gap-x-3">
-//                 <img
+//                 <img loading="lazy" 
 //                     className="size-8 rounded-full"
 //                     src={authorAvatar}
 //                     alt="Author Avatar"

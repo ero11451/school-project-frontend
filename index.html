@@ -17,5 +17,21 @@
 
     <script src="./node_modules/lodash/lodash.min.js"></script>
     <script src="./node_modules/dropzone/dist/dropzone-min.js"></script>
+
+    <script>
+      const el = HSScrollspy.getInstance('[data-hs-scrollspy="#scrollspy-1"]', true);
+      const collapse = HSCollapse.getInstance('[data-hs-collapse="#navbar-collapse-basic"]', true);
+    
+      el.element.on('beforeScroll', (instance) => {
+        return new Promise((res) => {
+          if (collapse.element.el.classList.contains('open')) {
+            collapse.element.hide();
+            HSStaticMethods.afterTransition(collapse.element.content, () => res(true));
+          } else {
+            res(true);
+          }
+        });
+      });
+    </script>
   </body>
 </html>

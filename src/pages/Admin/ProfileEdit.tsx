@@ -26,7 +26,7 @@ export default function ProfileEdit() {
 
         <div className="sm:col-span-9">
           <div className="flex items-center gap-5">
-            <img className="inline-block size-16 rounded-full ring-2 ring-white dark:ring-neutral-900" src="../assets/img/160x160/img1.jpg" alt="Image Description" />
+            <img loading="lazy"  className="inline-block size-16 rounded-full ring-2 ring-white dark:ring-neutral-900" src="../assets/img/160x160/img1.jpg" alt="Image Description" />
             <div className="flex gap-x-2">
               <div>
                 <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800">

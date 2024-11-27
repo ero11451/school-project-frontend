@@ -11,8 +11,8 @@ export default function Logo({ imageStyle }: { imageStyle?: string }) {
 
       <div className="flex items-start " >
         {theme !== "light" ?
-          <img src="icon/logo_white.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="" /> :
-          <img src="icon/logo.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="" />}
+          <img loading="lazy"  src="icon/logo_white.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="neeboh" /> :
+          <img loading="lazy"  src="icon/logo.svg" className={` w-full lg:h-10 h-5 object-contain ${imageStyle}`} alt="neeboh" />}
       </div>
     </div>
   )

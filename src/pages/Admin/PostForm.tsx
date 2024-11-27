@@ -61,7 +61,7 @@ const PostForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="bg-white rounded-xl shadow dark:bg-neutral-900">
-        {imagePreview && <img className='h-20' src={imagePreview} alt="Preview" />}
+        {imagePreview && <img loading="lazy"  className='h-20' src={imagePreview} alt="Preview" />}
         <div className={`relative h-40 rounded-t-xl bg-[url(https://neebohfileserver.blob.core.windows.net/neebohfilecontainer/WhatsApp Image 2024-08-09 at 12.27.45 PM.jpeg)] bg-no-repeat bg-cover bg-center`}></div>
         <div className="pt-0 p-4 sm:pt-0 sm:p-7">
           <div className="space-y-4 sm:space-y-6">

@@ -4,7 +4,8 @@ const DevToolsPage = () => {
 
       <div className="  lg:col-span-2   ">
         <p className="lg:text-[20px]">Documents</p>
-        <button className="p-4 border text-start border-2 border-gray-200 text-[#101828] dark:text-white text-sm rounded">Understanding JavaScript Scope</button>
+        <button className="p-4 border text-start border-2 w-full border-gray-50 dark:border-gray-500 dark:bg-gray-800 bg-gray-100 text-[#101828] dark:text-white text-sm rounded">jero Documentation
+        </button>
       </div>
 
       <div className="  lg:col-span-7   ">

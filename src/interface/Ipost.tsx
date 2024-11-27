@@ -19,6 +19,8 @@ export interface Ipost {
     location?: LocationModel;
     summary?:string;
     createdBy:string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    teacher?:any
     // teacherId?: number;
     // teacher?: UserModel;
 
@@ -26,7 +28,7 @@ export interface Ipost {
 
 // interfaces.ts
 export interface Itest {
-    id:number
+    id?:number
     option ?:string
     isCorrect ?:boolean ,
     summary?:string,
