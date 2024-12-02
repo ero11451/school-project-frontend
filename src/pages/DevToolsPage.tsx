@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import documentation from "./documentation.json";
 import { Documentation } from "../interface/IdevTool";
 
