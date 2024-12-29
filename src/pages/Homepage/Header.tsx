@@ -53,13 +53,13 @@ export default function Header() {
 
 
 
-        <div className="w-full h-100 overflow-x-scroll flex -space-x-4  scrollbar-hide">
+        {/* <div className="w-full h-100 overflow-x-scroll flex -space-x-4  scrollbar-hide">
         <div className="h-full w-100"  ></div>
           <div  className="h-full w-100" ></div>
           <img loading="lazy"  src="image/home_page_bander_1.svg" className="h-full w-full cover-full" alt="Image 1" />
           <img loading="lazy"  src="image/home_page_bander_2.svg" className="h-full w-full" alt="Image 2" />
           <img loading="lazy"  src="image/home_page_bander_3.svg" className="h-full w-full" alt="Image 3" />
-        </div>
+        </div> */}
 
 
         <br />

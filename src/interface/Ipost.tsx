@@ -11,7 +11,7 @@ export interface Ipost {
     example?: string;
     code?: string;
     status: string;
-    options?: Array <Itest>;
+    options?: Itest[] ;
     categoryId?: number;
     category?: Icategory;
     locationId?: number;

@@ -79,13 +79,16 @@ export function CourseList() {
                   </p>
                 </div>
                 <div className="mt-auto flex items-center gap-x-3 text-left">
-                  <img loading="lazy" className="size-8 rounded-full" src="image/1703945762347.jpeg" alt="Avatar" />
+                  <img loading="lazy" className="size-10 rounded-full" src="image/1703945762347.jpeg" alt="Avatar" />
                   <div>
                     <h5 className="text-sm text-gray-800 dark:text-neutral-200">{item.teacher?.username}</h5>
                     <a  href="https://www.linkedin.com/in/ero-osamuyi/" target="_blank" className="text-xs text-left text-blue-600 dark:text-neutral-200">Contact me</a>
                   </div>
                 </div>
 
+               <button className="btn-primary-rounded w-full justify-center mt-5 text-center">
+                Take course
+               </button>
               </button>
             )}
 
