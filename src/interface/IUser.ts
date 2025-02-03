@@ -1,4 +1,4 @@
-export interface Iuser  {
+export interface IUser  {
   id: string,
   userName: string,
   email: string,
@@ -9,7 +9,10 @@ export interface Iuser  {
   userImgUrl: string,
   gender: number,
   userType: number,
-  status: number
+  status: number,
+  token?:string,
+  username?:string
+  isAdmin?: boolean
   // phoneNumberConfirmed: true,
   // twoFactorEnabled: true,
   // emailConfirmed: true,

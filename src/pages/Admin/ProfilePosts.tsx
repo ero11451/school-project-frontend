@@ -2,14 +2,14 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import TableComponent from "../../component/TableComponent";
 import { deletePost, getPost } from "../../service/posts";
 import { useState } from "react";
-import { Ipost } from "../../interface/Ipost";
-import { showNotification } from "../../redux-store/slice/authSlice";
+import { ICourse } from "../../interface/ICourse";
 import { useDispatch } from "react-redux";
+import { showNotification } from "../../redux-store/slice/notificationSlice";
 
 export default function ProfilePosts() {
     const dispatch = useDispatch();
     const mutate =  useMutation({
-        mutationFn: (user:Ipost) =>  deletePost(user.id) ,
+        mutationFn: (user:ICourse) =>  deletePost(user.id) ,
         onSuccess: () => {
            dispatch(showNotification({show:true, message:"content created successful", type:'successful'}))
            
@@ -33,7 +33,7 @@ export default function ProfilePosts() {
            headers={['title', 'content', 'imgUrl']}
            changePage={() => console.log}
            currentPage={0} totalPages={0} 
-           deleteItem={(item:Ipost) =>   mutate.mutate(item)} />
+           deleteItem={(item:ICourse) =>   mutate.mutate(item)} />
         </div>
     )
 }

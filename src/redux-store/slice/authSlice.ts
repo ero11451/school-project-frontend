@@ -1,31 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Iuser } from '../../interface/Iuser';
-
-export interface Inotification  {
-     type?: "successful" | 'error' | 'info', 
-     message?:string,
-     show?:boolean
-    }
+import { IUser } from '../../interface/IUser';
 
 export interface AuthState {
     token: string | null;
     loading: boolean | null;
     error: string | null;
-    notification: Inotification;
-    user?: Iuser | null;
-    
+    user?: IUser | null;
+    redirectToLogin : boolean;
 }
 
+
+console.log()
+
 const initialState: AuthState = {
-    token: null,
+    token: localStorage.getItem("token") || null,
     loading: false,
     error: null,
     user: null,
-    notification: {
-        type: "info",
-        message: '',
-        show: false
-    },
+    redirectToLogin: false
 };
 
 export const authSlice = createSlice({
@@ -36,9 +28,16 @@ export const authSlice = createSlice({
             localStorage.setItem('token', action.payload)
             state.token = localStorage.getItem('token');
         },
+        setUser(state, action: PayloadAction<IUser>){
+            const userAsString = JSON.stringify(action.payload)
+            localStorage.setItem("user", userAsString)
+            state.user =  JSON.parse(userAsString)
+        },
         clearToken(state) {
             state.token = null;
+            state.user = null
             localStorage.removeItem('token');
+            localStorage.removeItem('user');
         },
         setLoading(state, action: PayloadAction<boolean>) {
             state.loading = action.payload;
@@ -46,16 +45,16 @@ export const authSlice = createSlice({
         setError(state, action: PayloadAction<string | null>) {
             state.error = action.payload;
         },
-        showNotification(state, action: PayloadAction<Inotification>){
-            state.notification =  action.payload;
-        },
-        setUserData(state, action: PayloadAction<Iuser>){
+        setUserData(state, action: PayloadAction<IUser>){
            state.user = action.payload;
+        },
+        setRedirectToLogin(state, action: PayloadAction<boolean>){
+            state.redirectToLogin = action.payload;
         }
     },
 });
 
-export const { setToken, clearToken, setLoading, setError, showNotification, setUserData } = authSlice.actions;
+export const { setToken, clearToken, setLoading, setError,  setUserData, setUser , setRedirectToLogin } = authSlice.actions;
 
 export default authSlice.reducer;
 

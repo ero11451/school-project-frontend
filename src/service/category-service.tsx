@@ -1,16 +1,17 @@
-import { Icategory } from "../interface/Icategory";
+
+// import { IApiResponse } from "../interface/IApiRespons";
+import { ICategory } from "../interface/ICategory";
 import api from "./interseptor";
 
-export function categoryCreate(data:Icategory){
-    return api.post('api/Categories', data);
+export function categoryCreate(data:ICategory){
+    return api.post('api/categories', data);
  }
 
- export function categoryGetAll(){
-    return api.get('api/Categories');
+ export function categoryGetAll()  {
+    return api.get('api/Category');
  }
 
- // eslint-disable-next-line @typescript-eslint/no-explicit-any
- export function categoryGetById(id:string): Promise<any> {
+ export function categoryGetById(id:string) {
    return api.get('api/Categories/'+ id);
 }
 

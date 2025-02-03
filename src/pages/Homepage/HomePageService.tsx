@@ -37,7 +37,7 @@ export default function HomePageService() {
         <div className=' bg-gradient-to-r from-[#14342C] via-[#0D7D61] to-[#14342C] text-white' style={{ backgroundImage: "url('image/green_bg.svg')" }}>
 
             <div className='text-center lg:pt-24 pt-10 '>
-                <p className='lg:font-[600] lg:text-[32px] font-semibold text-lg lg:text-center text-left px-5'>Your Top Choice for Expert Services and Learning</p>
+                <p className='lg:font-[600] lg:text-[22px] font-semibold text-lg lg:text-center text-left px-5'>Your Top Choice for Expert Services and Learning</p>
                 <p className='lg:font-[100] lg:text-[16px] lg:p-5 lg:px-[400px] leading-relaxed lg:text-center text-left text-sm font-[100] p-4'>chieve Your Goals with Expert Support and Comprehensive Learning Resources for Personal and Professional Growth</p>
             </div>
 
@@ -52,9 +52,9 @@ export default function HomePageService() {
                                 </div>
                             </div>
                             <div className="shrink-0 lg:my-7 my-3">
-                                <h3 className="block lg:text-[32px] font-semibold  dark:text-white ">{item.title}</h3>
+                                <h3 className="block lg:text-[22px] font-semibold  dark:text-white ">{item.title}</h3>
                             </div>
-                            <p className="font-[100] lg:text-[18px] text-sm leading-relaxed">{item.description}</p>
+                            <p className="font-[100] lg:text-[15px] text-sm leading-relaxed">{item.description}</p>
                         </div>
                     )
                     }

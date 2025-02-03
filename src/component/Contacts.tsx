@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux"
-import { showNotification } from "../redux-store/slice/authSlice"
+import { useDispatch } from "react-redux";
+import { showNotification } from "../redux-store/slice/notificationSlice";
 
 export default function Contacts() {
   const dispatch = useDispatch()

@@ -1,127 +1,148 @@
 /* src/styles/tailwind.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 /* Step 1: Define the font using @font-face */
+
 @font-face {
-  font-family: 'primary-font';
-  src: url('font/Poppins-Medium.ttf') format('ttf'),
-       url('font/Poppins-Bold.woff') format('ttf');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'primary-font';
+    src: url('font/Poppins-Medium.ttf') format('ttf'), url('font/Poppins-Bold.woff') format('ttf');
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 /* Step 2: Use the font in your CSS */
+
 body {
-  font-family: 'primary-font', sans-serif;
+    font-family: 'primary-font', sans-serif;
 }
+
 
 /* @import "preline"; */
 
 .dark-theme {
-  --bg-primary: #1a202c;
-  --text-primary: #ffffff;
-  --bg-secondary: #163930;
-  --text-secondary: #cbd5e0;
+    --bg-primary: #1a202c;
+    --text-primary: #ffffff;
+    --bg-secondary: #163930;
+    --text-secondary: #cbd5e0;
 }
 
 .dark-theme button {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
 }
 
 .dark-theme .active {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .dark-theme #unstyled-tabs-1,
 .dark-theme #unstyled-tabs-2,
 .dark-theme #unstyled-tabs-3 {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
-.label{
-  @apply block text-sm font-medium mb-2 dark:text-white
+.label {
+    @apply block text-sm font-medium mb-2 dark:text-white
 }
 
 .input {
-  @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:backdrop-blur-lg dark:bg-white/30  dark:border-neutral-700 dark:text-neutral-400;
+    @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:backdrop-blur-lg dark:bg-white/30 dark:border-neutral-700 dark:text-neutral-400;
 }
 
 .btn-outline {
-  @apply py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800
+    @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800
 }
+
+.btn-outline-rounded {
+  @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800
+}
+
 
 /* src/styles.css */
 
-.btn-primary-rounded {
-  @apply inline-flex items-center gap-x-2 text-white  rounded-full border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
-  
-  /* Responsive adjustments */
-  @apply py-2 px-4 text-sm ;     /* Small screens */
-  @apply transition
+.btn-primary {
+    @apply inline-flex items-center gap-x-2 text-white rounded border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
+    /* Responsive adjustments */
+    @apply py-2 px-4 text-sm;
+    /* Small screens */
+    @apply transition
 }
 
-
-
+.btn-primary-rounded {
+    @apply inline-flex items-center gap-x-2 text-white rounded-full border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
+    /* Responsive adjustments */
+    @apply py-2 px-4 text-sm;
+    /* Small screens */
+    @apply transition
+}
 
 
 /* Add more theme-specific styling as needed */
 
-.color-primary{
-  background: -webkit-linear-gradient(green, red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.color-primary {
+    background: -webkit-linear-gradient(green, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
 
 @keyframes roll {
-  0% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+
 /* Tailwind extension to add the animation */
+
 .animate-roll {
-  animation: smoothRoll 20s linear infinite;
+    animation: smoothRoll 20s linear infinite;
 }
 
 @keyframes smoothRoll {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
+
 /* Tailwind extension to add the animation */
+
 .animate-smooth-roll {
-  animation: smoothRoll 3s ease-in-out infinite;
+    animation: smoothRoll 3s ease-in-out infinite;
 }
 
 
 /* In your CSS file or as part of your Tailwind config */
+
 .scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+    display: none;
+    /* Safari and Chrome */
 }

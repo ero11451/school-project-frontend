@@ -12,7 +12,7 @@ export default function NavItem({
                 to={path}
                 className={({ isActive }) => `transition ease-linear transition-all  duration-400 
                  {${isActive ? 
-                    "text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradient  font-extrabold "  
+                    "text-transparent bg-clip-text dark:text-green-900 bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradient  font-extrabold "  
                     :
                     "inline-block text-black hover:text-gray-600 dark:text-white dark:hover:text-[#163930] "}}
                     `}

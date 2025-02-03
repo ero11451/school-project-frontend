@@ -2,7 +2,7 @@
 
 import { useSelector } from "react-redux"
 
-export default function HeardBg({title, description , label, labelIcon}: {title: string, description: string, label: string, labelIcon: string}) {
+export default function HeardBg({title, description , label, labelIcon}: {title?: string, description?: string, label?: string, labelIcon?: string}) {
    
   const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
      

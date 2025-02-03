@@ -1,5 +1,5 @@
 // import { useSelector } from "react-redux";
-import HeardBg from "../component/HeardBg";
+// import HeardBg from "../component/HeardBg";
 import HomeService from "./Homepage/HomeService";
 
 interface Iitem {
@@ -24,11 +24,11 @@ export default function About() {
             {/* category-2.svg */}
             <div id="">
                 
-            <HeardBg 
+            {/* <HeardBg 
                 title={"Empowering Growth Through Learning and Innovation"}
                 description={"At Neeboh, we connect learners, businesses, and professionals to create opportunities for growth and success."} 
                 label={"About us"} 
-                labelIcon={"icon/category-2.svg"} />
+                labelIcon={"icon/category-2.svg"} /> */}
             </div>
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
 

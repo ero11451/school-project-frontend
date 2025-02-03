@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import  authSlice   from './slice/authSlice'
 import themeSlice from './slice/themeSlice'
+import notificationSlice  from './slice/notificationSlice'
 
-// eslint-disable-next-line react-refresh/only-export-components
-export default configureStore({
+const store = configureStore({
   reducer: {
     theme: themeSlice,
-    auth: authSlice
+    auth: authSlice,
+    notification : notificationSlice
   },
 })
+
+
+export default  store;

@@ -1,11 +1,16 @@
 import axios from 'axios';
 import store from '../redux-store/store';
-import { setLoading, setError, clearToken } from '../redux-store/slice/authSlice';
+import {  clearToken, setRedirectToLogin } from '../redux-store/slice/authSlice';
+import { setLoading } from '../redux-store/slice/notificationSlice';
+import { showToast } from '../component/ToastNotifications';
+// import { RoutePath } from '../router/routerPath';
+
 
 const envType:boolean = import.meta.env.MODE === 'production';
 
+
 const api = axios.create({
-    baseURL: envType ? "https://neeboh.azurewebsites.net/" :  "http://localhost:5160/",
+    baseURL: envType ? "https://neeboh.azurewebsites.net/" :  "http://localhost:5160",
 });
 
 api.interceptors.request.use(
@@ -29,11 +34,19 @@ api.interceptors.response.use(
         return response;
     },
     (error) => {
-        store.dispatch(setLoading(false));
-        if (error.response?.status === 401) {
+        store.dispatch(setLoading(false))
+
+        if (error.response.status == 401) {
             store.dispatch(clearToken());
+            store.dispatch(setRedirectToLogin(true));
+            // window.location.href = "/" + RoutePath.login; 
         }
-        store.dispatch(setError(error.response.data.title || error.message));
+
+        showToast({
+            show: true,
+            message: error.response.data.title || error.response.data.title  || error.message || "An error occurred",
+            type: 'error'
+        });
         return Promise.reject(error);
     }
 );

@@ -1,25 +1,44 @@
-// import React from 'react'
-
 import { useSelector } from "react-redux";
 import HeardBg from "../component/HeardBg";
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
+import { IContact } from "../interface/IContact";
+import { createContact } from "../service/contactus-service";
+import { showToast } from "../component/ToastNotifications";
 
 export default function ContactUs() {
     const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
-     
-   const bgImageURl = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')" 
+
+    const bgImageURl = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')";
+
+
+    const { register, handleSubmit, formState: { errors, isValid, isLoading } } = useForm<IContact>();
+
+    const mutation = useMutation({
+        mutationFn:  createContact,
+        onSuccess: (res: { data: unknown }) => {
+         showToast({ show: true, message: "Message sent successful", type: 'successful' })
+          console.log(res);
+        },
+        onError: (error) => { 
+          showToast({ show: true, message: "There was an error with you message", type: 'error' })
+          console.log(error)
+        }
+      });
+
     return (
         <div className='bg-[#F8F8F8] dark:bg-neutral-900' >
             
             <HeardBg 
                 title={" Get in Touch and Start Your Journey with Us Today"}
-                description={"We’re Here to Help – Reach Out for Questions, Support, or Collaboration Opportunities"} 
+                // description={"We’re Here to Help – Reach Out for Questions, Support, or Collaboration Opportunities"} 
                 label={"Contact us"} 
                 labelIcon={"icon/category-2.svg"} />
       
 
             <div className="container mx-auto flex justify-center lg:-mt-12">
                 <div className='rounded-lg m-5 bg-white lg:p-5 py-3 w-fit dark:bg-white/10 dark:backdrop-blur-lg '>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark: ">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-10 dark:">
                         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
                             <div style={{background: bgImageURl}} className="space-y-4 bg-[#FEFAF1] flex flex-col p-4 lg:p-6 justify-between rounded-lg">
                                 <div>
@@ -83,28 +102,30 @@ export default function ContactUs() {
 
                                 </div>
                             </div>
-                            <div className="space-y-4 flex text-[12px] flex-col gap-1 dark:text-white font-[100]">
+                            <form onSubmit={handleSubmit((data:IContact) =>  mutation.mutate(data))}  className="space-y-4 flex text-[12px] flex-col gap-1 dark:text-white font-[100]">
                                 <div>
                                     <label htmlFor="text-sm" >Full name</label>
-                                    <input type="text" className='input' />
+                                    <input  className='input' {...register("fullname", { required: true })} type="text"  />
                                 </div>
                                 <div>
                                     <label htmlFor="">Email</label>
-                                    <input type="text" className='input' />
+                                    <input type='email' {...register("email", { required: true })}   className='input' />
                                 </div>
                                 <div>
                                     <label htmlFor="">Subject</label>
-                                    <input type="text" className='input' />
+                                    <input type="text" className='input'  {...register("subject", { required: true })} />
                                 </div>
                                 <div>
                                     <label htmlFor="">Message</label>
-                                    <textarea className='input' ></textarea>
+                                    <textarea className='input' {...register("message", { required: true })} ></textarea>
                                 </div>
 
-                                <button className=' btn-primary-rounded flex justify-center'>
+                                {errors.email && <span className='text-sm text-red-600 '>This field is required</span>}
+                                {isLoading && "loading..."}
+                                <button disabled={!isValid} className=' btn-primary-rounded flex justify-center'>
                                     Shoot us a mail
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -112,3 +133,4 @@ export default function ContactUs() {
         </div>
     )
 }
+

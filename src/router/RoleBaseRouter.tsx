@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { showNotification } from '../redux-store/slice/notificationSlice';
 // import { RoutePath } from './routerPath';
-import {  showNotification } from '../redux-store/slice/authSlice';
 
 const ProtectedRoute: React.FC = () => {
   const navigate = useNavigate();

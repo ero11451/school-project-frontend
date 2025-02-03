@@ -2,14 +2,26 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from '../router/routerPath';
 import ThemeToggle from './ThemeToggle';
 import { useDispatch, useSelector } from 'react-redux';
-import { AuthState, clearToken } from '../redux-store/slice/authSlice';
+import { AuthState, clearToken, setUser,  } from '../redux-store/slice/authSlice';
 import Logo from './Logo';
 import { NavItem } from '.';
+import { limitText } from '../utility/limitText';
+import { IUser } from '../interface/IUser';
+import { useEffect } from 'react';
 
 export default function Navbar() {
     const navigate = useNavigate();
-    const user = useSelector((store: { auth: AuthState }) => store.auth.token)
-
+    const userData = useSelector((store: { auth: AuthState }) => store.auth)
+    const dispatch = useDispatch()
+   
+    useEffect(() => {
+        if (userData.user) {
+            dispatch(setUser(JSON.parse(localStorage.getItem("user") || "" )))
+        } 
+        return () => {}
+    }, [])
+    
+    // console.log(JSON.parse(localStorage.getItem("user") || ""), "user name")
     return (
         <header className="flex flex-wrap md:justify-start fixed bg-white  md:flex-nowrap z-50 w-full py-2  dark:bg-neutral-900 dark:text-white">
             <nav className="relative lg:max-w-7xl w-full  grid grid-cols-3  lg:grid  lg:grid-cols-12  gap-3  lg:basis-full items-center lg:px-2 md:px-6  lg:mx-auto" >
@@ -22,14 +34,14 @@ export default function Navbar() {
 
                 <div className="flex items-center  w-[200px]  gap-x-2 lg:ms-auto lg:py-1 lg:ps-6 md:order-3 lg:col-span-3 ">
                     <ThemeToggle />
-                    {user == null ? <div className=''>
+                    {userData.token == null ? <div className=''>
                         <button type="button"
                         onClick={() => navigate(RoutePath.login)}
                         className="lg:btn-primary-rounded  text-[10px] bg-[#163930] p-2 lg:px-3 text-white rounded-full">
                         Get started
                     </button> 
                     </div>:
-                    <ProfileDropDown />
+                    <ProfileDropDown data={userData?.user || null} />
                     }
 
                     <div className="md:hidden">
@@ -57,7 +69,7 @@ export default function Navbar() {
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
                         <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
                         <NavItem path={RoutePath.devTools} label="Dev tools" key={4} isActive={false} />
-                        {/* <NavItem path={RoutePath.servicePage} label="Service" key={5} isActive={false} /> */}
+                        {userData?.user?.isAdmin == true &&    <NavItem path={RoutePath.admin} label="Admin" key={5} isActive={false} />}
 
                     </div>
                 </div>
@@ -68,23 +80,30 @@ export default function Navbar() {
 }
 
 
-function ProfileDropDown(){
+function ProfileDropDown({data}:{data:IUser | null}){
+
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    
+    const userProfile = {
+        img: "src/assets/user-profile.png"
+    }
     return   <>
     <div className="hs-dropdown relative inline-flex">
-        <button id="hs-dropdown-custom-icon-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-            <img loading="lazy"  className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
+        <button id="hs-dropdown-custom-icon-trigger" type="button"  aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+            <div className='flex justify-center align-center items-center gap-3'>
+
+            <img loading="lazy"  className="inline-block size-10 rounded-full" src={userProfile.img} alt="Avatar"  />
+            <p>{limitText(data?.username || "", 9)  }</p>
+            </div>
         </button>
 
         <div className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-custom-icon-trigger">
             <div className="p-1 space-y-0.5">
-
-
                 <div className='text-center  justify-center items-center p-2 flex-col flex gap-2'>
-                    <img loading="lazy"  className="inline-block size-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar" />
-                    <p>osamuyi ero</p>
+                    <img loading="lazy"  className="inline-block size-14 rounded-full" src={userProfile.img} alt="Avatar" />
+                    <p>{data?.username}</p>
                 </div>
                 <button type="button" 
                     onClick={() => navigate(RoutePath.profile)}

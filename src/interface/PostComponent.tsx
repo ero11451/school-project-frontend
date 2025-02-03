@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Category {
     id: number | null;
     name: string;
@@ -15,6 +14,6 @@ export interface Category {
   
 export  interface Props {
     categories: Category[];
-    setParams: any;
+    setParams: () => void;
     params: Params;
   }

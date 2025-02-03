@@ -3,6 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import sidebarInterface from '../interface/SideBarNav'
 import Logo from '../component/Logo'
 import { useEffect } from 'react'
+import { Navbar } from '../component'
 
 export default function DashboardLayout({
   sideNavList,
@@ -130,7 +131,9 @@ export default function DashboardLayout({
       </div>
 
       <div className="w-full h-screen lg:ps-64">
-        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+          <Navbar />
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 pt-10">
+        <br />
           <Outlet />
         </div>
       </div>

@@ -1,9 +1,15 @@
-// import React from 'react'
+import { useSelector } from "react-redux";
+import { IUser } from "../../interface/IUser";
 
 export default function ProfilePage() {
+
+  const data  = useSelector(
+    (store:{auth:{user:IUser}}) => store.auth.user
+  );
+  console.log(data)
   return (
     <div>
-      <div className={`container mx-auto grid grid-cols-11 gap-4" `}>
+      <div className={`container mx-auto grid grid-cols-11 gap-4 p-100" `}>
         <div className=" col-span-2">
           <button className="dark:text-white w-full ">Personal info</button>
         </div>
@@ -51,14 +57,14 @@ export default function ProfilePage() {
               <div className="flex flex-wrap items-center gap-3">
                 <div className="w-full">
                   <label className="label" htmlFor="profileSettingsFirstName">First Name</label>
-                  <input type="text" className="input" id="profileSettingsFirstName" placeholder="First Name" />
+                  <input type="text" className="input" id="profileSettingsFirstName" value={data?.username} placeholder="First Name" />
                 </div>
                 <div className="w-full">
                   <label className="label" htmlFor="profileSettingsLastName">Email address</label>
-                  <input type="text" className="input" id="profileSettingsLastName" placeholder="Last Name" />
+                  <input disabled  type="text" className="input" id="profileSettingsLastName" value={data?.email} placeholder="Last Name" />
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>

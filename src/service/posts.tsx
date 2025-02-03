@@ -1,4 +1,4 @@
-import { Ipost } from "../interface/Ipost";
+import { Ipost } from "../interface/ICourse";
 import api from "./interseptor";
 
 export  function getPost(query:{page:number, pageSize:number, categoryId ?:number | null})

@@ -18,7 +18,7 @@ const Table = ({
 	// hasCheckBox,
 }: {
 	columns: Array<Icolumns> ,
-	data: any,
+	data?: any,
 	showHeaderIcon?: boolean
 	tableStyle?: string
 	isLoading?: boolean

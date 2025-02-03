@@ -24,10 +24,10 @@ import ProtectedRoute from "./ProtectedRoute";
 import DevToolsPage from "../pages/DevToolsPage";
 import PageNotFound from "../component/PageNotFound";
 import ContactUs from "../pages/ContactUs";
-import ProfilePage from "../pages/ProfilePage";
+import ProfilePage from "../pages/Profile/ProfilePage";
 import CourseDetails from "../pages/Courses/CourseDetails";
 import { CourseList } from "../pages/Courses/CourseList";
-import { CourseClassList } from "../pages/Courses/CourseClassList";
+// import { CourseClassList } from "../pages/Courses/CourseClassList";
 
 declare global {
   interface Window {
@@ -55,11 +55,10 @@ export default function MainRouter() {
           <Route path={RoutePath.home} element={<HomePage />} />
           <Route path={RoutePath.initialPage} element={<HomePage />} />
           <Route path={RoutePath.courseList} element={<CourseList />} />
-          <Route path={RoutePath.courseList + "/:id"} element={<CourseDetails />} />
           <Route element={<ProtectedRoute />} >
-            <Route path={`${RoutePath.postDetails}/:postId`} element={<CourseDetails />} />
+            <Route path={RoutePath.courseList + "/:id"} element={<CourseDetails />} />
           </Route>
-          <Route path={RoutePath.courseList + '/:id'} element={<CourseClassList />} />
+          {/* <Route path={RoutePath.courseList + '/:id'} element={<CourseClassList />} /> */}
           <Route path={RoutePath.about} element={<About />} />
           <Route path={RoutePath.register} element={<Register />} />
           <Route path={RoutePath.login} element={<Login />} />

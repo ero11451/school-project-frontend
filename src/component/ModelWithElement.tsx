@@ -17,7 +17,7 @@ export default function ModelWithElement({ children, title, btnStyle, btnText , 
       <button
         type="button"
         className={btnStyle}
-        onClick={handleOpen}
+        onClick={ handleOpen}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-controls="modal"

@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/icon/logo_white.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>neeboh</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- <script src="node_modules/preline/dist/preline.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/preline@2.4.1/+esm"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/preline@2.4.1/dist/preline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.4.1/dist/preline.min.js"></script>
 
     <script src="./node_modules/lodash/lodash.min.js"></script>
     <script src="./node_modules/dropzone/dist/dropzone-min.js"></script>
+    <script src="./node_modules/toastify-js/src/toastify.js"></script>
+    <script src="./assets/vendor/canvas-confetti/dist/confetti.browser.js"></script>
+
 
     <script>
-      const el = HSScrollspy.getInstance('[data-hs-scrollspy="#scrollspy-1"]', true);
-      const collapse = HSCollapse.getInstance('[data-hs-collapse="#navbar-collapse-basic"]', true);
-    
-      el.element.on('beforeScroll', (instance) => {
-        return new Promise((res) => {
-          if (collapse.element.el.classList.contains('open')) {
-            collapse.element.hide();
-            HSStaticMethods.afterTransition(collapse.element.content, () => res(true));
-          } else {
-            res(true);
-          }
+        const el = HSScrollspy.getInstance('[data-hs-scrollspy="#scrollspy-1"]', true);
+        const collapse = HSCollapse.getInstance('[data-hs-collapse="#navbar-collapse-basic"]', true);
+
+        el.element.on('beforeScroll', (instance) => {
+            return new Promise((res) => {
+                if (collapse.element.el.classList.contains('open')) {
+                    collapse.element.hide();
+                    HSStaticMethods.afterTransition(collapse.element.content, () => res(true));
+                } else {
+                    res(true);
+                }
+            });
         });
-      });
     </script>
-  </body>
+</body>
+
 </html>

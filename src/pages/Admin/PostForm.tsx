@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { showNotification } from '../../redux-store/slice/authSlice';
 import { createPost } from '../../service/posts';
-import { Ipost } from '../../interface/Ipost';
+import { Ipost } from '../../interface/ICourse';
+import { showNotification } from '../../redux-store/slice/notificationSlice';
 
 const PostForm: React.FC = () => {
   const dispatch = useDispatch();

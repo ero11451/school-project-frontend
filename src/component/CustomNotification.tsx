@@ -1,10 +1,10 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Inotification, showNotification } from '../redux-store/slice/authSlice';
+import { Inotification, showNotification } from '../redux-store/slice/notificationSlice';
 
 const CustomNotification = React.memo(() => {
   const notification = useSelector(
-    (store: { auth: { notification: Inotification } }) => store.auth.notification
+    (store: { notification: { notification: Inotification } }) => store.notification.notification
   );
   const dispatch = useDispatch();
 

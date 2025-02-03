@@ -1,21 +1,21 @@
-// import React from 'react'
 import { useSelector } from "react-redux";
-// import { postData } from "../../service/postDB";
 import { limitText } from "../../utility/limitText";
-import { categoryGetAll } from "../../service/category";
 import { useQuery } from "@tanstack/react-query";
-import { Icategory } from "../../interface/Icategory";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../router/routerPath";
+import { getCourses } from "../../service/courses-service";
+import { ICourse } from "../../interface/ICourse";
 
 export default function ExploreClasses() {
     const navigate = useNavigate()
-    const { data: postData, isLoading } = useQuery({
-        queryKey: ['category'],
-        queryFn: () => categoryGetAll(),
+    const { data, isLoading } = useQuery({
+        queryKey: ['courseClassList'],
+        queryFn: () => getCourses({ page: 1, pageSize: 5 }),
     })
     const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
     const headerBG: string = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')"
+    console.log(data, isLoading, headerBG , navigate )
+
     return (
         <div>
             <div className="overflow-hidden bg-[#FEFAF1]" style={{ backgroundImage: headerBG }}>
@@ -40,8 +40,8 @@ export default function ExploreClasses() {
                             <div className='w-screen'>
                                 <div className="flex space-x-4 overflow-x-scroll scrollbar-hide">
 
-                                 {!postData?.data &&  <div className = "text-center">There is no data </div> }
-                                    {postData?.data.map((item: Icategory) =>
+                                 {!data?.data &&  <div className = "text-center">There is no data </div> }
+                                    {data && data?.data?.data.map((item: ICourse) =>
                                         <a key={item.id} className="group  bg-white/50 dark:bg-white/10 backdrop-blur-lg  flex flex-col w-[400px] min-h-[350px] 
                                          border border-gray-200 dark:border-gray-800  hover:border-transparent hover:shadow-lg 
                                          focus:outline-none focus:border-transparent focus:shadow-lg transition
@@ -51,18 +51,13 @@ export default function ExploreClasses() {
                                             </div>
                                             <div className="my-6">
                                                 <h3 className="text-xl font-semibold text-start text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                                                    {item.name}
+                                                    {item.courseName}
                                                 </h3>
                                                 <p className="mt-5 text-gray-600 dark:text-neutral-200 text-left ">
-                                                    {limitText(item.content || '', 70)}
+                                                    {limitText(item.description || '', 70)}
                                                 </p>
                                             </div>
-                                            <div className="mt-auto flex items-center gap-x-3">
-                                                <img loading="lazy"  className="size-8 rounded-full" src="image/1703945762347.jpeg" alt="Avatar" />
-                                                <div>
-                                                    <h5 className="text-sm text-gray-800 dark:text-neutral-200">{item.teacher?.username}</h5>
-                                                </div>
-                                            </div>
+                                          
 
                                         </a>
                                     )}

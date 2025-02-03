@@ -1,4 +1,4 @@
-import { Ipost } from "../interface/Ipost";
+import { Ipost } from "../interface/ICourse";
 
 export const postData: Array<Ipost> = [
     {
