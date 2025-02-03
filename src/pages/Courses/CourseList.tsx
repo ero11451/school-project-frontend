@@ -16,7 +16,7 @@ import CourseCard from "./CourseCard";
 import { limitText } from "../../utility/limitText";
 
 export function CourseList() {
-  const sortBy : {name:string, id:string}[] = [{ id: "name", name: "Name" }, { id: "name_desc", name: "Name desc" }, { id:  "date", name: "Date" }, { id: "date_desc", name: "Date desc" }]
+  const sortBy: { name: string, id: string }[] = [{ id: "name", name: "Name" }, { id: "name_desc", name: "Name desc" }, { id: "date", name: "Date" }, { id: "date_desc", name: "Date desc" }]
   const navigate = useNavigate();
 
   const { register, handleSubmit, reset, formState: { errors, isValid, isLoading } } = useForm<ICourseURLParams>();
@@ -41,8 +41,8 @@ export function CourseList() {
 
   const onSubmit: SubmitHandler<ICourseURLParams> = (data: ICourseURLParams) => {
 
-    setParams(prev => prev = {...prev , ...data})
-    
+    setParams(prev => prev = { ...prev, ...data })
+
   }
 
   const onReset = () => {
@@ -54,7 +54,7 @@ export function CourseList() {
         search: null
       }
     )
-    setParams( {
+    setParams({
       pageNumber: 1,
       pageSize: 4,
       categoryId: null,
@@ -137,16 +137,18 @@ export function CourseList() {
 
         <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2">
           {courseData?.data && courseData?.data?.data.map((course: ICourse) =>
-    
- 
-          <CourseCard 
-          status ={course?.status || ""}
-          onClick={() => navigate(`/${RoutePath?.courseList}/${course?.id}`)}
-          courseName={course?.courseName || ""} 
-          dataCreated={moment(course?.createdAt).format("MMMM D, YYYY h:mm A")} 
-          totalClasses={course.totalClasses || 0} 
-          description ={limitText(course?.description || '', 30)}
-          userName={limitText(course.creator?.userName || "", 10 ) || ""} />
+
+
+            <CourseCard
+              status={course?.status || ""}
+              onClick={() => navigate(`/${RoutePath?.courseList}/${course?.id}`)}
+              courseName={course?.courseName || ""}
+              dataCreated={moment(course?.createdAt).format("MMMM D, YYYY h:mm A")}
+              totalClasses={course.totalClasses || 0}
+              description={limitText(course?.description || '', 30)}
+              userName={limitText(course.creator?.userName || "", 10) || ""} />
+
+              
             // <div key={course?.id} onClick={() => navigate(`/${RoutePath?.courseList}/${course?.id}`)}
             //   className="group  bg-white/50 dark:bg-white/10 backdrop-blur-lg  flex flex-col  min-h-fit
             //             border border-gray-200 dark:border-gray-800  hover:border-transparent hover:shadow-lg 

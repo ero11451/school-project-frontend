@@ -18,6 +18,6 @@ export function updateCourses(data:ICourse): Promise<{data:string}>{
     return api.post('api/Courses', data);
 }
 
-export function deleteCourses(id:number){
+export function deleteCourses(id:string = ''){
     return api.delete('api/Courses/' + id);
 }

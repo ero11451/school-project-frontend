@@ -38,6 +38,7 @@ export const notificationSlice = createSlice({
             state.error = action.payload;
         },
         showNotification(state, action: PayloadAction<Inotification>){
+            console.log(state);
             showToast({ 
                 message: action.payload.message || "Something went wrong", 
                 type: action.payload.type , 

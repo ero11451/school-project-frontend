@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+// import { useMutation } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { createPost } from '../../service/posts';
-import { Ipost } from '../../interface/ICourse';
-import { showNotification } from '../../redux-store/slice/notificationSlice';
+// import { useDispatch } from 'react-redux';
+// import { createPost } from '../../service/posts';
+// import { showNotification } from '../../redux-store/slice/notificationSlice';
 
 const PostForm: React.FC = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const [uploading, setUploading] = useState<boolean>(false);
+  const [imagePreview, setImagePreview] = useState<string>('');
   const { handleSubmit, register, formState: { errors } } = useForm({
     defaultValues: {
       title: '',
@@ -27,22 +28,20 @@ const PostForm: React.FC = () => {
     },
   });
 
-  const [uploading, setUploading] = useState<boolean>(false);
-  const [imagePreview, setImagePreview] = useState<string>('');
 
-  const mutation = useMutation({
-    mutationFn: (data:Ipost) => createPost(data), 
-    onSuccess:  (data: { response: string }) => {
-      dispatch(showNotification({ show: true, message: "Post successful: " + data.response, type: 'successful' }));
-    },
-    onError: (error: {message:string}) => {
-      dispatch(showNotification({ show: true, message: "Post failed: " + error.message, type: 'error' }));
-    },
-  });
+  // const mutation = useMutation({
+  //   mutationFn: createPost, 
+  //   onSuccess:  (data: { response: string }) => {
+  //     dispatch(showNotification({ show: true, message: "Post successful: " + data.response, type: 'successful' }));
+  //   },
+  //   onError: (error: {message:string}) => {
+  //     dispatch(showNotification({ show: true, message: "Post failed: " + error.message, type: 'error' }));
+  //   },
+  // });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
-    return mutation.mutate(data);
+    return console.log(data);
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,11 +1,11 @@
 import React, { FC, useState } from 'react';
 import { IUser } from '../interface/IUser';
-import { Ipost } from '../interface/ICourse';
+import { ICourse } from '../interface/ICourse';
 import { limitText } from '../utility/limitText';
 
 interface TableComponentProps {
     title: string;
-    data: Array<Ipost | IUser>;
+    data: Array<ICourse | IUser>;
     headers: Array<string | number>;
     changePage: (pageNumber: number) => void;
     deleteItem: unknown ;

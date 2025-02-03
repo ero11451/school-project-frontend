@@ -1,4 +1,4 @@
-import { Ipost } from "../interface/ICourse";
+
 import api from "./interseptor";
 
 export  function getPost(query:{page:number, pageSize:number, categoryId ?:number | null})
@@ -10,7 +10,7 @@ export const getPostById = function (id:number){
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function createPost(data:Ipost): Promise<any>{
+export function createPost(data:any) {
      return api.post('api/posts', data);
 }
 

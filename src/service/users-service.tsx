@@ -36,3 +36,8 @@ export function createUser(data:unknown){
 export function deleteUser(id:string){
     return api.delete('api/user/' + id);
 }
+
+
+export function getAllUser(id:string){
+    return api.delete('api/user/' + id);
+}

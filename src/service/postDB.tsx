@@ -1,6 +1,6 @@
-import { Ipost } from "../interface/ICourse";
 
-export const postData: Array<Ipost> = [
+
+export const postData = [
     {
       id: 1,
       "title": "Understanding JavaScript Scope",
