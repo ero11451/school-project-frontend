@@ -19,6 +19,7 @@ const DevToolsPage = () => {
           {/* <p className="lg:text-[20px]">Documents</p> */}
           {docData.map((topic:Documentation) =>
           <button
+            key={topic.id}
            onClick={() => setTopic(topic)}
           className={`p-4 border text-start border-2 w-full ${topic.id == selectedTopic.id ? "bg-green-800 text-white dark:bg-green-500" : ""} border-gray-50 dark:border-gray-500 dark:bg-gray-800 bg-gray-100 text-[#101828] dark:text-white text-sm rounded`}>
             {topic.title}

@@ -8,12 +8,12 @@ export default function ProfilePage() {
   );
   console.log(data)
   return (
-    <div>
-      <div className={`container mx-auto grid grid-cols-11 gap-4 p-100" `}>
-        <div className=" col-span-2">
-          <button className="dark:text-white w-full ">Personal info</button>
+    <div className=" p-3 lg:w-3/5 mx-auto" >
+      <div className=" mx-auto grid lg:grid-cols-11 gap-4 lg:p-100  ">
+        <div className=" lg:col-span-2">
+          <button className="dark:text-white ">Personal info</button>
         </div>
-        <div className=" col-span-9 ">
+        <div className=" lg:col-span-9 ">
           <div>
             <div data-hs-file-upload='{"url": "/upload",  "acceptedFiles": "image/*",  "maxFiles": 1,  "singleton": true}'>
               <template data-hs-file-upload-preview="">
@@ -22,7 +22,7 @@ export default function ProfilePage() {
                 </div>
               </template>
 
-              <div className="flex flex-wrap items-center gap-3 sm:gap-5">
+              <div className="lg:flex lg:flex-wrap items-center gap-3 ">
                 <div className="group" data-hs-file-upload-previews="" data-hs-file-upload-pseudo-trigger="">
                   <span className="group-has-[div]:hidden flex shrink-0 justify-center items-center size-20 border-2 border-dotted border-gray-300 text-gray-400 cursor-pointer rounded-full hover:bg-gray-50 dark:border-neutral-700 dark:text-neutral-600 dark:hover:bg-neutral-700/50">
                     <svg className="shrink-0 size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -33,8 +33,8 @@ export default function ProfilePage() {
                   </span>
                 </div>
 
-                <div className="grow  ">
-                  <div className="flex items-center justify-between gap-x-2">
+                <div className="lg:grow  ">
+                  <div className="lg:flex lg:items-center lg:mt-0 mt-2 lg:justify-between lg:gap-x-2">
                     <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 dark:bg-black font-medium rounded-full border border-transparent bg-gray-100 dark:text-white hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none" data-hs-file-upload-trigger="">
                       <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -43,7 +43,7 @@ export default function ProfilePage() {
                       </svg>
                       Upload photo
                     </button>
-                    <div className="gap-4">
+                    <div className="gap-4 lg:mt-0 mt-3">
                     <button type="button" className="btn-outline mr-2" data-hs-file-upload-clear="">Cancel</button>
                     <button type="button" className="btn-primary-rounded" data-hs-file-upload-clear="">Save changes</button>
 

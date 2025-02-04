@@ -1,11 +1,11 @@
 
 
-export default function NotFound() {
+export default function NotFound({text = "Recourse Not Found"}: {text?:string}) {
   return (
-    <div>
- <p className='text-center dark:text-white'>Recourse Not Found</p>
+    <div className="">
+ <p className='text-center text-sm dark:text-white'>{text}</p>
     <div className='flex align-center  content-center justify-center text-white'>
-       <img loading="lazy"  src="file.png"  className="h-30 w-30  " />
+       <img loading="lazy" alt=""  src="file.png"  className="h-32 w-32  " />
        
     </div>
     </div>

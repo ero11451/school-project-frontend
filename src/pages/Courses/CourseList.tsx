@@ -131,11 +131,12 @@ export function CourseList() {
       {loadingCourse && <LoadingIndicator />}
 
 
+          {!courseData?.data.data && <NotFound text="No course found" />}
 
       <div className="  py-12 lg:py-2 mx-auto  dark:bg-neutral-900">
 
 
-        <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2">
+        <div className="grid lg:grid-cols-2 gap-4 md:grid-cols-2">
           {courseData?.data && courseData?.data?.data.map((course: ICourse) =>
 
 
@@ -145,8 +146,8 @@ export function CourseList() {
               courseName={course?.courseName || ""}
               dataCreated={moment(course?.createdAt).format("MMMM D, YYYY h:mm A")}
               totalClasses={course.totalClasses || 0}
-              description={limitText(course?.description || '', 30)}
-              userName={limitText(course.creator?.userName || "", 10) || ""} />
+              description={limitText(course?.description || '', 60)}
+              userName={limitText(course.creator?.userName || "", 20) || ""} />
 
               
             // <div key={course?.id} onClick={() => navigate(`/${RoutePath?.courseList}/${course?.id}`)}
@@ -179,10 +180,7 @@ export function CourseList() {
             //         </a>
             //       </div>
             //     </div>
-
-
             //     <p className="text-xs mb-2"> {moment(course?.createdAt).format("MMMM D, YYYY h:mm A")}</p>
-
             //     <button className="btn-primary w-full justify-center  text-center ">
             //       Take course
             //     </button>

@@ -24,6 +24,58 @@ export default function CourseDetails() {
 
   
           
+      <div
+        id="application-sidebar"
+        className="hs-overlay [--auto-close:lg]  hs-overlay-open:translate-x-0
+  -translate-x-full transition-all duration-300 transform  w-[260px]
+  hidden  fixed inset-y-0 start-0 z-[60]  bg-white border-e border-gray-200
+  lg:block lg:translate-x-0 lg:end-auto lg:bottom-0
+  dark:bg-neutral-800 dark:border-neutral-700
+ "
+      >
+        <div className="px-8 pt-4">
+          <Logo />
+        </div>
+
+        <nav
+          className="hs-accordion-group p-6 w-full flex flex-col flex-wrap"
+          data-hs-accordion-always-open
+        >
+          <ul className="space-y-1.5">
+          {data?.data?.data?.map((classItem: IClass) => (
+                  <li key={classItem.id}>
+                    {/* ✅ Fixed the key warning by using classItem.id */}
+                    <button
+                      onClick={() => setSelectedClass(classItem)}
+                      className={`${
+                        classItem?.id === selectedClass?.id
+                          ? "bg-gray-200 dark:bg-neutral-700 dark:text-white w-full"
+                          : ""
+                      } flex items-center text-left gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white`}
+                    >
+                      <svg
+                        className="shrink-0 size-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                      </svg>
+                      {classItem?.title}
+                    </button>
+                  </li>
+                ))}
+            
+          </ul>
+        </nav>
+      </div>
    <div>
       <div className="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:ml-60 dark:bg-neutral-800 dark:border-neutral-700">
         <div className="flex justify-between items-center py-2">
@@ -97,66 +149,14 @@ export default function CourseDetails() {
         </div>
       </div>
 
-      <div
-        id="application-sidebar"
-        className="hs-overlay [--auto-close:lg]  hs-overlay-open:translate-x-0
-  -translate-x-full transition-all duration-300 transform  w-[260px]
-  hidden  fixed inset-y-0 start-0 z-[60]  bg-white border-e border-gray-200
-  lg:block lg:translate-x-0 lg:end-auto lg:bottom-0
-  dark:bg-neutral-800 dark:border-neutral-700
- "
-      >
-        <div className="px-8 pt-4">
-          <Logo />
-        </div>
 
-        <nav
-          className="hs-accordion-group p-6 w-full flex flex-col flex-wrap"
-          data-hs-accordion-always-open
-        >
-          <ul className="space-y-1.5">
-          {data?.data?.data?.map((classItem: IClass) => (
-                  <li key={classItem.id}>
-                    {/* ✅ Fixed the key warning by using classItem.id */}
-                    <button
-                      onClick={() => setSelectedClass(classItem)}
-                      className={`${
-                        classItem?.id === selectedClass?.id
-                          ? "bg-gray-200 dark:bg-neutral-700 dark:text-white w-full"
-                          : ""
-                      } flex items-center text-left gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white`}
-                    >
-                      <svg
-                        className="shrink-0 size-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                      </svg>
-                      {classItem?.title}
-                    </button>
-                  </li>
-                ))}
-            
-          </ul>
-        </nav>
-      </div>
-
-      <div className="w-full h-screen lg:ps-64">
+      <div className="w-full h-screen overflow-auto lg:ps-64">
           {/* header */}
 
      
-        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 pt-10">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 ">
      
-        <div className="max-w-[45rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+        <div className="max-w-[45rem]  h-screen  sm:px-6 lg:px-8 lg:py-16 mx-auto">
         {selectedClass ? (
           <Detail posts={selectedClass} />
         ) : (
@@ -175,6 +175,8 @@ export default function CourseDetails() {
       </div>
         </div>
       </div>
+
+      
     </div>
 
 

@@ -14,9 +14,9 @@ export default function CourseCard(
 
   return (
    <button onClick={onClick} >
-      <div className="bg-white rounded-2xl w-full shadow-lg grid grid-cols-5  h-full  overflow-hidden">
+      <div className="bg-white rounded-2xl w-full shadow-lg grid grid-cols-5 border h-full rounded-tr-3xl overflow-hidden">
         <div className="bg-[#163930] rounded-tr-3xl text-white p-6 col-span-3 text-left">
-          <p className="uppercase text-xs opacity-60">Course</p>
+          <p className=" text-xs opacity-60">Course</p>
           <p className="font-bold">{courseName}</p>
           <a href="#" className="text-xs mt-4 inline-block opacity-60">View all chapters {totalClasses }  <FaChevronRight className="inline" /></a>
         </div>
@@ -30,9 +30,9 @@ export default function CourseCard(
           <div className="text-xs ">
 
           {/* <p className=" text-xs opacity-60">Classes </p> */}
-          <p className="lg:text-xs "> by {userName}</p>
-          <p className={`${status == 'published' && "text-green-800"}`}>{status}</p>
+          <p className="lg:text-xs mt-5"> By {userName}</p>
           <p className="mt-2"> {description}</p>
+          <p className={`${status == 'published' && "text-green-800"}`}>{status}</p>
           </div>
           <button className="bg-[#163930] rounded text-white p-1 text-xs">
             Task course</button>

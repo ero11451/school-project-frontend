@@ -85,7 +85,7 @@ export default function Login() {
                 </form>
               </div>
             </div>
-            <div className="text- lg:py-5 flex flex-col gap-4 ">
+            <div className="text-xs lg:py-5 flex flex-col gap-2 ">
               <p className="mt-2   dark:text-neutral-400">
                 Already have an account?
                 <button className="decoration-2 hover:underline font-medium text-blue-600 ml-2 dark:text-blue-500"
@@ -93,7 +93,7 @@ export default function Login() {
                   Register here
                 </button>
               </p>
-              <p className=" lg:-24 text-gray-800 dark:text-white">By Signing In, you agree to our terms of services and that you have read our privacy policy</p>
+              <p className=" lg:-24 text-gray-800 dark:text-white">By Signing Up, you agree to our terms of services and that you have read our privacy policy</p>
             </div>
           </div>
         </div>

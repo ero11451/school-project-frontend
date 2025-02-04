@@ -66,6 +66,7 @@ import "toastify-js/src/toastify.css";
         escapeMarkup: false,
         gravity: "top",
         position: "right",
+        // stopOnfocus:true,
         backgroundColor: type == 'error' && 'red' || type == 'info' && 'skyblue' || type == 'successful' && '#3D9F86' || 'white',
          className: "bg-red-200 fixed -top-[150px]  right-[20px] z-[90] rounded-xl transition-all duration-300 w-[320px]  rounded-xl shadow-lg [&>.toast-close]:hidden ",
        

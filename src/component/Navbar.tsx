@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AuthState, clearToken, setUser,  } from '../redux-store/slice/authSlice';
 import Logo from './Logo';
 import { NavItem } from '.';
-import { limitText } from '../utility/limitText';
+// import { limitText } from '../utility/limitText';
 import { IUser } from '../interface/IUser';
 import { useEffect } from 'react';
 
@@ -91,15 +91,20 @@ function ProfileDropDown({data}:{data:IUser | null}){
     }
     return   <>
     <div className="hs-dropdown relative inline-flex">
-        <button id="hs-dropdown-custom-icon-trigger" type="button"  aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-            <div className='flex justify-center align-center items-center gap-3'>
+        <button id="hs-dropdown-custom-icon-trigger" type="button"  className='lg:btn-primary-rounded  text-[10px] bg-[#163930] p-2 lg:px-3 text-white rounded-full' aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+            My profile
+            {/* <div className='flex justify-center align-center items-center gap-3'>
 
             <img loading="lazy"  className="inline-block size-10 rounded-full" src={userProfile.img} alt="Avatar"  />
             <p>{limitText(data?.username || "", 9)  }</p>
-            </div>
+            </div> */}
         </button>
 
-        <div className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-custom-icon-trigger">
+        <div 
+             className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+             role="menu" 
+             aria-orientation="vertical" 
+             aria-labelledby="hs-dropdown-custom-icon-trigger">
             <div className="p-1 space-y-0.5">
                 <div className='text-center  justify-center items-center p-2 flex-col flex gap-2'>
                     <img loading="lazy"  className="inline-block size-14 rounded-full" src={userProfile.img} alt="Avatar" />

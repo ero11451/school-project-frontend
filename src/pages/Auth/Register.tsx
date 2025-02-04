@@ -31,9 +31,13 @@ export default function Register() {
      dispatch(setToken(res.data.accessToken));
      return navigate(`/${RoutePath.login}`);
     },
-    onError(error, variables, context) {
-      console.log(variables, context);
-      showToast({show:true, message:error.message, type:'error'})
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onError(error:any, variables) {
+      console.log(variables, error);
+      if (error?.response?.data.errors)  
+            error?.response?.data.errors.map((errorItem:string )=> showToast({show:true, message:errorItem, type:'error'}))
+      else
+        showToast({show:true, message:error.message, type:'error'})
         
     },
 });
@@ -49,8 +53,8 @@ export default function Register() {
   return (
     <div>
       {/* <HeardBg title={'Get started on Neeboh'} description={''} label={'Sign up'} labelIcon={'icon/profile.svg'} /> */}
-    <div className='flex justify-center flex-1 dark:bg-neutral-900 h-scree'>
-    <div className=" lg:w-2/5 w-full bg-white border- border-gray-20 backdrop-blur-lg   rounded-xl h-fit shadow-sm dark:bg-neutral-900 backdrop-blur-lg dark:border-neutral-700">
+    <div className='flex justify-center flex-1 dark:bg-neutral-900 h-scree p-5'>
+    <div className=" lg:w-2/5 w-full bg-white border- border-gray-20 backdrop-blur-lg    h-fit dark:bg-neutral-900 backdrop-blur-lg dark:border-neutral-700">
     <div className=" sm:p-7">
           {/* <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">Sign up</h1>
@@ -63,14 +67,14 @@ export default function Register() {
             </p>
           </div> */}
 
-          <div className="mt-5">
+          <div className="">
             {/* <div className="py-3 flex items-center text-xs text-gray-400 uppercase before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">Or</div> */}
 
          
 
             <div className="grid gap-y-4">
                 <h1 className="text-3xl font-bold">Get started on Neeboh</h1>
-                <p className='lg:w-3/4 text-sm text-gray-500'>By Sign add get access too our courses and save course you have taking in yhe past add so on </p>
+                <p className='lg:w-3/4 text-sm text-gray-500'>By Sign add get access too our courses and save course you have taking in the past add so on </p>
               <form onSubmit={handleSubmit(onSubmit)}>
              <label className="block text-sm font-medium mb-2 dark:text-white">
                 Username
@@ -133,14 +137,14 @@ export default function Register() {
 
 
           <div className="text- lg:py-5 flex flex-col gap-4 ">
-              <p className="mt-2   dark:text-neutral-400">
+              <p className="text-sm mt-3  dark:text-neutral-400">
                 Already have an account?
                 <button className="decoration-2 hover:underline font-medium text-blue-600 ml-2 dark:text-blue-500"
                   onClick={() => navigate(`/${RoutePath.login}`)} >
                   Login here
                 </button>
               </p>
-              <p className=" lg:-24 text-gray-800 dark:text-white">By Signing In, you agree to our terms of services and that you have read our privacy policy</p>
+              <p className="text-xs text-gray-800 dark:text-white">By Signing Up, you agree to our terms of services and that you have read our privacy policy</p>
             </div>
         </div>
       </div>
