@@ -1,6 +1,8 @@
 // import React from 'react'
 import { useSelector } from "react-redux";
 import { CardContainer, CardBody, CardItem } from "../../components/ui/3d-card";
+import { Link } from "react-router-dom";
+import { RoutePath } from "../../router/routerPath";
 
 interface Iitem {
     id: number,
@@ -64,14 +66,14 @@ export default function HomeService() {
                                 </div>
 
                                 <p className="font-[100] text-[16px] my-5">Expert solutions from market research to launch, designed to elevate your projects and drive success</p>
-                                <button type="button" className="btn btn-primary-rounded">Get started</button>
+                                <Link to={"/" + RoutePath.contact} type="button" className="btn btn-primary-rounded">Get started</Link>
                             </div>
 
                             {data.map((item) =>
                             <CardContainer>
                               <CardBody >
-                                <CardItem    translateZ="50" className="">
-                                <div key={item.id} className={`size-full w-full ${!item.activte ? 'bg-white dark:bg-white/10 ': 'bg-[#163930] text-white'} dark:backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
+                                <CardItem    translateZ="100" className="">
+                                <div key={item.id} className={`size-full flex-1 w-full ${!item.activte ? 'bg-white dark:bg-white/10 ': 'bg-[#163930] text-white'} dark:backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
                                     <div className="flex items-center gap-x-4 mb-3">
                                         <div className={`inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white  bg-none`}>
                                             <img loading="lazy"  src={item.iconurl} alt="" />

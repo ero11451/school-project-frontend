@@ -9,7 +9,7 @@ const envType:boolean = import.meta.env.MODE === 'production';
 
 
 const api = axios.create({
-    baseURL: envType ? "https://server-app-api-server-dseud4beg4djeua8.canadacentral-01.azurewebsites.net" :  "http://localhost:5160",
+    baseURL: !envType ? "https://server-app-api-server-dseud4beg4djeua8.canadacentral-01.azurewebsites.net" :  "http://localhost:5160",
 });
 
 api.interceptors.request.use(
@@ -40,11 +40,11 @@ api.interceptors.response.use(
             store.dispatch(setRedirectToLogin(true));
             // window.location.href = "/" + RoutePath.login; 
         }
-
+   
         showToast({
             show: true,
-            message: error.response.data.title || error.response.data.title  || error.message || "An error occurred",
-            type: 'error'
+            message: error.response.data.message  || error.message || error.response.data.title || error.response.data.title   || "An error occurred",
+            type: 'error',
         });
         return Promise.reject(error);
     }

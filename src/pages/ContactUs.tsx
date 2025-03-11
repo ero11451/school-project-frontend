@@ -31,6 +31,7 @@ export default function ContactUs() {
             
             <HeardBg 
                 title={" Get in Touch and Start Your Journey with Us Today"}
+                // description=" Get in Touch and Start Your Journey with Us Today"
                 // description={"We’re Here to Help – Reach Out for Questions, Support, or Collaboration Opportunities"} 
                 label={"Contact us"} 
                 labelIcon={"icon/category-2.svg"} />

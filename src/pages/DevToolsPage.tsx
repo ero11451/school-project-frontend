@@ -37,9 +37,6 @@ const DocumentationElement = ({ selectedTopic }: { selectedTopic: IDocumentation
       <h1 className="lg:text-4xl font-bold text-white">{selectedTopic?.title}</h1>
       <p className="lg:text-lg mb-5 dark:text-gray-200  text-gray-700">{selectedTopic?.description}</p>
     </header>
-
-
-
     <main>
       {selectedTopic?.sections.map((section, index: number) => (
         <section key={index} className="mb-8">

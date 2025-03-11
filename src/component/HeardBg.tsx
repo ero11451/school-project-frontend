@@ -18,7 +18,7 @@ export default function HeardBg({title, description , label, labelIcon}: {title?
                                <img loading="lazy"  src={labelIcon} alt=""  />
                                 {label}
                             </button>
-                            <p className="text-lg text-[#101828]  lg:p-3 lg:p-1 font-bold  lg:text-4xl lg:leading-tight dark:text-neutral-200">
+                            <p className="text-lg text-[#101828]  lg:p-3 lg:p-1 font-bold  lg:text-1xl lg:leading-tight dark:text-neutral-200">
                                {title}
                             </p>
                            {description && <p className="lg:mt-  lg:text-sm lg:mb-4 lg:text-sm text-[11px]  dark:text-white text-gray-800">

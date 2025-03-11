@@ -1,39 +1,43 @@
 import React from "react";
 import {
-//   IconArrowWaveRightUp,
-//   IconBoxAlignRightFilled,
-//   IconBoxAlignTopLeft,
-//   IconClipboardCopy,
+  //   IconArrowWaveRightUp,
+  //   IconBoxAlignRightFilled,
+  //   IconBoxAlignTopLeft,
+  //   IconClipboardCopy,
   IconFileBroken,
-//   IconSignature,
-//   IconTableColumn,
+  //   IconSignature,
+  //   IconTableColumn,
 } from "@tabler/icons-react";
 import { cn } from "../../lib/utils";
-import { Link } from "react-router-dom";
-import { RoutePath } from "../../router/routerPath";
+// import { Link } from "react-router-dom";
+// import { RoutePath } from "../../router/routerPath";
+import { ExpandableCardDemo } from "./ExpandableCardDemo";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function BentoGridDemo ({ itemsList }: { itemsList: any[] }) {
+export function BentoGridDemo({ itemsList }: { itemsList: any[] }) {
   return (
     <BentoGrid className=" mx-auto">
       {itemsList?.map((item, i) => (
-        <Link to={`/${RoutePath?.courseList}/${item?.id}`} key={i}>
-        <BentoGridItem
-          key={i}
-          title={item?.title || item?.courseName}
-          description={item?.description}
-          header={ <Skeleton thumbnailUrl ={item.thumbnailUrl} />}
-          icon={<IconFileBroken className="h-4 w-4 text-neutral-500" />}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-        </Link>
+        <>
+          <ExpandableCardDemo cards={item}>
+            <BentoGridItem
+              key={i}
+              title={item?.title || item?.courseName}
+              description={item?.description}
+              header={<Skeleton thumbnailUrl={item.thumbnailUrl} />}
+              icon={<IconFileBroken className="h-4 w-4 text-neutral-500" />}
+              className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+            />
+          </ExpandableCardDemo>
+
+        </>
       ))}
     </BentoGrid>
   );
 }
-const Skeleton = ({thumbnailUrl}:{thumbnailUrl:string}) => (
-  !thumbnailUrl ?  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-: <img alt="" src={thumbnailUrl} className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />);
+const Skeleton = ({ thumbnailUrl }: { thumbnailUrl: string }) => (
+  !thumbnailUrl ? <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+    : <img alt="" src={thumbnailUrl} className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />);
 // const items = [
 //   {
 //     title: "The Dawn of Innovation",
@@ -92,7 +96,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-9xl mx-auto ",
         className
       )}
     >
@@ -118,13 +122,13 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-xl group/bento text-left hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
     >
       {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
-       
+
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
           {title}
         </div>
@@ -136,7 +140,7 @@ export const BentoGridItem = ({
             Start Learning
           </span>
           <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
-            ✈️
+            Now ✈️
           </div>
         </ModalTrigger>
       </div>

@@ -8,6 +8,7 @@ import MainRouter from './router/main-router.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { INotificationState } from './redux-store/slice/notificationSlice.tsx'
 import React from 'react'
+import { FollowingPointerLayout } from './components/ui/following-pointer.tsx'
 
 
 const queryClient = new QueryClient(
@@ -27,10 +28,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Suspense fallback={<div>Loading...</div>}>
           <Provider store={store}>
             <LoadingProvider>
-
+<FollowingPointerLayout>
+  
               <div className=' dark:bg-neutral-900'>
                 <MainRouter />
               </div>
+</FollowingPointerLayout>
             </LoadingProvider>
           </Provider>
         </Suspense>
