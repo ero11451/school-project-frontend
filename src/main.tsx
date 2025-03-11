@@ -7,6 +7,7 @@ import store from './redux-store/store.tsx'
 import MainRouter from './router/main-router.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { INotificationState } from './redux-store/slice/notificationSlice.tsx'
+import React from 'react'
 
 
 const queryClient = new QueryClient(
