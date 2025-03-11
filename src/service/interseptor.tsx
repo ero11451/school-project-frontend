@@ -3,7 +3,6 @@ import store from '../redux-store/store';
 import {  clearToken, setRedirectToLogin } from '../redux-store/slice/authSlice';
 import { setLoading } from '../redux-store/slice/notificationSlice';
 import { showToast } from '../component/ToastNotifications';
-// import { RoutePath } from '../router/routerPath';
 
 
 const envType:boolean = import.meta.env.MODE === 'production';
