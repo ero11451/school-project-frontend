@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import  { FC, useState } from 'react';
 import { IUser } from '../interface/IUser';
 import { ICourse } from '../interface/ICourse';
 import { limitText } from '../utility/limitText';

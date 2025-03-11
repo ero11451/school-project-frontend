@@ -1,4 +1,4 @@
-import React, { ReactNode, Suspense } from 'react'
+import  { ReactNode, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
