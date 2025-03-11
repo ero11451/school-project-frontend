@@ -1,20 +1,21 @@
 // import { useSelector } from "react-redux";
 // import HeardBg from "../component/HeardBg";
+import HomePageService from "./Homepage/HomePageService";
 import HomeService from "./Homepage/HomeService";
 
-interface Iitem {
-    title: string,
-    description: string
-}
+// interface Iitem {
+//     title: string,
+//     description: string
+// }
 
-const data = [{
-    title: 'Tailored Solutions for You',
-    description: 'Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you.'
-},
+// const data = [{
+//     title: 'Tailored Solutions for You',
+//     description: 'Get customized support for your unique needs – whether you need experts or learning tools, Neeboh is here for you.'
+// },
 
-{
-    title: 'Secure and Reliable products', description: 'Trustworthy services with a focus on your security and satisfaction every step of the way.'
-}]
+// {
+//     title: 'Secure and Reliable products', description: 'Trustworthy services with a focus on your security and satisfaction every step of the way.'
+// }]
 
 export default function About() {
     // const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
@@ -57,8 +58,10 @@ export default function About() {
 
             </div>
 
+            <HomePageService />
 
-            <div className=' bg-gradient-to-r from-[#14342C] via-[#0D7D61] lg:pb-12 to-[#14342C] text-white' style={{ backgroundImage: "url('image/green_bg.svg')" }}>
+
+            {/* <div className=' bg-gradient-to-r from-[#14342C] via-[#0D7D61] lg:pb-12 to-[#14342C] text-white' style={{ backgroundImage: "url('image/green_bg.svg')" }}>
 
                 <div className='text-center lg:pt-24 pt-10 '>
                     <p className='lg:font-[600] lg:text-[32px] font-semibold text-lg lg:text-center text-left px-5'>Guided by Our Mission, Driven by Our Values</p>
@@ -86,7 +89,7 @@ export default function About() {
                     </div>
                 </div>
 
-            </div>
+            </div> */}
 
 
 

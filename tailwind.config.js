@@ -1,5 +1,11 @@
+/* eslint-disable no-undef */
 // tailwind.config.js
-// eslint-disable-next-line no-undef
+const {
+    default: flattenColorPalette,
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
+
 module.exports = {
     darkMode: 'class',
     // darkMode: 'selector',
@@ -20,6 +26,7 @@ module.exports = {
     },
     theme: {
         extend: {
+
             backgroundImage: {
                 'wave-svg': "url('./src/assets/wavebg.svg')",
             },
@@ -27,14 +34,39 @@ module.exports = {
                 'primary': '-red-400'
             },
             animation: {
+
+                move: "move 5s linear infinite",
                 bounce200: 'bounce 1s infinite 200ms',
                 bounce400: 'bounce 1s infinite 400ms',
             },
+            keyframes: {
+                move: {
+                    "0%": { transform: "translateX(-200px)" },
+                    "100%": { transform: "translateX(200px)" },
+                },
+            },
         },
     },
+    // variants: {
+    //     extend: {
+    //         backgroundColor: ["hover"],
+    //     },
+    // },
     plugins: [
-        // eslint-disable-next-line no-undef
+        addVariablesForColors,
         require('preline/plugin'),
 
     ],
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function addVariablesForColors({ addBase, theme }) {
+    let allColors = flattenColorPalette(theme("colors"));
+    let newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
+
+    addBase({
+        ":root": newVars,
+    });
+}

@@ -6,7 +6,7 @@ export default function HomeDevTool() {
             <div className="max-w-[75rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="text-center lg:p-10">
                     <button type="button" className="btn w-fit "></button>
-                        <p className='font-[600]  lg:text-[32px] dark:text-white text-[#163930] '>Powerful Dev Tools to Bring Your Ideas to  Life
+                        <p className='font-[600]  lg:text-[32px] dark:text-white text-[#163930] '>Powerful Dev help to Bring Your Ideas to  Life
                             {/* <span className="text-transparent 
                         bg-clip-text bg-gradient-to-r dark:from-white text-green-900 lg:from-[#163930] 
                         via-[#3D9F86]  to-green-800 dark:text-white animate-gradient"> Life</span> */}

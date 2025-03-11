@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../router/routerPath";
 import { useSelector } from "react-redux";
+import { FlipWords } from "../../components/ui/flip-words";
 // import SideShow from "./SideShow";
 // import Glowing from "./headerBG/Glowing";
 
@@ -23,7 +24,7 @@ export default function Header() {
             <div className=" text-left lg:text-center ">
 
               <h1 className="text-3xl text-[#101828] font-bold sm:text-5xl lg:text-6xl lg:leading-tight dark:text-neutral-200 lg:pt-20">
-                Transform Your Vision <br /> into
+                Transform Your <FlipWords words={["Vision" , "Idea", "Dream website"]} />  <br /> into
                 <span className="ml-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#163930] via-green-900 to-[#3D9F86] animate-gradient dark:text-white">
                   Reality</span>
               </h1>

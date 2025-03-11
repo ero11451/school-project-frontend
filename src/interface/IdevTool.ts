@@ -1,21 +1,22 @@
-export interface Documentation {
+export  interface IDocumentation {
     id?: number;
     title: string;
     description: string;
-    sections: Section[];
+    sections: ISection[];
   }
   
-  export interface Section {
+   interface ISection {
     id?: number;
     heading: string;
     content: string;
     code?: string; // Optional
+    language?: string; // Optional
     examples?: string[]; // Optional
     tips?: string; // Optional
-    subsections?: Subsection[]; // Optional
+    subsections?: ISubsection[]; // Optional
   }
   
-  export interface Subsection {
+   interface ISubsection {
     id?: number;
     subheading: string;
     content: string;

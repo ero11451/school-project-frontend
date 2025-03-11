@@ -47,43 +47,31 @@ body {
     color: var(--text-primary);
 }
 
-.label {
-    @apply block text-sm font-medium mb-2 dark:text-white
+@layer utilities {
+    .label {
+        @apply block text-sm font-medium mb-2 dark:text-white;
+    }
+    .input {
+        @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:backdrop-blur-lg dark:bg-white/30 dark:border-neutral-700 dark:text-neutral-400;
+    }
+    .btn-outline {
+        @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800;
+    }
+    .btn-outline-rounded {
+        @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800;
+    }
+    .btn-primary {
+        @apply inline-flex items-center gap-x-2 text-white rounded border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
+        @apply py-2 px-4 text-sm;
+        @apply transition;
+    }
+    .btn-primary-rounded {
+        @apply inline-flex items-center gap-x-2 text-white rounded-full border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
+        @apply py-2 px-4 text-sm;
+        @apply transition;
+    }
 }
 
-.input {
-    @apply py-3 px-4 block w-full border-red-500 rounded-lg bg-gray-100 text-sm focus:border-red-500 focus:ring-red-500 dark:backdrop-blur-lg dark:bg-white/30 dark:border-neutral-700 dark:text-neutral-400;
-}
-
-.btn-outline {
-    @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800
-}
-
-.btn-outline-rounded {
-  @apply py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800
-}
-
-
-/* src/styles.css */
-
-.btn-primary {
-    @apply inline-flex items-center gap-x-2 text-white rounded border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
-    /* Responsive adjustments */
-    @apply py-2 px-4 text-sm;
-    /* Small screens */
-    @apply transition
-}
-
-.btn-primary-rounded {
-    @apply inline-flex items-center gap-x-2 text-white rounded-full border border-transparent bg-[#163930] hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none;
-    /* Responsive adjustments */
-    @apply py-2 px-4 text-sm;
-    /* Small screens */
-    @apply transition
-}
-
-
-/* Add more theme-specific styling as needed */
 
 .color-primary {
     background: -webkit-linear-gradient(green, red);
@@ -145,4 +133,14 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
     /* Safari and Chrome */
+}
+
+.no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
 }

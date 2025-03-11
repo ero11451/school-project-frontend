@@ -1,5 +1,6 @@
 // import React from 'react'
 import { useSelector } from "react-redux";
+import { CardContainer, CardBody, CardItem } from "../../components/ui/3d-card";
 
 interface Iitem {
     id: number,
@@ -49,6 +50,7 @@ export default function HomeService() {
 
     return (
         <div>
+            
             <div className="overflow-hidden bg-[#FEFAF1] dark:text-white"  style={{backgroundImage:headerBG }}>
                 <div className="max-w-[85rem] mx-auto  sm:px-6 lg:px-1 ">
                     <div className="relative mx-auto max-w-5xl grid space-y-5 sm:space-y-10">
@@ -66,7 +68,10 @@ export default function HomeService() {
                             </div>
 
                             {data.map((item) =>
-                                <div key={item.id} className={`size-full  ${!item.activte ? 'bg-white dark:bg-white/10 ': 'bg-[#163930] text-white'} dark:backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
+                            <CardContainer>
+                              <CardBody >
+                                <CardItem    translateZ="50" className="">
+                                <div key={item.id} className={`size-full w-full ${!item.activte ? 'bg-white dark:bg-white/10 ': 'bg-[#163930] text-white'} dark:backdrop-blur-lg   rounded-lg p-8 lg:rounded-[20px]`}>
                                     <div className="flex items-center gap-x-4 mb-3">
                                         <div className={`inline-flex justify-center items-center size-[62px] bg-[#E8EBEA] rounded-full border-2 border-white  bg-none`}>
                                             <img loading="lazy"  src={item.iconurl} alt="" />
@@ -78,6 +83,9 @@ export default function HomeService() {
                                     <br />
                                     <p className="font-[100] text-[18px]">{item.description}</p>
                                 </div>
+                                </CardItem>
+                              </CardBody>
+                            </CardContainer>
                             )
                             }
                         </div>
@@ -96,3 +104,5 @@ export default function HomeService() {
         </div>
     )
 }
+
+

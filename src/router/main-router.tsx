@@ -69,7 +69,6 @@ export default function MainRouter() {
         <Route path={RoutePath.register} element={<Register />} />
         <Route path={RoutePath.login} element={<Login />} />
         {/* ServicePage */}
-
         {/* <Route element={<ProtectedRoute />}>
         </Route> */}
         <Route element={<ProtectedRoute />} >
