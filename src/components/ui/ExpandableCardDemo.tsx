@@ -1,6 +1,8 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "../../hooks/use-outside-click";
+import { Link } from "react-router-dom";
+import { RoutePath } from "../../router/routerPath";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ExpandableCardDemo({ cards, children }: { cards: any, children: React.ReactNode }) {
@@ -101,15 +103,16 @@ export function ExpandableCardDemo({ cards, children }: { cards: any, children: 
 
                     </motion.p>
                   </div>
-
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                  >
-                    {active.ctaText || "Start"}
-                  </motion.a>
+                  <Link to={"/" + RoutePath.courseList + "/" + active.id}>
+                    <motion.a
+                      layoutId={`button-${active.title}-${id}`}
+                      href={active.ctaLink}
+                      target="_blank"
+                      className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    >
+                      {active.ctaText || "Start"}
+                    </motion.a>
+                  </Link>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div

@@ -4,20 +4,18 @@ import React, { useEffect, useState } from "react";
 
 import { motion, AnimatePresence, useMotionValue } from "motion/react";
 import { cn } from "../../lib/utils";
-import { useSelector } from "react-redux";
 import { IUser } from "../../interface/IUser";
 
 
 export function FollowingPointerLayout({ children }: { children: React.ReactNode }) {
-    const blogContent  = useSelector(
-        (store:{auth:{user:IUser}}) => store.auth.user
-      );
+    const userData = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") as string) as IUser : null;
+   
     return (
         <FollowerPointerCard
             title={
                 <TitleComponent
-                    title={blogContent?.userName || "Guest"}
-                    avatar={blogContent?.userImgUrl || "/manu.png"}
+                    title={userData?.username || "Guest"}
+                    avatar={userData?.userImgUrl || "/manu.png"}
                 />
             }
         >
@@ -195,3 +193,4 @@ export const FollowPointer = ({
         </motion.div>
     );
 };
+

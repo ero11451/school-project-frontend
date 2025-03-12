@@ -5,11 +5,12 @@ import { setLoading } from '../redux-store/slice/notificationSlice';
 import { showToast } from '../component/ToastNotifications';
 
 
-const envType:boolean = import.meta.env.MODE === 'production';
+const envType:boolean = true || import.meta.env.MODE === 'production';
 
 
 const api = axios.create({
     baseURL: envType ? "https://server-app-api-server-dseud4beg4djeua8.canadacentral-01.azurewebsites.net" :  "http://localhost:5160",
+    
 });
 
 api.interceptors.request.use(

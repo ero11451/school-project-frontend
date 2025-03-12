@@ -17,8 +17,7 @@ export default function ExploreClasses() {
     })
     const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
     const headerBG: string = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')"
-    console.log(data, isLoading, headerBG, navigate)
-
+    // console.log(data, isLoading, headerBG, navigate)
     // const dataCarousel: SlideData[] = data?.data.data.map((course: ICourse) =>  {
     //  return { 
     //      src: course?.thumbnailUrl,
