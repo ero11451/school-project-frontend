@@ -1,4 +1,3 @@
-import React from "react";
 import { BackgroundGradientAnimation } from "../ui/background-gradient-animation";
 import Logo from "../../component/Logo";
 
