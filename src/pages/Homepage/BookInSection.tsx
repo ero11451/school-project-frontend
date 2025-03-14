@@ -27,7 +27,7 @@ export default function BookInSection() {
 
 
                                     <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-                                        <a className="btn-primary-rounded flex justify-center" href="#">
+                                        <a  type="button" href="mailto:neeboh.io@gmail.com" className="btn-primary-rounded flex justify-center">
                                             Book a demo in 1 minutes
                                         </a>
 

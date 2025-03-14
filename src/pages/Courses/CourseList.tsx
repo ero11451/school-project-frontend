@@ -61,7 +61,7 @@ export function CourseList() {
    const course :ICourse []= courseData?.data.data || []
    console.log(errors, isValid)
   return (
-    <div>
+    <div className=" h-full">
       <div className=" dark:bg-neutral-900 lg:w-3/4 m-auto px-5">
         {isloadingCategory && <LoadingIndicator />}
         <motion.div

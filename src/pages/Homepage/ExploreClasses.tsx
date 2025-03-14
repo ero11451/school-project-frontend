@@ -13,7 +13,7 @@ export default function ExploreClasses() {
     const navigate = useNavigate()
     const { data, isLoading } = useQuery({
         queryKey: ['courseClassList'],
-        queryFn: () => getCourses({ pageNumber: 1, pageSize: 5 }),
+        queryFn: () => getCourses({ pageNumber: 1, pageSize: 6 }),
     })
     const theme = useSelector((state: { theme: { value: "light" | "dark" } }) => state.theme.value);
     const headerBG: string = theme !== 'dark' ? "url('image/yelloBG.svg')" : "url('image/headerDarkBG.svg')"

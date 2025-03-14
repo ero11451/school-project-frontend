@@ -61,7 +61,7 @@ export default function HomePageService() {
                             <AnimatePresence>
                                 {hoveredIndex === idx && (
                                     <motion.span
-                                        className="absolute inset-0 h-full w-full  bg-[#0D7D61] dark:bg-slate-800/[0.8] block  rounded-[30px]"
+                                        className="absolute inset-0 h-full w-full  bg-[#0D7D61] dark:bg-[#0D7D61] block  rounded-[30px]"
                                         layoutId="hoverBackground"
                                         initial={{ opacity: 0 }}
                                         animate={{

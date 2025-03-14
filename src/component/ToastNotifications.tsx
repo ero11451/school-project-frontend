@@ -46,9 +46,9 @@ import "toastify-js/src/toastify.css";
 //     close.click();
 //   }
 
-  export const showToast = ({message, type, show = true}:{message:string,   type?: "successful" | 'error' | 'info', show:boolean }) => {
-    Toastify({
-      text:  
+export const showToast = ({ message, type, show = true }: { message: string, type?: "successful" | 'error' | 'info', show: boolean }) => {
+  Toastify({
+    text:
       `
       <div class="flex">
         <p class="text-sm">${message}</p>
@@ -60,20 +60,20 @@ import "toastify-js/src/toastify.css";
         </div>
       </div>
     `
-      ,
-        duration: 3000,
-        close: show,
-        escapeMarkup: false,
-        gravity: "top",
-        position: "right",
-        // stopOnfocus:true,
-        backgroundColor: type == 'error' && 'red' || type == 'info' && 'skyblue' || type == 'successful' && '#3D9F86' || 'white',
-         className: "bg-red-200 fixed -top-[150px]  right-[20px] z-[90] rounded-xl transition-all duration-300 w-[320px]  rounded-xl shadow-lg [&>.toast-close]:hidden ",
-       
-     
-    }).showToast();
-    // setCount(count + 1);
-  };
+    ,
+    duration: 3000,
+    close: show,
+    escapeMarkup: false,
+    gravity: "top",
+    position: "right",
+    // stopOnfocus:true,
+    backgroundColor: type == 'error' && 'red' || type == 'info' && 'skyblue' || type == 'successful' && '#3D9F86' || 'white',
+    className: "bg-red-200 fixed -top-[150px]  right-[20px] z-[90] rounded-xl transition-all duration-300 w-[320px]  rounded-xl shadow-lg [&>.toast-close]:hidden ",
+
+
+  }).showToast();
+  // setCount(count + 1);
+};
 
 
 

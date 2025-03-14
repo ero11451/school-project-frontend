@@ -10,7 +10,7 @@ import React from 'react'
 import { FollowingPointerLayout } from './components/ui/following-pointer.tsx'
 
 // Lazy load the MainRouter
-import LazyMainRouter from './router/main-router.tsx'
+import MainRouter from './router/main-router.tsx'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <FollowingPointerLayout>
               <div className='dark:bg-neutral-900'>
                 <Suspense fallback={<div>Loading...</div>}>
-                  <LazyMainRouter />
+                  <MainRouter />
                 </Suspense>
               </div>
             </FollowingPointerLayout>
