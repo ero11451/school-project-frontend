@@ -54,10 +54,10 @@ export default function ContactUs() {
 
                                             <div className="grow">
                                                 <p className="text-sm text-gray-500 dark:text-neutral-300">
-                                                    Our Email
+                                                    Our mail
                                                 </p>
                                                 <h3 className="group-hover:text-blue-600 font-[500] text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                                                    neeboh.io@gmail.com
+                                                    admin@neeboh.com
                                                 </h3>
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@ export default function ContactUs() {
 
                                             <div className="grow">
                                                 <p className="text-sm text-gray-500 dark:text-neutral-300">
-                                                    Our Telephone
+                                                    Our gmail
                                                 </p>
                                                 <h3 className="group-hover:text-blue-600 font-[500] text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
                                                     neeboh.io@gmail.com
