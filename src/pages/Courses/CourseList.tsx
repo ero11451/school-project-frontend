@@ -1,11 +1,11 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { LoadingIndicator } from "../../component";
 import { categoryGetAll } from "../../service/category-service";
 import NotFound from "../../component/NotFound";
 import { getCourses } from "../../service/courses-service";
 import { ICourse, ICourseURLParams } from "../../interface/ICourse";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ICategory } from "../../interface/ICategory";
 import Pagination from "../../component/Pagination";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -40,7 +40,6 @@ export function CourseList() {
   }
 
   const onReset = () => {
-    console.log("reset")
     reset(
       {
         categoryId: null,
@@ -58,8 +57,8 @@ export function CourseList() {
 
   }
 
-   const course :ICourse []= courseData?.data.data || []
-   console.log(errors, isValid)
+  const course: ICourse[] = courseData?.data.data || []
+  console.log(errors, isValid)
   return (
     <div className=" h-full">
       <div className=" dark:bg-neutral-900 lg:w-3/4 m-auto px-5">
@@ -127,19 +126,19 @@ export function CourseList() {
         {loadingCourse || courseData?.data?.length == 0 && <NotFound />}
         {!courseData?.data.data && <NotFound text="No course found" />}
 
-<div className="mt-5 h-full flex-1 flex flex-col gap-24">
+        <div className="mt-5 h-full flex-1 flex flex-col gap-24">
 
-      <BentoGridDemo itemsList={course} />
+          <BentoGridDemo itemsList={course} />
 
-       
-      <Pagination
-        page={params.pageNumber || 1}
-        pageSize={params.pageSize || 10}
-        totalCount={courseData?.data.totalCount}
-        totalPages={courseData?.data.totalPages}
-        onPageChange={(newPage: number) => setParams(prev => prev = { ...prev, pageNumber: newPage })}
-      /> 
-      </div>
+
+          <Pagination
+            page={params.pageNumber || 1}
+            pageSize={params.pageSize || 10}
+            totalCount={courseData?.data.totalCount}
+            totalPages={courseData?.data.totalPages}
+            onPageChange={(newPage: number) => setParams(prev => prev = { ...prev, pageNumber: newPage })}
+          />
+        </div>
 
       </div>
 
@@ -149,4 +148,4 @@ export function CourseList() {
 
 
 
- 
+

@@ -150,7 +150,7 @@ export default function CourseDetails() {
       </div>
 
 
-      <div className="w-full h-screen overflow-auto lg:ps-64">
+      <div className="w-full h-fit overflow-auto lg:ps-64">
           {/* header */}
 
      

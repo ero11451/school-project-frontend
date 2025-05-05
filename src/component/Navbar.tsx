@@ -64,11 +64,11 @@ export default function Navbar() {
                     id="navbar-collapse-with-animation"
                     className="hs-collapse  hidden overflow-hidden transition-all duration-300 basis-full w-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6 col-span-3 ">
                     <div className="flex flex-col lg:px-2 px-5 gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
-                        {/* <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} /> */}
+                        <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
-                        <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
-                        <NavItem path={RoutePath.devTools} label="Dev help" key={4} isActive={false} />
+                        {/* <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} /> */}
+                        <NavItem path={RoutePath.devTools} label="Dev Blog" key={4} isActive={false} />
                         {userData?.user?.isAdmin == true &&    <NavItem path={RoutePath.admin} label="Admin" key={5} isActive={false} />}
 
                     </div>

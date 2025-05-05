@@ -34,8 +34,8 @@ export default function Header() {
                 <a  type="button" href="mailto:neeboh.io@gmail.com" className="py-3 px-5 inline-flex items-center lg:w-fit lg:mb-2 mb-5 w-full text-center justify-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-[#163930] text-white hover:bg-[#163930] focus:outline-none focus:bg-[#163930] disabled:opacity-50 disabled:pointer-events-none">
                   Book a demo
                 </a>
-                <button type="button" onClick={() => navigate( '/' + RoutePath.courseList) } className="py-3 px-5 inline-flex lg:w-fit w-full h-fit items-center justify-center gap-x-2 text-sm font-medium rounded-full border border-gray-700  text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
-                  Learn a skill</button>
+                <button type="button" onClick={() => navigate( '/' + RoutePath.about) } className="py-3 px-5 inline-flex lg:w-fit w-full h-fit items-center justify-center gap-x-2 text-sm font-medium rounded-full border border-gray-700  text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
+                  About us</button>
               </div>
             </div>
 

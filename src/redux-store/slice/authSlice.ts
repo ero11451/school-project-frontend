@@ -38,6 +38,7 @@ export const authSlice = createSlice({
             state.user = null
             localStorage.removeItem('token');
             localStorage.removeItem('user');
+            localStorage.clear();
         },
         setLoading(state, action: PayloadAction<boolean>) {
             state.loading = action.payload;

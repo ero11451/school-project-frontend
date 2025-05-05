@@ -110,7 +110,7 @@ export default function About() {
                                         Engage Directly with Your Tutor, Get Answers to Questions, and Sharpen Your Skills Through Quizzes Tailored for You
                                     </p>
                                     <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-                                        <a  type="button" href="mailto:neeboh.io@gmail.com" className="btn-primary-rounded flex justify-center" >
+                                        <a  type="button" href="mailto:admin@neeboh.com" className="btn-primary-rounded flex justify-center" >
                                             Book a demo in 1 minutes
                                         </a>
                                     </div>
@@ -140,7 +140,7 @@ export default function About() {
             </div>
 
 
-            <div className="overflow-hidden" id="osamuyi-ero">
+            {/* <div className="overflow-hidden" id="osamuyi-ero">
                 <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
                     <div className="relative mx-auto max-w-4xl grid space-y-5 sm:space-y-10">
 
@@ -171,7 +171,7 @@ Why did I develop this project? I am a software developer with nearly a decade o
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <HomeService />
 
