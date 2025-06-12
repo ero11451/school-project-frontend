@@ -16,14 +16,17 @@ export default function ContactUs() {
 
     const mutation = useMutation({
         mutationFn:  createContact,
+        
         onSuccess: (res: { data: unknown }) => {
          showToast({ show: true, message: "Message sent successful", type: 'successful' })
           console.log(res);
         },
+
         onError: (error) => { 
           showToast({ show: true, message: "There was an error with you message", type: 'error' })
           console.log(error)
-        }
+        },
+        
       });
 
     return (

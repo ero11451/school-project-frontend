@@ -13,7 +13,7 @@ export default function Footer() {
                                 </p>
                             </div>
                             <div className="col-span-2 flex lg:justify-center lg:p-1 px-4 pb-3 items-center">
-                                <a href="mailto:neebog@gmail.com" >
+                                <a href="mailto:neeboh@gmail.com" >
                                     <button className="btn-primary-rounded md:text-sm">
                                         <img loading="lazy" src="icon/calendar.svg" alt="" />
                                         Schedule a consultation

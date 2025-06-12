@@ -67,7 +67,7 @@ export default function Navbar() {
                         <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />
                         <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
-                        {/* <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} /> */}
+                        <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
                         <NavItem path={RoutePath.devTools} label="Dev Blog" key={4} isActive={false} />
                         {userData?.user?.isAdmin == true &&    <NavItem path={RoutePath.admin} label="Admin" key={5} isActive={false} />}
 
