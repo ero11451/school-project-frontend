@@ -66,9 +66,9 @@ export default function Navbar() {
                     <div className="flex flex-col lg:px-2 px-5 gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
                         <NavItem path={RoutePath.home} label="Home" key={1} isActive={false} />
                         <NavItem path={RoutePath.about} label="About us" key={1} isActive={false} />
-                        <NavItem path={RoutePath.contact} label="Contact" key={2} isActive={false} />
-                        <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
-                        <NavItem path={RoutePath.devTools} label="Dev Blog" key={4} isActive={false} />
+                        <NavItem path={RoutePath.contact} label="Contact Us" key={2} isActive={false} />
+                        {/* <NavItem path={RoutePath.courseList} label="Courses" key={3} isActive={false} />
+                        <NavItem path={RoutePath.devTools} label="Dev Blog" key={4} isActive={false} /> */}
                         {userData?.user?.isAdmin == true &&    <NavItem path={RoutePath.admin} label="Admin" key={5} isActive={false} />}
 
                     </div>
