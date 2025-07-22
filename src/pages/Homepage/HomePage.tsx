@@ -23,7 +23,7 @@ function HomePage() {
             <BookInSection />
             <HomeService />
             <HomeDevTool />
-            <ExploreClasses />
+            {/* <ExploreClasses /> */}
         </div>
 
     )
