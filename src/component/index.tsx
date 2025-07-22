@@ -1,6 +1,6 @@
 
 // export {default as Header } from '../component/Header';
-export {default as Plane  } from '../component/Plane';
+export {default as Plane  } from '../component/Plane'
 export {default as Input  } from '../component/Input';
 export {default as HeardBg } from '../component/HeardBg';
 export {default as ThemeToggle } from '../component/ThemeToggle';

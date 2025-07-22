@@ -1,5 +1,5 @@
 import BookInSection from "./BookInSection";
-import ExploreClasses from "./ExploreClasses";
+// import ExploreClasses from "./ExploreClasses";
 import Header from "./Header";
 import HomeDevTool from "./HomeDevTool";
 import HomePageService from "./HomePageService";
